@@ -7,24 +7,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .floating-btn {
-            width: 55px; height: 55px; border-radius: 50%; display: flex;
-            align-items: center; justify-content: center; color: white;
-            font-size: 26px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s, background 0.3s; text-decoration: none;
-        }
-        .floating-btn:hover { transform: scale(1.1); filter: brightness(1.1); }
-        .linkedin-bg { background: #0077b5; }
-        .android-bg { background: #3DDC84; }
-        .whatsapp-bg { background: #25d366; }
-        .email-bg { background: #ea4335; }
-        
-        .qr-card {
-            background: white; padding: 12px; border-radius: 12px; 
-            width: 140px; text-align: center; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            border: 1px solid #e2e8f0;
-        }
+        .floating-contact { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
+        .contact-options { display: none; margin-bottom: 10px; }
+        .floating-contact:hover .contact-options { display: flex; flex-direction: column; gap: 10px; }
+        .social-link i { font-size: 20px; transition: 0.3s; }
+        .social-link:hover { color: #60a5fa; }
     </style>
 </head>
 <body class="bg-slate-50 font-sans">
@@ -49,9 +36,9 @@
         </div>
     </header>
 
-    <section class="py-20 container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-black mb-16 uppercase">Our Premium Services</h2>
-        <div class="grid md:grid-cols-3 gap-10">
+    <section class="py-20 container mx-auto px-6">
+        <h2 class="text-3xl font-black text-center mb-16 uppercase">Our Premium Services</h2>
+        <div class="grid md:grid-cols-3 gap-10 text-center">
             <div class="bg-white p-10 rounded-3xl shadow-lg border-b-4 border-blue-600">
                 <i class="fas fa-link text-5xl text-blue-600 mb-6"></i>
                 <h3 class="text-2xl font-bold mb-4">Guest Posting</h3>
@@ -60,57 +47,55 @@
             <div class="bg-white p-10 rounded-3xl shadow-lg border-b-4 border-blue-600">
                 <i class="fas fa-pen-nib text-5xl text-blue-600 mb-6"></i>
                 <h3 class="text-2xl font-bold mb-4">Content Writing</h3>
-                <p class="text-slate-500">SEO-optimized articles tailored for worldwide audiences.</p>
+                <p class="text-slate-500">SEO-optimized articles tailored for US/UK audiences.</p>
             </div>
             <div class="bg-white p-10 rounded-3xl shadow-lg border-b-4 border-blue-600">
                 <i class="fas fa-chart-line text-5xl text-blue-600 mb-6"></i>
                 <h3 class="text-2xl font-bold mb-4">Niche Edits</h3>
-                <p class="text-slate-500">Contextual backlinks from already ranked articles.</p>
+                <p class="text-slate-600">Contextual backlinks from already ranked articles.</p>
             </div>
         </div>
     </section>
 
+    <div class="floating-contact">
+        <div class="contact-options">
+            <a href="https://wa.me/923074647927" target="_blank" class="bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition"><i class="fab fa-whatsapp text-2xl"></i></a>
+            <a href="mailto:Admin@offpageseoexpert.com" class="bg-red-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition"><i class="fas fa-envelope text-2xl"></i></a>
+        </div>
+        <button class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:rotate-12 transition">
+            <i class="fas fa-comments text-3xl"></i>
+        </button>
+    </div>
+
     <footer class="bg-slate-900 text-white pt-16 pb-8">
         <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12 border-b border-slate-800 pb-12">
             <div>
-                <h3 class="text-xl font-bold mb-6">MOBILE EXPERIENCE</h3>
-                <div class="qr-card">
-                    <img src="app-qr-code.png" alt="Scan to Download App" style="width: 100%; border-radius: 5px;">
-                    <div style="background: #1e293b; color: white; font-size: 10px; font-weight: bold; margin-top: 8px; padding: 4px; border-radius: 4px; font-family: sans-serif;">SCAN & DOWNLOAD APP</div>
+                <h3 class="text-xl font-bold mb-6 italic uppercase">OFFPAGE <span class="text-blue-400">SEO</span> EXPERT</h3>
+                <p class="text-slate-400 mb-6">Your trusted partner for worldwide ranking and authority building. Specialized in US, UK, and European markets.</p>
+                <div class="flex gap-4 text-2xl">
+                    <a href="https://www.linkedin.com/in/menadeem" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://wa.me/923074647927" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" target="_blank" class="social-link"><i class="fab fa-telegram"></i></a>
+                    <a href="#" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
             <div>
                 <h3 class="text-xl font-bold mb-6">QUICK LINKS</h3>
                 <ul class="text-slate-400 space-y-3">
-                    <li><a href="inventory.html" class="hover:text-blue-400">Premium Inventory</a></li>
-                    <li><a href="about.html" class="hover:text-blue-400">Our Story</a></li>
+                    <li><a href="inventory.html" class="hover:text-blue-400 italic">Premium Inventory</a></li>
+                    <li><a href="https://drive.google.com/file/d/1xk1Dwa2x4F7qzUJyDMG4Jbaa-Th2DFX2/view?usp=sharing" target="_blank" class="hover:text-blue-400"><i class="fab fa-android mr-2"></i>Download Mobile App</a></li>
                     <li><a href="contact.html" class="hover:text-blue-400">Order Now</a></li>
                 </ul>
             </div>
             <div>
                 <h3 class="text-xl font-bold mb-6">CONTACT INFO</h3>
-                <p class="text-slate-400 mb-2"><i class="fas fa-envelope mr-2 text-blue-400"></i> info@offpageseoexpert.com</p>
-                <p class="text-slate-400"><i class="fab fa-whatsapp mr-2 text-green-400"></i> +92 307 4647927</p>
-                <p class="text-slate-400 mt-2"><i class="fab fa-linkedin mr-2 text-blue-500"></i> linkedin.com/in/menadeem</p>
+                <p class="text-slate-400 mb-2"><i class="fas fa-envelope mr-2"></i> Admin@offpageseoexpert.com</p>
+                <p class="text-slate-400"><i class="fab fa-whatsapp mr-2"></i> +92 307 4647927</p>
             </div>
         </div>
         <p class="text-center mt-8 text-slate-500 text-sm italic">© 2026 OffPage SEO Expert | All Rights Reserved</p>
-    </footer>
-
-    <div style="position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 99999;">
-        <a href="https://www.linkedin.com/in/menadeem" target="_blank" class="floating-btn linkedin-bg" title="Connect on LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://drive.google.com/file/d/1xk1Dwa2x4F7qzUJyDMG4Jbaa-Th2DFX2/view?usp=sharing" target="_blank" class="floating-btn android-bg" title="Download Android App">
-            <i class="fab fa-android"></i>
-        </a>
-        <a href="https://wa.me/923074647927" target="_blank" class="floating-btn whatsapp-bg" title="Chat on WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="mailto:info@offpageseoexpert.com" class="floating-btn email-bg" title="Send an Email">
-            <i class="fas fa-envelope"></i>
-        </a>
-    </div>
+    </footer> 
 
 </body>
 </html>
