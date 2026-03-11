@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Inventory - OffPage SEO Expert</title>
+    <title>Premium SEO Inventory - OffPage SEO Expert</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
     <style>
-        /* Table Styling */
         .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, 
         .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_paginate { color: #94a3b8 !important; }
         input[type="search"] { background: #1e293b !important; border: 1px solid #334155 !important; color: white !important; border-radius: 20px !important; padding: 5px 15px !important; outline: none; margin-bottom: 10px; }
@@ -33,7 +32,7 @@
     <main class="container mx-auto px-4 py-12">
         <div class="mb-10 border-l-4 border-blue-600 pl-4">
             <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter text-white">PREMIUM GUEST POST <span class="text-blue-500">INVENTORY</span></h2>
-            <p class="text-slate-400 text-sm italic">Official High-Authority Database - 2026 Updated</p>
+            <p class="text-slate-400 text-sm italic">Verified Database - 50,000+ High-Authority Sites</p>
         </div>
 
         <div class="bg-[#0f172a] rounded-[2rem] shadow-2xl border border-blue-900/30 overflow-hidden p-6">
@@ -41,19 +40,19 @@
                 <table id="inventoryTable" class="w-full text-left border-separate border-spacing-y-2">
                     <thead>
                         <tr class="uppercase text-[10px] md:text-[11px] font-black tracking-widest border-b border-blue-500/20">
-                            <th class="p-3 text-blue-400">PUBLICATION</th>
-                            <th class="p-3 text-center text-blue-400">URLS</th>
-                            <th class="p-3 text-center text-blue-400">GENRES</th>
-                            <th class="p-3 text-center text-green-400">PRICE(USD)</th>
+                            <th class="p-3 text-blue-400">Publication</th>
+                            <th class="p-3 text-center text-blue-400">URLs</th>
+                            <th class="p-3 text-center text-blue-400">Genres</th>
+                            <th class="p-3 text-center text-green-400">Price(USD)</th>
                             <th class="p-3 text-center text-blue-400">DA</th>
                             <th class="p-3 text-center text-blue-400">DR</th>
                             <th class="p-3 text-center text-yellow-500">TAT</th>
-                            <th class="p-3 text-center text-blue-400">REGION</th>
-                            <th class="p-3 text-center text-orange-500">MOST VISIT</th>
-                            <th class="p-3 text-center text-blue-400">SPONSORED</th>
-                            <th class="p-3 text-center text-blue-400">INDEXED</th>
-                            <th class="p-3 text-center text-blue-400">DO FOLLOW</th>
-                            <th class="p-3 text-center text-red-500">ACTION</th>
+                            <th class="p-3 text-center text-blue-400">Region</th>
+                            <th class="p-3 text-center text-orange-500">Most Visit</th>
+                            <th class="p-3 text-center text-blue-400">Sponsored</th>
+                            <th class="p-3 text-center text-blue-400">Indexed</th>
+                            <th class="p-3 text-center text-blue-400">Do Follow</th>
+                            <th class="p-3 text-center text-red-500">Action</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
@@ -64,21 +63,12 @@
         </div>
     </main>
 
-    <section class="bg-blue-600 py-16 text-center mt-10">
-        <h2 class="text-3xl md:text-5xl font-black text-white mb-4 uppercase tracking-tighter italic">TOP 50K+ HIGH-AUTHORITY SITES</h2>
-        <p class="text-blue-100 mb-8 font-medium italic">Direct access to premium web traffic and high-DR backlinks.</p>
-        <a href="https://wa.me/923074646927" target="_blank" class="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-full transition-all hover:scale-105 shadow-2xl">
-            <i class="fab fa-whatsapp text-xl"></i> GET BULK DISCOUNT VIA WHATSAPP
-        </a>
-    </section>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 
     <script>
-        // آپ کی شیٹ کی تفصیلات
         const sheetId = '1uIlU2a28IgFk66lsf_tThBgbaMrFEmJ71jgSODoB2ew';
-        const sheetName = '🇺🇸USA (PUBS)'; 
+        const sheetName = 'USA'; 
         const url = https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(sheetName)};
 
         async function fetchDatabase() {
@@ -95,14 +85,14 @@
                         return row.c[i].f ? row.c[i].f : (row.c[i].v !== null ? row.c[i].v : "-");
                     };
 
-                    const siteName = getV(0);
-                    const siteLink = getV(1);
+                    const name = getV(0);
+                    const link = getV(1);
 
                     html += `
                         <tr class="bg-[#161e2d] hover:bg-[#1e293b] border-b border-blue-900/10 transition-all text-[11px]">
-                            <td class="p-3 text-white font-bold uppercase">${siteName}</td>
-                            <td class="p-3 text-center text-blue-400 font-mono"><a href="${siteLink}" target="_blank">Visit Site</a></td>
-                            <td class="p-3 text-center text-slate-400 italic">${getV(2)}</td>
+                            <td class="p-3 text-white font-bold uppercase">${name}</td>
+                            <td class="p-3 text-center text-blue-400"><a href="${link}" target="_blank">Visit Site</a></td>
+                            <td class="p-3 text-center text-slate-400">${getV(2)}</td>
                             <td class="p-3 text-center text-green-400 font-black">${getV(3)}</td>
                             <td class="p-3 text-center text-white font-bold">${getV(4)}</td>
                             <td class="p-3 text-center text-white font-bold">${getV(5)}</td>
@@ -113,24 +103,20 @@
                             <td class="p-3 text-center text-slate-400">${getV(10)}</td>
                             <td class="p-3 text-center text-slate-400">${getV(11)}</td>
                             <td class="p-3 text-center">
-                                <a href="https://wa.me/923074646927?text=Hi, I'm interested in ${siteName}" target="_blank" class="bg-green-600/20 hover:bg-green-600 text-green-400 hover:text-white px-3 py-1 rounded-lg text-[10px] font-bold transition-all inline-block">WhatsApp</a>
+                                <a href="https://wa.me/923074646927?text=Hi, I am interested in ${name}" target="_blank" class="bg-green-600/20 hover:bg-green-600 text-green-400 hover:text-white px-3 py-1 rounded-lg text-[10px] font-bold transition-all inline-block">WhatsApp</a>
                             </td>
                         </tr>`;
                 });
 
                 document.getElementById('tableBody').innerHTML = html;
-                
-                // DataTable Initialize
                 $('#inventoryTable').DataTable({
                     "pageLength": 25,
                     "scrollX": true,
-                    "order": [], 
-                    "language": { "search": "", "searchPlaceholder": "Search from 50,000+ Premium Sites..." }
+                    "language": { "search": "", "searchPlaceholder": "Search Sites..." }
                 });
 
             } catch (err) {
-                console.error("Fetch Error:", err);
-                document.getElementById('tableBody').innerHTML = <tr><td colspan="13" class="text-center p-10 text-red-500 font-bold">Failed to load data. Please ensure the Google Sheet is Published to Web.</td></tr>;
+                document.getElementById('tableBody').innerHTML = <tr><td colspan="13" class="text-center p-10 text-red-500 font-bold">Error loading data. Check sheet publication.</td></tr>;
             }
         }
         fetchDatabase();
