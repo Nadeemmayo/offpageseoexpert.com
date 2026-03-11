@@ -3,109 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEO Inventory - Professional</title>
+    <title>SEO Inventory - Professional Database</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
     
     <style>
-        /* Table Structure Fix */
-        #inventoryTable { width: 100% !important; border-collapse: collapse !important; }
-        .dataTables_wrapper { padding: 20px; background: #0f172a; border-radius: 15px; }
-        
-        /* Heading Styling */
-        thead th { 
-            color: #3b82f6 !important; 
-            text-transform: uppercase; 
-            font-size: 11px; 
-            padding: 15px 10px !important;
-            border-bottom: 2px solid #1e293b !important;
-            text-align: left !important;
-        }
+        /* Global Background */
+        body { background-color: #0a1224; color: white; font-family: sans-serif; }
 
-        /* Search & Info Styling */
+        /* Hide Default DataTables Elements (Clean Look) */
+        .dataTables_length, .dataTables_info, .dataTables_paginate { display: none !important; }
+        
+        /* Modern Search Bar */
+        .dataTables_filter { width: 100%; text-align: left !important; margin-bottom: 25px; }
         .dataTables_filter input { 
-            background: #1e293b !important; border: 1px solid #334155 !important; 
-            color: white !important; border-radius: 5px; padding: 5px 10px; margin-bottom: 10px;
+            background: #0f172a !important; 
+            border: 1px solid #3b82f6 !important; 
+            color: white !important; 
+            border-radius: 8px !important; 
+            padding: 12px 20px !important; 
+            width: 320px !important; 
+            outline: none; 
+            font-size: 14px;
         }
-        .dataTables_info, .dataTables_length, .dataTables_paginate { color: #94a3b8 !important; font-size: 12px; margin-top: 15px; }
+        .dataTables_filter input:focus { box-shadow: 0 0 10px rgba(59, 130, 246, 0.4); }
 
-        tr { border-bottom: 1px solid #1e293b; }
-        td { padding: 12px 10px !important; color: #cbd5e1; font-size: 12px; }
-        
-        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        /* Table Header Styling */
+        table.dataTable thead th { 
+            background-color: #0f172a !important;
+            color: #60a5fa !important;
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 11px;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid #3b82f6 !important;
+            padding: 18px 10px !important;
+        }
+
+        /* Table Body Styling (Remove White Strips) */
+        table.dataTable tbody tr { background-color: transparent !important; }
+        table.dataTable tbody td { 
+            padding: 15px 10px !important; 
+            color: #cbd5e1 !important; 
+            border-bottom: 1px solid #1e293b !important;
+            font-size: 13px;
+        }
+
+        /* Border Fixes */
+        .dataTables_wrapper.no-footer .dataTables_scrollBody { border-bottom: none !important; }
+        table.dataTable.no-footer { border-bottom: none !important; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
     </style>
 </head>
-<body class="bg-[#0a1224] text-white">
+<body>
 
-    <main class="container mx-auto py-10 px-4">
-        <div class="overflow-x-auto shadow-2xl border border-blue-900/20 rounded-xl bg-[#0f172a]">
-            <table id="inventoryTable" class="display">
-                <thead>
-                    <tr>
-                        <th>Publication</th>
-                        <th>URLs</th>
-                        <th>Genres</th>
-                        <th>Price(USD)</th>
-                        <th>DA</th>
-                        <th>DR</th>
-                        <th>TAT</th>
-                        <th>Region</th>
-                        <th>Most Visit</th>
-                        <th>Sponsored</th>
-                        <th>Indexed</th>
-                        <th>Do Follow</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Example.com</td>
-                        <td>Link</td>
-                        <td>Tech</td>
-                        <td>$Quote</td>
-                        <td>50</td>
-                        <td>45</td>
-                        <td>2 Days</td>
-                        <td>USA</td>
-                        <td>5k</td>
-                        <td>No</td>
-                        <td>Yes</td>
-                        <td>Yes</td>
-                        <td>Contact</td>
-                    </tr>
-                </tbody>
-            </table>
+    <header class="container mx-auto py-12 px-6">
+        <div class="border-l-4 border-blue-600 pl-5">
+            <h1 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter">
+                Premium <span class="text-blue-500">SEO Inventory</span>
+            </h1>
+            <p class="text-slate-400 mt-2 text-sm uppercase tracking-widest">Verified High Authority Backlinks Database</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto pb-20 px-6">
+        <div class="bg-[#0f172a] rounded-2xl shadow-2xl border border-blue-900/30 p-8">
+            <div class="overflow-x-auto">
+                <table id="inventoryTable" class="w-full text-left display">
+                    <thead>
+                        <tr>
+                            <th>Publication</th>
+                            <th>URLs</th>
+                            <th>Genres</th>
+                            <th>Price(USD)</th>
+                            <th>DA</th>
+                            <th>DR</th>
+                            <th>TAT</th>
+                            <th>Region</th>
+                            <th>Most Visit</th>
+                            <th>Sponsored</th>
+                            <th>Indexed</th>
+                            <th>Do Follow</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-bold text-white">Forbes.com</td>
+                            <td><a href="#" class="text-blue-400 hover:underline">View Site</a></td>
+                            <td>Business</td>
+                            <td class="text-green-400 font-bold">$Quote</td>
+                            <td>94</td>
+                            <td>92</td>
+                            <td>5 Days</td>
+                            <td>Global</td>
+                            <td>50M+</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>
+                                <a href="https://wa.me/923074646927" class="bg-green-600/10 text-green-400 border border-green-600/30 px-3 py-1 rounded text-[10px] font-bold uppercase hover:bg-green-600 hover:text-white transition">Contact</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 
-    <section class="bg-blue-600 py-16 text-center mt-10">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-6xl font-black text-white mb-2 uppercase italic tracking-tighter">TOP 50K+ HIGH-AUTHORITY</h2>
-            <p class="text-blue-100 text-lg mb-8 italic">Direct access to our massive database for bulk orders.</p>
+    <section class="bg-blue-600 py-20 text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-7xl font-black text-white mb-4 uppercase italic tracking-tighter">TOP 50K+ HIGH-AUTHORITY</h2>
+            <p class="text-blue-100 text-xl mb-12 italic opacity-90">Instant access to our master database for bulk inventory orders.</p>
             
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="https://wa.me/923074646927" class="bg-[#10b981] text-white font-bold py-4 px-10 rounded-full shadow-lg flex items-center justify-center gap-2 hover:scale-105 transition">
-                    <i class="fab fa-whatsapp text-xl"></i> CONTACT FOR PRICING
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="https://wa.me/923074646927" target="_blank" class="bg-[#10b981] text-white font-black py-5 px-14 rounded-full shadow-2xl transition-transform hover:scale-105 flex items-center justify-center gap-3">
+                    <i class="fab fa-whatsapp text-2xl"></i> CONTACT FOR PRICING
                 </a>
-                <a href="#" class="bg-white text-blue-600 font-bold py-4 px-10 rounded-full shadow-lg flex items-center justify-center gap-2 hover:scale-105 transition">
-                    <i class="fas fa-external-link-alt text-xl"></i> VISIT GOOGLE SHEET
+                <a href="#" target="_blank" class="bg-white text-blue-700 font-black py-5 px-14 rounded-full shadow-2xl transition-transform hover:scale-105 flex items-center justify-center gap-3">
+                    <i class="fas fa-external-link-alt text-2xl"></i> VISIT GOOGLE SHEET
                 </a>
             </div>
         </div>
     </section>
+
+    <footer class="py-10 text-center text-slate-600 text-[10px] uppercase tracking-[0.3em]">
+        © 2026 OffPage SEO Expert - All Rights Reserved
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
     <script>
         $(document).ready(function() {
             $('#inventoryTable').DataTable({
-                "pageLength": 25,
-                "responsive": true,
+                "pageLength": 100,
+                "ordering": true,
+                "info": false,
                 "language": {
-                    "search": "Filter:",
-                    "searchPlaceholder": "Search sites..."
+                    "search": "",
+                    "searchPlaceholder": "Search by publication or genre..."
                 }
             });
         });
