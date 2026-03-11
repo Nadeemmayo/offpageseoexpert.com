@@ -31,6 +31,7 @@
     <div class="bg-[#0f172a] rounded-[2rem] shadow-2xl border border-blue-900/30 overflow-hidden">
         <div class="overflow-x-auto p-4">
      <div class="overflow-x-auto p-4">
+  <div class="overflow-x-auto p-4">
             <table id="inventoryTable" class="w-full text-left border-separate border-spacing-y-2">
                 <thead>
                     <tr class="text-blue-400 uppercase text-[10px] font-black tracking-widest border-b border-blue-500/30">
@@ -54,6 +55,19 @@
         </div>
     </main>
 
+    <section class="bg-blue-600 py-16 px-4 text-center mt-10">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-4 uppercase tracking-tighter">
+            TOP 50K+ <span class="text-blue-200">HIGH-AUTHORITY SITES</span>
+        </h2>
+        <p class="text-blue-100 mb-8 max-w-2xl mx-auto font-medium">
+            Direct access to premium websites with massive organic traffic.
+        </p>
+        <a href="https://docs.google.com/spreadsheets/d/1uIlU2a28IgFk66lsf_tThBgbaMrFEmJ71jgSODoB2ew/edit" target="_blank" class="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full transition-all hover:scale-105 shadow-xl">
+            <i class="fas fa-file-excel text-xl"></i>
+            VIEW FULL 50K+ GOOGLE SHEET
+        </a>
+    </section>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
@@ -70,11 +84,11 @@
                 let html = "";
                 rows.forEach(row => {
                     const getV = (i) => (row.c[i] ? row.c[i].v : '-');
-                    const siteName = getV(0);
+                    const name = getV(0);
                     html += `
                         <tr class="bg-[#161e2d] hover:bg-[#1e293b] border-b border-blue-900/10 transition-all text-[11px]">
-                            <td class="p-3 text-white font-bold">${siteName}</td>
-                            <td class="p-3 text-center text-blue-400"><a href="${getV(1)}" target="_blank">Link</a></td>
+                            <td class="p-3 text-white font-bold">${name}</td>
+                            <td class="p-3 text-center text-blue-400 font-mono"><a href="${getV(1)}" target="_blank">Link</a></td>
                             <td class="p-3 text-center text-slate-400 italic">${getV(2)}</td>
                             <td class="p-3 text-center text-green-400 font-black">${getV(3)}</td>
                             <td class="p-3 text-center text-blue-300 font-bold">${getV(4)}</td>
@@ -87,7 +101,7 @@
                             <td class="p-3 text-center text-blue-200">${getV(11)}</td>
                             <td class="p-3 text-center">
                                 <div class="flex justify-center gap-2">
-                                    <a href="https://wa.me/923074646927?text=Interested in ${siteName}" target="_blank" class="text-green-500 text-lg"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="https://wa.me/923074646927?text=Interested in ${name}" target="_blank" class="text-green-500 text-lg"><i class="fab fa-whatsapp"></i></a>
                                     <a href="mailto:admin@offpageseoexpert.com" class="text-red-500 text-lg"><i class="fas fa-envelope"></i></a>
                                 </div>
                             </td>
@@ -100,11 +114,11 @@
                     "language": {
                         "search": "",
                         "searchPlaceholder": "Search from 1,500+ Sites...",
-                        "paginate": { "previous": "« Back", "next": "Next »" }
+                        "paginate": { "previous": "« Back", "next": "Next »" },
+                        "info": "Showing START to END of TOTAL Sites"
                     }
                 });
             });
     </script>
 </body>
-</html>       
-
+</html>          
