@@ -19,13 +19,13 @@
 </head>
 <body class="bg-[#0a1224] text-white font-sans">
 
-    <nav class="bg-[#0f172a] p-4 sticky top-0 z-50 border-b border-blue-900/30">
+    <nav class="bg-[#0f172a] p-4 sticky top-0 z-50 border-b border-blue-900/30 shadow-xl">
         <div class="container mx-auto flex justify-between items-center px-4">
             <h1 class="text-xl font-bold italic uppercase underline decoration-blue-500 tracking-tighter">OFFPAGE SEO <span class="text-blue-400">AGENCY</span></h1>
             <div class="hidden md:flex gap-6 font-bold text-[12px] uppercase italic">
-                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+                <a href="index.html" class="hover:text-blue-400">Home</a>
                 <a href="inventory.html" class="text-blue-400 border-b-2 border-blue-400">Site Inventory</a>
-                <a href="contact.html" class="hover:text-blue-400 transition">Contact</a>
+                <a href="contact.html" class="hover:text-blue-400">Contact</a>
             </div>
         </div>
     </nav>
@@ -39,7 +39,7 @@
         <div class="bg-[#0f172a] rounded-[2rem] shadow-2xl border border-blue-900/30 overflow-hidden p-6">
             <table id="inventoryTable" class="w-full text-left border-separate border-spacing-y-2">
                 <thead>
-                    <tr class="text-blue-400 uppercase text-[10px] font-black tracking-widest border-b border-blue-500/20">
+                    <tr class="text-blue-400 uppercase text-[10px] font-black tracking-widest">
                         <th class="p-3">Publication</th>
                         <th class="p-3 text-center">URLs</th>
                         <th class="p-3 text-center">Genres</th>
@@ -51,7 +51,7 @@
                     </tr>
                 </thead>
                 <tbody id="tableBody">
-                    <tr><td colspan="8" class="text-center p-10 text-slate-500">Connecting to Live Database...</td></tr>
+                    <tr><td colspan="8" class="text-center p-10 text-slate-500">Connecting to Database...</td></tr>
                 </tbody>
             </table>
         </div>
@@ -59,9 +59,10 @@
 
     <section class="bg-blue-600 py-16 text-center mt-10">
         <h2 class="text-3xl md:text-5xl font-black text-white mb-4 uppercase tracking-tighter">TOP 50K+ <span class="text-blue-200">HIGH-AUTHORITY SITES</span></h2>
-        <p class="text-blue-100 mb-8 font-medium">Access our complete database of 50,000+ niche-specific websites.</p>
+        <p class="text-blue-100 mb-8 font-medium italic">Access our complete 50,000+ niche-specific database directly.</p>
+        
         <a href="https://docs.google.com/spreadsheets/d/1ngvHB-hOBzkXBGYbmwVj4ISuDLhnX5naKKEREtk2s5Q/edit" target="_blank" class="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-full transition-all hover:scale-105 shadow-2xl">
-            <i class="fas fa-file-excel text-xl"></i> VIEW FRESH 50K+ GOOGLE SHEET
+            <i class="fas fa-file-excel text-xl"></i> VIEW FULL 50K+ GOOGLE SHEET
         </a>
     </section>
 
@@ -96,7 +97,7 @@
                     html += `
                         <tr class="bg-[#161e2d] hover:bg-[#1e293b] border-b border-blue-900/10 transition-all text-[11px]">
                             <td class="p-3 text-white font-bold">${name}</td>
-                            <td class="p-3 text-center text-blue-400 font-mono"><a href="${siteLink}" target="_blank">Visit Site</a></td>
+                            <td class="p-3 text-center text-blue-400 font-mono"><a href="${siteLink}" target="_blank" class="hover:underline">Visit Site</a></td>
                             <td class="p-3 text-center text-slate-400 italic">${getV(2)}</td>
                             <td class="p-3 text-center text-green-400 font-black">${getV(3)}</td>
                             <td class="p-3 text-center text-blue-300 font-bold">${getV(4)}</td>
@@ -112,14 +113,11 @@
                 $('#inventoryTable').DataTable({
                     "pageLength": 25,
                     "scrollX": true,
-                    "language": {
-                        "search": "",
-                        "searchPlaceholder": "Search Sites..."
-                    }
+                    "language": { "search": "", "searchPlaceholder": "Search Sites..." }
                 });
 
             } catch (err) {
-                document.getElementById('tableBody').innerHTML = <tr><td colspan="8" class="text-center p-10 text-red-500 font-bold">Error loading database.</td></tr>;
+                document.getElementById('tableBody').innerHTML = <tr><td colspan="8" class="text-center p-10 text-red-500 font-bold">Database loading error.</td></tr>;
             }
         }
         fetchDatabase();
