@@ -90,5 +90,60 @@
         $('.dataTables_filter input').addClass('bg-[#1e293b] border border-blue-900/50 text-white rounded-full px-6 py-2 outline-none w-64 md:w-80 focus:border-blue-500 transition-all');
     });
 </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
+<script>
+const sheetId = '1uIlU2a28IgFk66lsf_tThBgbaMrFEmJ71jgSODoB2ew';
+const url = https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json;
+
+fetch(url)
+  .then(res => res.text())
+  .then(data => {
+    const json = JSON.parse(data.substr(47).slice(0, -2));
+    const rows = json.table.rows;
+    let html = "";
+
+    rows.forEach(row => {
+      const getV = (i) => (row.c[i] ? row.c[i].v : '-');
+
+      html += `
+        <tr class="bg-[#161e2d] hover:bg-[#1e293b] border-b border-blue-900/10 transition-all text-[11px]">
+          <td class="p-3 text-white font-bold">${getV(0)}</td>
+          <td class="p-3 text-center text-blue-400"><a href="${getV(1)}" target="_blank">Link</a></td>
+          <td class="p-3 text-center text-slate-400 italic">${getV(2)}</td>
+          <td class="p-3 text-center text-green-400 font-black">${getV(3)}</td>
+          <td class="p-3 text-center text-blue-300 font-bold">${getV(4)}</td>
+          <td class="p-3 text-center text-indigo-300 font-bold">${getV(5)}</td>
+          <td class="p-3 text-center text-yellow-500 font-medium">${getV(6)}</td>
+          <td class="p-3 text-center text-slate-300">${getV(7)}</td>
+          <td class="p-3 text-center text-orange-300 font-bold">${getV(8)}</td>
+          <td class="p-3 text-center text-slate-500">${getV(9)}</td>
+          <td class="p-3 text-center text-slate-500">${getV(10)}</td>
+          <td class="p-3 text-center text-blue-200">${getV(11)}</td>
+          <td class="p-3 text-center">
+            <div class="flex justify-center gap-2">
+                <a href="https://wa.me/923074646927?text=Interested in ${getV(0)}" target="_blank" class="text-green-500 text-lg"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:admin@offpageseoexpert.com" class="text-red-500 text-lg"><i class="fas fa-envelope"></i></a>
+            </div>
+          </td>
+        </tr>`;
+    });
+
+    document.getElementById('tableBody').innerHTML = html;
+
+    $('#inventoryTable').DataTable({
+      "pageLength": 25,
+      "scrollX": true,
+      "pagingType": "full_numbers",
+      "language": {
+        "search": "",
+        "searchPlaceholder": "Search 1,500+ Sites...",
+        "paginate": { "previous": "« Prev", "next": "Next »" }
+      }
+    });
+  });
+</script>
 </body>
 </html>
