@@ -39,19 +39,24 @@
         <div class="bg-[#0f172a] rounded-[2rem] shadow-2xl border border-blue-900/30 overflow-hidden p-6">
             <table id="inventoryTable" class="w-full text-left border-separate border-spacing-y-2">
                 <thead>
-                    <tr class="text-blue-400 uppercase text-[10px] font-black tracking-widest">
-                        <th class="p-3">Publication</th>
-                        <th class="p-3 text-center">URLs</th>
-                        <th class="p-3 text-center">Genres</th>
-                        <th class="p-3 text-center text-green-400">Price</th>
-                        <th class="p-3 text-center text-blue-300">DA</th>
-                        <th class="p-3 text-center text-indigo-300">DR</th>
+                    <tr class="uppercase text-[11px] font-black tracking-widest border-b border-blue-500/20">
+                        <th class="p-3 text-blue-400">Publication</th>
+                        <th class="p-3 text-center text-blue-400">URLs</th>
+                        <th class="p-3 text-center text-blue-400">Genres</th>
+                        <th class="p-3 text-center text-green-400">Price(USD)</th>
+                        <th class="p-3 text-center text-blue-400">DA</th>
+                        <th class="p-3 text-center text-blue-400">DR</th>
                         <th class="p-3 text-center text-yellow-500">TAT</th>
-                        <th class="p-3 text-center text-red-500">Order</th>
+                        <th class="p-3 text-center text-blue-400">Region</th>
+                        <th class="p-3 text-center text-orange-500">Most Visit</th>
+                        <th class="p-3 text-center text-blue-400">Sponsored</th>
+                        <th class="p-3 text-center text-blue-400">Indexed</th>
+                        <th class="p-3 text-center text-blue-400">Do Follow</th>
+                        <th class="p-3 text-center text-red-500">Action</th>
                     </tr>
                 </thead>
                 <tbody id="tableBody">
-                    <tr><td colspan="8" class="text-center p-10 text-slate-500">Connecting to Database...</td></tr>
+                    <tr><td colspan="13" class="text-center p-10 text-slate-500">Connecting to Database...</td></tr>
                 </tbody>
             </table>
         </div>
@@ -60,7 +65,6 @@
     <section class="bg-blue-600 py-16 text-center mt-10">
         <h2 class="text-3xl md:text-5xl font-black text-white mb-4 uppercase tracking-tighter">TOP 50K+ <span class="text-blue-200">HIGH-AUTHORITY SITES</span></h2>
         <p class="text-blue-100 mb-8 font-medium italic">Access our complete 50,000+ niche-specific database directly.</p>
-        
         <a href="https://docs.google.com/spreadsheets/d/1ngvHB-hOBzkXBGYbmwVj4ISuDLhnX5naKKEREtk2s5Q/edit" target="_blank" class="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-full transition-all hover:scale-105 shadow-2xl">
             <i class="fas fa-file-excel text-xl"></i> VIEW FULL 50K+ GOOGLE SHEET
         </a>
@@ -97,14 +101,19 @@
                     html += `
                         <tr class="bg-[#161e2d] hover:bg-[#1e293b] border-b border-blue-900/10 transition-all text-[11px]">
                             <td class="p-3 text-white font-bold">${name}</td>
-                            <td class="p-3 text-center text-blue-400 font-mono"><a href="${siteLink}" target="_blank" class="hover:underline">Visit Site</a></td>
+                            <td class="p-3 text-center text-blue-400 font-mono"><a href="${siteLink}" target="_blank">Visit Site</a></td>
                             <td class="p-3 text-center text-slate-400 italic">${getV(2)}</td>
                             <td class="p-3 text-center text-green-400 font-black">${getV(3)}</td>
-                            <td class="p-3 text-center text-blue-300 font-bold">${getV(4)}</td>
-                            <td class="p-3 text-center text-indigo-300 font-bold">${getV(5)}</td>
+                            <td class="p-3 text-center text-white font-bold">${getV(4)}</td>
+                            <td class="p-3 text-center text-white font-bold">${getV(5)}</td>
                             <td class="p-3 text-center text-yellow-500">${getV(6)}</td>
+                            <td class="p-3 text-center text-white">${getV(7)}</td>
+                            <td class="p-3 text-center text-white">${getV(8)}</td>
+                            <td class="p-3 text-center text-white">${getV(9)}</td>
+                            <td class="p-3 text-center text-white">${getV(10)}</td>
+                            <td class="p-3 text-center text-white">${getV(11)}</td>
                             <td class="p-3 text-center">
-                                <a href="https://wa.me/923074646927?text=Hi, I am interested in ${name}" target="_blank" class="bg-green-600/20 hover:bg-green-600 text-green-400 hover:text-white px-4 py-1 rounded-lg text-[10px] font-bold transition-all inline-block">WhatsApp</a>
+                                <a href="https://wa.me/923074646927?text=Hi, I am interested in ${name}" target="_blank" class="bg-green-600/20 hover:bg-green-600 text-green-400 hover:text-white px-3 py-1 rounded-lg text-[10px] font-bold transition-all inline-block">WhatsApp</a>
                             </td>
                         </tr>`;
                 });
@@ -113,11 +122,11 @@
                 $('#inventoryTable').DataTable({
                     "pageLength": 25,
                     "scrollX": true,
-                    "language": { "search": "", "searchPlaceholder": "Search Sites..." }
+                    "language": { "search": "", "searchPlaceholder": "Search from 1500+ Sites..." }
                 });
 
             } catch (err) {
-                document.getElementById('tableBody').innerHTML = <tr><td colspan="8" class="text-center p-10 text-red-500 font-bold">Database loading error.</td></tr>;
+                document.getElementById('tableBody').innerHTML = <tr><td colspan="13" class="text-center p-10 text-red-500 font-bold">Database loading error.</td></tr>;
             }
         }
         fetchDatabase();
