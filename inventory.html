@@ -22,7 +22,33 @@
             </div>
         </div>
     </nav>
+<main class="container mx-auto px-4 py-12">
+    <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+        <div>
+            <h2 class="text-3xl font-black uppercase italic text-blue-500 tracking-tighter">Verified Inventory</h2>
+            <p class="text-slate-400 text-sm">Find the perfect guest post site from our premium list</p>
+        </div>
+    </div>
 
+    <div class="bg-[#0f172a] p-4 md:p-8 rounded-[2rem] shadow-2xl border border-blue-900/30 overflow-hidden">
+        <div class="overflow-x-auto">
+            <table id="inventoryTable" class="w-full text-left border-separate border-spacing-y-3">
+                <thead>
+                    <tr class="text-blue-400 uppercase text-xs tracking-widest font-bold">
+                        <th class="p-4">Publication</th>
+                        <th class="p-4">Genre</th>
+                        <th class="p-4 text-center">DA/DR</th>
+                        <th class="p-4 text-center">Top Countries</th>
+                        <th class="p-4 text-center">Price</th>
+                        <th class="p-4 text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</main>
     <header class="bg-gradient-to-r from-[#1e3a8a] to-[#0a1224] py-20 px-6 text-center">
         <h1 class="text-4xl font-black mb-4 uppercase italic tracking-tight">Top 50K+ <span class="text-blue-400">High-Authority</span> Sites</h1>
         <p class="text-lg max-w-2xl mx-auto mb-8 text-slate-300 italic">Direct access to premium websites with massive organic traffic.</p>
@@ -69,6 +95,24 @@
     <footer class="bg-[#0f172a] py-10 border-t border-blue-900/30 text-center">
         <p class="text-slate-500 text-sm font-bold uppercase italic tracking-widest">&copy; 2026 OffPage SEO Agency | All Rights Reserved</p>
     </footer>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 
+<script>
+    $(document).ready(function() {
+        $('#inventoryTable').DataTable({
+            "pageLength": 25,
+            "dom": '<"flex justify-between mb-4"f>rt<"flex justify-between mt-4"ip>',
+            "language": {
+                "search": "",
+                "searchPlaceholder": "Search Niche or Domain...",
+                "lengthMenu": "Show MENU sites"
+            }
+        });
+
+        // Styling the Search Input
+        $('.dataTables_filter input').addClass('bg-[#1e293b] border border-blue-900/50 text-white rounded-full px-6 py-2 outline-none w-64 md:w-80 focus:border-blue-500 transition-all');
+    });
+</script>
 </body>
 </html>
