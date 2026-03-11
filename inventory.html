@@ -32,7 +32,7 @@
     <main class="container mx-auto px-4 py-12">
         <div class="mb-10 border-l-4 border-blue-600 pl-4">
             <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter text-white">PREMIUM GUEST POST <span class="text-blue-500">INVENTORY</span></h2>
-            <p class="text-slate-400 text-sm italic">Verified Database - 50,000+ High-Authority Sites</p>
+            <p class="text-slate-400 text-sm italic">Verified Database - High-Authority Sites</p>
         </div>
 
         <div class="bg-[#0f172a] rounded-[2rem] shadow-2xl border border-blue-900/30 overflow-hidden p-6">
@@ -70,7 +70,7 @@
             <a href="https://wa.me/923074646927" target="_blank" class="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-full transition-all hover:scale-105 shadow-2xl">
                 <i class="fab fa-whatsapp text-xl"></i> CONTACT FOR PRICING
             </a>
-            <a href="https://docs.google.com/spreadsheets/d/1uIlU2a28IgFk66lsf_tThBgbaMrFEmJ71jgSODoB2ew/edit?usp=sharing" target="_blank" class="inline-flex items-center justify-center gap-3 bg-white hover:bg-slate-100 text-blue-600 font-bold py-4 px-10 rounded-full transition-all hover:scale-105 shadow-2xl">
+            <a href="https://docs.google.com/spreadsheets/d/1ngvHB-hOBzkXBGYbmwVj4ISuDLhnX5naKKEREtk2s5Q/edit?usp=drivesdk" target="_blank" class="inline-flex items-center justify-center gap-3 bg-white hover:bg-slate-100 text-blue-600 font-bold py-4 px-10 rounded-full transition-all hover:scale-105 shadow-2xl">
                 <i class="fas fa-external-link-alt text-xl"></i> VISIT GOOGLE SHEET 50K+
             </a>
         </div>
@@ -81,7 +81,7 @@
 
     <script>
         const sheetId = '1uIlU2a28IgFk66lsf_tThBgbaMrFEmJ71jgSODoB2ew';
-        const sheetName = 'USA'; // Ensure tab name is exactly "USA"
+        const sheetName = 'USA'; 
         const url = https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(sheetName)};
 
         async function fetchDatabase() {
@@ -98,13 +98,13 @@
                         return row.c[i].f ? row.c[i].f : (row.c[i].v !== null ? row.c[i].v : "-");
                     };
 
-                    const siteName = getV(0);
-                    const siteLink = getV(1);
+                    const name = getV(0);
+                    const link = getV(1);
 
                     html += `
                         <tr class="bg-[#161e2d] hover:bg-[#1e293b] border-b border-blue-900/10 transition-all text-[11px]">
-                            <td class="p-3 text-white font-bold uppercase">${siteName}</td>
-                            <td class="p-3 text-center text-blue-400 font-mono"><a href="${siteLink}" target="_blank">Visit Site</a></td>
+                            <td class="p-3 text-white font-bold uppercase">${name}</td>
+                            <td class="p-3 text-center text-blue-400 font-mono"><a href="${link}" target="_blank">Visit Site</a></td>
                             <td class="p-3 text-center text-slate-400 italic">${getV(2)}</td>
                             <td class="p-3 text-center text-green-400 font-black">${getV(3)}</td>
                             <td class="p-3 text-center text-white font-bold">${getV(4)}</td>
@@ -116,7 +116,7 @@
                             <td class="p-3 text-center text-slate-400">${getV(10)}</td>
                             <td class="p-3 text-center text-slate-400">${getV(11)}</td>
                             <td class="p-3 text-center">
-                                <a href="https://wa.me/923074646927?text=Hi, I am interested in ${siteName}" target="_blank" class="bg-green-600/20 hover:bg-green-600 text-green-400 hover:text-white px-3 py-1 rounded-lg text-[10px] font-bold transition-all inline-block shadow-lg">WhatsApp</a>
+                                <a href="https://wa.me/923074646927?text=Hi, I am interested in ${name}" target="_blank" class="bg-green-600/20 hover:bg-green-600 text-green-400 hover:text-white px-3 py-1 rounded-lg text-[10px] font-bold transition-all inline-block shadow-lg">WhatsApp</a>
                             </td>
                         </tr>`;
                 });
@@ -125,12 +125,11 @@
                 $('#inventoryTable').DataTable({
                     "pageLength": 25,
                     "scrollX": true,
-                    "language": { "search": "", "searchPlaceholder": "Search from 50,000+ Premium Sites..." }
+                    "language": { "search": "", "searchPlaceholder": "Search Sites..." }
                 });
 
             } catch (err) {
-                console.error("Fetch Error:", err);
-                document.getElementById('tableBody').innerHTML = <tr><td colspan="13" class="text-center p-10 text-red-500 font-bold">Failed to load database. Please ensure sheet tab name is "USA" and Published to Web.</td></tr>;
+                document.getElementById('tableBody').innerHTML = <tr><td colspan="13" class="text-center p-10 text-red-500 font-bold">Error loading database. Ensure sheet tab name is "USA" and Published to Web.</td></tr>;
             }
         }
         fetchDatabase();
