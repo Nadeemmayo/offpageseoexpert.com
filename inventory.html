@@ -6,13 +6,14 @@
     <title>Top 50k+ Premium Inventory - OffPage SEO Expert</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
 </head>
 <body class="bg-[#0a1224] text-white font-sans">
 
     <nav class="bg-[#0f172a] text-white p-4 sticky top-0 z-50 shadow-xl border-b border-blue-900/30">
         <div class="container mx-auto flex justify-between items-center px-4">
-            <h1 class="text-xl font-bold tracking-tighter italic uppercase underline decoration-blue-500">OFFPAGE SEO <span class="text-blue-500">AGENCY</span></h1>
-            <div class="hidden md:flex gap-6 font-bold text-sm uppercase italic">
+            <h1 class="text-xl font-bold tracking-tighter italic uppercase underline decoration-blue-500">OFFPAGE SEO <span class="text-blue-400">AGENCY</span></h1>
+            <div class="hidden md:flex gap-6 font-bold text-[12px] uppercase italic">
                 <a href="index.html" class="hover:text-blue-400 transition">Home</a>
                 <a href="about.html" class="hover:text-blue-400 transition">About</a>
                 <a href="Services.html" class="hover:text-blue-400 transition">Services</a>
@@ -22,112 +23,103 @@
             </div>
         </div>
     </nav>
-<main class="container mx-auto px-4 py-12">
-    <div class="mb-8 border-l-4 border-blue-600 pl-4">
-        <h2 class="text-3xl font-black uppercase text-white tracking-tighter">Premium Guest Post <span class="text-blue-500">Inventory</span></h2>
-        <p class="text-slate-400 text-sm">Official High-Authority Database - 2026 Updated</p>
-    </div>
 
-    <div class="bg-[#0f172a] rounded-[2rem] shadow-2xl border border-blue-900/30 overflow-hidden">
-        <div class="overflow-x-auto p-4">
-     <div class="overflow-x-auto p-4">
-  <div class="overflow-x-auto p-4">
-           <div class="overflow-x-auto p-4">
-            <table id="inventoryTable" class="w-full text-left border-separate border-spacing-y-2">
-                <thead>
-                   <div class="overflow-x-auto p-4">
-            <table id="inventoryTable" class="w-full text-left border-separate border-spacing-y-2">
-                <thead>
-          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <main class="container mx-auto px-4 py-12">
+        <div class="mb-8 border-l-4 border-blue-600 pl-4">
+            <h2 class="text-3xl font-black uppercase text-white tracking-tighter">Premium Guest Post <span class="text-blue-500">Inventory</span></h2>
+            <p class="text-slate-400 text-sm">Official High-Authority Database - 2026 Updated</p>
+        </div>
 
-<script>
+        <div class="bg-[#0f172a] rounded-[2rem] shadow-2xl border border-blue-900/30 overflow-hidden">
+            <div class="overflow-x-auto p-4">
+                <table id="inventoryTable" class="w-full text-left border-separate border-spacing-y-2">
+                    <thead>
+                        <tr class="text-blue-400 uppercase text-[10px] font-black tracking-widest border-b border-blue-500/30">
+                            <th class="p-3">Publication</th>
+                            <th class="p-3 text-center">URLs</th>
+                            <th class="p-3 text-center">Genres</th>
+                            <th class="p-3 text-center text-green-400">Price</th>
+                            <th class="p-3 text-center text-blue-300">DA</th>
+                            <th class="p-3 text-center text-indigo-300">DR</th>
+                            <th class="p-3 text-center text-yellow-500">TAT</th>
+                            <th class="p-3 text-center">Region</th>
+                            <th class="p-3 text-center text-orange-400">Visit</th>
+                            <th class="p-3 text-center text-xs">Spons.</th>
+                            <th class="p-3 text-center text-xs">Index</th>
+                            <th class="p-3 text-center text-xs text-blue-200">Follow</th>
+                            <th class="p-3 text-center text-red-500">Order</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
 
-const sheetId = "1uIlU2a28IgFk66lsf_tThBgbaMrFEmJ71jgSODoB2ew";
-const sheetName = "Sheet1";
+    <section class="bg-blue-600 py-16 px-4 text-center mt-10">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-4 uppercase tracking-tighter">TOP 50K+ <span class="text-blue-200">HIGH-AUTHORITY SITES</span></h2>
+        <p class="text-blue-100 mb-8 max-w-2xl mx-auto font-medium">Direct access to premium websites with massive organic traffic.</p>
+        <a href="https://docs.google.com/spreadsheets/d/1uIlU2a28IgFk66lsf_tThBgbaMrFEmJ71jgSODoB2ew/edit" target="_blank" class="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full transition-all hover:scale-105 shadow-xl">
+            <i class="fas fa-file-excel text-xl"></i> VIEW FULL 50K+ GOOGLE SHEET
+        </a>
+    </section>
 
-const url = https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&sheet=${sheetName};
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 
-fetch(url)
-.then(res => res.text())
-.then(data => {
+    <script>
+        const sheetId = '1uIlU2a28IgFk66lsf_tThBgbaMrFEmJ71jgSODoB2ew';
+        const url = https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json;
 
-const json = JSON.parse(data.substring(47).slice(0,-2));
-const rows = json.table.rows;
+        fetch(url)
+            .then(res => res.text())
+            .then(data => {
+                const json = JSON.parse(data.substring(47).slice(0, -2));
+                const rows = json.table.rows;
+                let html = "";
 
-let html = "";
+                rows.forEach(row => {
+                    const getV = (i) => {
+                        if (!row.c || !row.c[i]) return "-";
+                        return row.c[i].f ? row.c[i].f : (row.c[i].v !== null ? row.c[i].v : "-");
+                    };
 
-rows.forEach(row => {
+                    const name = getV(0);
+                    const link = getV(1);
 
-const get = (i)=>{
-return row.c[i] ? row.c[i].v : "";
-};
+                    html += `
+                        <tr class="bg-[#161e2d] hover:bg-[#1e293b] border-b border-blue-900/10 transition-all text-[11px]">
+                            <td class="p-3 text-white font-bold">${name}</td>
+                            <td class="p-3 text-center text-blue-400 font-mono"><a href="${link}" target="_blank">Link</a></td>
+                            <td class="p-3 text-center text-slate-400 italic">${getV(2)}</td>
+                            <td class="p-3 text-center text-green-400 font-black">${getV(3)}</td>
+                            <td class="p-3 text-center text-blue-300 font-bold">${getV(4)}</td>
+                            <td class="p-3 text-center text-indigo-300 font-bold">${getV(5)}</td>
+                            <td class="p-3 text-center text-yellow-500 font-medium">${getV(6)}</td>
+                            <td class="p-3 text-center text-slate-300">${getV(7)}</td>
+                            <td class="p-3 text-center text-orange-300 font-bold">${getV(8)}</td>
+                            <td class="p-3 text-center text-slate-500">${getV(9)}</td>
+                            <td class="p-3 text-center text-slate-500">${getV(10)}</td>
+                            <td class="p-3 text-center text-blue-200">${getV(11)}</td>
+                            <td class="p-3 text-center">
+                                <a href="https://wa.me/923074646927?text=Interested in ${name}" target="_blank" class="text-green-500 text-lg hover:scale-125 transition-transform"><i class="fab fa-whatsapp"></i></a>
+                            </td>
+                        </tr>`;
+                });
 
-const siteName = get(0);
-const siteURL = get(1);
+                document.getElementById('tableBody').innerHTML = html;
 
-html += `
-<tr class="bg-[#161e2d] hover:bg-[#1e293b] text-[11px]">
-
-<td class="p-3 text-white font-bold">${siteName}</td>
-
-<td class="p-3 text-center">
-<a href="${siteURL}" target="_blank" class="text-blue-400">
-Visit
-</a>
-</td>
-
-<td class="p-3 text-center">${get(2)}</td>
-
-<td class="p-3 text-center text-green-400 font-bold">${get(3)}</td>
-
-<td class="p-3 text-center text-blue-300">${get(4)}</td>
-
-<td class="p-3 text-center text-indigo-300">${get(5)}</td>
-
-<td class="p-3 text-center text-yellow-400">${get(6)}</td>
-
-<td class="p-3 text-center">${get(7)}</td>
-
-<td class="p-3 text-center">${get(8)}</td>
-
-<td class="p-3 text-center">${get(9)}</td>
-
-<td class="p-3 text-center">${get(10)}</td>
-
-<td class="p-3 text-center">${get(11)}</td>
-
-<td class="p-3 text-center">
-
-<a href="https://wa.me/923074646927?text=Interested in ${siteName}" target="_blank">WhatsApp</a>
-
-</td>
-
-</tr>
-`;
-
-});
-
-document.getElementById("tableBody").innerHTML = html;
-
-$('#inventoryTable').DataTable({
-
-pageLength:25,
-
-scrollX:true,
-
-pagingType:"full_numbers",
-
-language:{
-search:"",
-searchPlaceholder:"Search from 1500+ Sites..."
-}
-
-});
-
-})
-.catch(err => console.log(err));
-
-</script>          
-
+                $('#inventoryTable').DataTable({
+                    "pageLength": 25,
+                    "scrollX": true,
+                    "language": {
+                        "search": "",
+                        "searchPlaceholder": "Search 1,500+ Sites...",
+                        "paginate": { "previous": "« Prev", "next": "Next »" }
+                    }
+                });
+            })
+            .catch(err => console.error("Error:", err));
+    </script>
+</body>
+</html>
