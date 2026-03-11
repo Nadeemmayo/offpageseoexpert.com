@@ -3,134 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium SEO Inventory - Link-Lift Agency</title>
+    <title>SEO Inventory - Fixed Edition</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    
     <style>
+        /* Table Colors Fix */
         .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, 
-        .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_paginate { color: #94a3b8 !important; }
-        input[type="search"] { background: #1e293b !important; border: 1px solid #334155 !important; color: white !important; border-radius: 20px !important; padding: 5px 15px !important; outline: none; margin-bottom: 10px; }
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: #0a1224; }
+        .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_paginate { color: #94a3b8 !important; margin-bottom: 15px; }
+        
+        input[type="search"] { 
+            background: #1e293b !important; border: 1px solid #3b82f6 !important; 
+            color: white !important; border-radius: 8px !important; padding: 8px 15px !important; outline: none;
+        }
+
+        /* Removing white background issue */
+        table.dataTable tbody tr { background-color: #0f172a !important; color: #cbd5e1 !important; }
+        table.dataTable tbody tr:hover { background-color: #1e293b !important; }
+        table.dataTable.no-footer { border-bottom: 1px solid #1e293b !important; }
+        
+        .dataTable thead th { 
+            background-color: #0f172a !important;
+            border-bottom: 2px solid #3b82f6 !important; 
+            color: #3b82f6 !important;
+            padding: 12px !important;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
-        table.dataTable.no-footer { border-bottom: 1px solid #1e293b; }
-        tr:nth-child(even) { background-color: rgba(30, 41, 59, 0.5); }
     </style>
 </head>
 <body class="bg-[#0a1224] text-white font-sans">
 
-    <!-- Navigation -->
-    <nav class="bg-[#0f172a] p-4 sticky top-0 z-50 border-b border-blue-900/30 shadow-2xl">
+    <nav class="bg-[#0f172a] p-4 border-b border-blue-900/30">
         <div class="container mx-auto flex justify-between items-center px-4">
-            <h1 class="text-xl font-bold italic uppercase underline decoration-blue-500 tracking-tighter">OFFPAGE SEO <span class="text-blue-400">AGENCY</span></h1>
-            <div class="hidden md:flex gap-6 font-bold text-[12px] uppercase italic">
-                <a href="index.html" class="hover:text-blue-400 transition-colors">Home</a>
-                <a href="inventory.html" class="text-blue-400 border-b-2 border-blue-400">Site Inventory</a>
-                <a href="contact.html" class="hover:text-blue-400 transition-colors">Contact</a>
+            <h1 class="text-xl font-black italic uppercase tracking-tighter">OFFPAGE <span class="text-blue-500">SEO</span></h1>
+            <div class="hidden md:flex gap-6 font-bold text-[12px] uppercase italic text-slate-400">
+                <a href="index.html" class="hover:text-blue-400">Home</a>
+                <a href="inventory.html" class="text-blue-400 border-b-2 border-blue-400">Inventory</a>
             </div>
         </div>
     </nav>
 
-    <!-- Header Section -->
-    <main class="container mx-auto px-4 py-12">
-        <div class="mb-10 border-l-4 border-blue-600 pl-4">
-            <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter text-white italic">PREMIUM GUEST POST <span class="text-blue-500">INVENTORY</span></h2>
-            <p class="text-slate-400 text-sm italic font-medium">Static Database - 1500+ High-Authority Sites Loaded</p>
+    <main class="container mx-auto px-4 py-10">
+        <div class="mb-8 border-l-4 border-blue-500 pl-4">
+            <h2 class="text-3xl md:text-5xl font-black uppercase italic text-white tracking-tighter">PREMIUM GUEST POST <span class="text-blue-500">INVENTORY</span></h2>
         </div>
 
-        <!-- Table Container -->
-        <div class="bg-[#0f172a] rounded-[2rem] shadow-2xl border border-blue-900/30 overflow-hidden p-6">
+        <div class="bg-[#0f172a] rounded-xl shadow-2xl border border-blue-900/20 p-6 overflow-hidden">
             <div class="overflow-x-auto">
-                <table id="inventoryTable" class="w-full text-left border-separate border-spacing-y-2">
+                <table id="inventoryTable" class="w-full text-left">
                     <thead>
-                        <tr class="uppercase text-[10px] md:text-[11px] font-black tracking-widest text-blue-400 border-b border-blue-500/20">
-                            <th class="p-3">Publication</th>
-                            <th class="p-3 text-center">URLs</th>
-                            <th class="p-3 text-center">Genres</th>
-                            <th class="p-3 text-center text-green-400">Price(USD)</th>
-                            <th class="p-3 text-center">DA</th>
-                            <th class="p-3 text-center">DR</th>
-                            <th class="p-3 text-center text-yellow-500">TAT</th>
-                            <th class="p-3 text-center text-orange-500">Most Visit</th>
-                            <th class="p-3 text-center text-red-500">Action</th>
+                        <tr>
+                            <th>Publication</th>
+                            <th>URLs</th>
+                            <th>Genres</th>
+                            <th>Price(USD)</th>
+                            <th>DA</th>
+                            <th>DR</th>
+                            <th>TAT</th>
+                            <th>Region</th>
+                            <th>Most Visit</th>
+                            <th>Sponsored</th>
+                            <th>Indexed</th>
+                            <th>Do follow</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody id="tableBody">
-                        <!-- Data will be loaded via script for performance -->
+                    <tbody>
+                        <!-- DATA ROW START -->
+                        <tr class="border-b border-blue-900/10">
+                            <td class="p-4 font-bold uppercase">ExampleSite.com</td>
+                            <td class="p-4"><a href="#" target="_blank" class="text-blue-400 underline">Visit Link</a></td>
+                            <td class="p-4 text-slate-400 italic">General</td>
+                            <td class="p-4 text-green-400 font-bold">$Quote</td>
+                            <td class="p-4 font-bold text-white">50</td>
+                            <td class="p-4 font-bold text-white">40</td>
+                            <td class="p-4 text-yellow-500 italic">2 Days</td>
+                            <td class="p-4">Global</td>
+                            <td class="p-4 text-orange-400 font-bold">10k+</td>
+                            <td class="p-4 text-slate-400">No</td>
+                            <td class="p-4 text-slate-400">Yes</td>
+                            <td class="p-4 text-slate-400">Yes</td>
+                            <td class="p-4">
+                                <a href="https://wa.me/923074646927" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-[10px] font-bold transition-all inline-block">WhatsApp</a>
+                            </td>
+                        </tr>
+                        <!-- DATA ROW END -->
                     </tbody>
                 </table>
             </div>
         </div>
     </main>
 
-    <!-- Restored 50K Database Section -->
-    <section class="bg-blue-600 py-16 text-center mt-10">
-        <h2 class="text-3xl md:text-5xl font-black text-white mb-4 uppercase tracking-tighter italic">TOP 50K+ HIGH-AUTHORITY SITES</h2>
-        <p class="text-blue-100 mb-8 font-medium italic">Direct access to our massive database for bulk orders.</p>
-        <div class="flex flex-col md:flex-row justify-center gap-4 px-4">
-            <a href="https://wa.me/923074646927" target="_blank" class="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-full transition-all hover:scale-105 shadow-2xl">
-                <i class="fab fa-whatsapp text-xl"></i> CONTACT FOR PRICING
-            </a>
-            <a href="https://docs.google.com/spreadsheets/d/1ngvHB-hOBzkXBGYbmwVj4ISuDLhnX5naKKEREtk2s5Q/edit?usp=drivesdk" target="_blank" class="inline-flex items-center justify-center gap-3 bg-white hover:bg-slate-100 text-blue-600 font-bold py-4 px-10 rounded-full transition-all hover:scale-105 shadow-2xl">
-                <i class="fas fa-external-link-alt text-xl"></i> VISIT GOOGLE SHEET 50K+
-            </a>
+    <section class="bg-blue-600 py-16 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-6xl font-black text-white mb-2 uppercase italic tracking-tighter leading-none">TOP 50K+ HIGH-AUTHORITY</h2>
+            <p class="text-blue-100 text-lg mb-8 italic">Direct access to our massive database for bulk orders.</p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="https://wa.me/923074646927" target="_blank" class="bg-[#10b981] hover:bg-[#059669] text-white font-bold py-4 px-8 rounded-full shadow-lg flex items-center justify-center gap-2 transition-transform hover:scale-105">
+                    <i class="fab fa-whatsapp text-xl"></i> CONTACT FOR PRICING
+                </a>
+                <a href="https://docs.google.com/spreadsheets/d/1ngvHB-hOBzkXBGYbmwVj4ISuDLhnX5naKKEREtk2s5Q/edit?usp=drivesdk" target="_blank" class="bg-white hover:bg-slate-100 text-blue-600 font-bold py-4 px-8 rounded-full shadow-lg flex items-center justify-center gap-2 transition-transform hover:scale-105">
+                    <i class="fas fa-external-link-alt text-xl"></i> VISIT GOOGLE SHEET
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Scripts -->
+    <!-- JS Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
-
     <script>
-        // آپ کی شیٹ سے نکالا گیا ڈیٹا
-        const sites = [
-            ["WIKIPEDIA.ORG", "https://wikipedia.org", "General", "Quote", "98", "92", "3 Days", "100M+"],
-            ["FORBES.COM", "https://forbes.com", "Business", "Quote", "95", "93", "5 Days", "50M+"],
-            ["YAHOO FINANCE", "https://finance.yahoo.com", "Finance", "Quote", "92", "91", "2 Days", "80M+"],
-            ["TECHCRUNCH", "https://techcrunch.com", "Tech", "Quote", "92", "89", "4 Days", "15M+"],
-            ["BUSINESS INSIDER", "https://businessinsider.com", "Business", "Quote", "94", "92", "3 Days", "40M+"],
-            ["ENTREPRENEUR", "https://entrepreneur.com", "Business", "Quote", "91", "90", "5 Days", "12M+"],
-            ["BLOOMBERG", "https://bloomberg.com", "Finance", "Quote", "93", "92", "4 Days", "35M+"],
-            ["NY TIMES", "https://nytimes.com", "News", "Quote", "95", "94", "2 Days", "100M+"],
-            ["THE GUARDIAN", "https://theguardian.com", "News", "Quote", "94", "93", "3 Days", "90M+"],
-            ["USA TODAY", "https://usatoday.com", "News", "Quote", "92", "91", "4 Days", "70M+"],
-            ["HUFFPOST", "https://huffpost.com", "General", "Quote", "91", "90", "3 Days", "45M+"],
-            ["BBC NEWS", "https://bbc.com", "News", "Quote", "95", "94", "2 Days", "150M+"],
-            ["CNBC", "https://cnbc.com", "Finance", "Quote", "92", "91", "4 Days", "55M+"],
-            ["REUTERS", "https://reuters.com", "News", "Quote", "93", "92", "3 Days", "60M+"],
-            ["AP NEWS", "https://apnews.com", "News", "Quote", "91", "90", "4 Days", "30M+"]
-            // باقی 1400+ سائٹس یہاں اسی طرح شامل ہوں گی
-        ];
-
         $(document).ready(function() {
-            let html = "";
-            sites.forEach(site => {
-                html += `
-                <tr class="bg-[#161e2d] hover:bg-[#1e293b] border-b border-blue-900/10 transition-all text-[11px]">
-                    <td class="p-3 text-white font-bold uppercase">${site[0]}</td>
-                    <td class="p-3 text-center text-blue-400"><a href="${site[1]}" target="_blank">Link</a></td>
-                    <td class="p-3 text-center text-slate-400 italic">${site[2]}</td>
-                    <td class="p-3 text-center text-green-400 font-black">${site[3]}</td>
-                    <td class="p-3 text-center text-white font-bold">${site[4]}</td>
-                    <td class="p-3 text-center text-white font-bold">${site[5]}</td>
-                    <td class="p-3 text-center text-yellow-500 font-bold">${site[6]}</td>
-                    <td class="p-3 text-center text-orange-400 font-bold">${site[7]}</td>
-                    <td class="p-3 text-center">
-                        <a href="https://wa.me/923074646927?text=Hi, I am interested in ${site[0]}" target="_blank" class="bg-green-600/20 text-green-400 hover:bg-green-600 hover:text-white px-3 py-1 rounded-lg text-[10px] font-bold transition-all">WhatsApp</a>
-                    </td>
-                </tr>`;
-            });
-            
-            $('#tableBody').html(html);
-            
             $('#inventoryTable').DataTable({
                 "pageLength": 25,
                 "scrollX": true,
-                "order": [[4, "desc"]],
                 "language": {
                     "search": "",
-                    "searchPlaceholder": "Search from 1500+ Premium Sites..."
+                    "searchPlaceholder": "Search Site Name..."
                 }
             });
         });
