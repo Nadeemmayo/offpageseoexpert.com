@@ -122,18 +122,89 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#inventoryTable').DataTable({
-                "pageLength": 100,
-                "ordering": true,
-                "info": false,
-                "language": {
-                    "search": "",
-                    "searchPlaceholder": "Search by publication or genre..."
-                }
-            });
-        });
-    </script>
+    
 </body>
+    <script>
+let inventoryData = [];
+let currentPage = 1;
+const rowsPerPage = 100;
+
+async function loadCSV() {
+  const response = await fetch('./inventory.csv');
+  const csvText = await response.text();
+
+  const rows = csvText.trim().split('\n').map(row => row.split(','));
+  inventoryData = rows.slice(1);
+
+  renderTable();
+  renderPagination();
+}
+
+function renderTable() {
+  const tbody = document.querySelector('tbody');
+  tbody.innerHTML = '';
+
+  const start = (currentPage - 1) * rowsPerPage;
+  const end = start + rowsPerPage;
+
+  inventoryData.slice(start, end).forEach(cols => {
+    const tr = document.createElement('tr');
+
+    tr.innerHTML = `
+      <td>${cols[0] || ''}</td>
+      <td><a href="${cols[1]}" target="_blank">${cols[1]}</a></td>
+      <td>${cols[2] || ''}</td>
+      <td>${cols[3] || ''}</td>
+      <td>${cols[4] || ''}</td>
+      <td>${cols[5] || ''}</td>
+      <td>${cols[6] || ''}</td>
+      <td>${cols[7] || ''}</td>
+      <td>${cols[8] || ''}</td>
+      <td>${cols[9] || ''}</td>
+      <td>${cols[10] || ''}</td>
+      <td>${cols[11] || ''}</td>
+      <td><a href="${cols[12]}" target="_blank">View</a></td>
+    `;
+
+    tbody.appendChild(tr);
+  });
+}
+
+function renderPagination() {
+  let container = document.getElementById('pagination');
+
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'pagination';
+    container.style.marginTop = '20px';
+    document.querySelector('table').after(container);
+  }
+
+  container.innerHTML = '';
+
+  const totalPages = Math.ceil(inventoryData.length / rowsPerPage);
+
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement('button');
+    btn.innerText = i;
+    btn.style.margin = '5px';
+    btn.style.padding = '8px 12px';
+    btn.style.background = i === currentPage ? '#00d4ff' : '#1e293b';
+    btn.style.color = 'white';
+    btn.style.border = 'none';
+    btn.style.borderRadius = '5px';
+
+    btn.onclick = () => {
+      currentPage = i;
+      renderTable();
+      renderPagination();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    container.appendChild(btn);
+  }
+}
+
+loadCSV();
+</script>
 </html>
