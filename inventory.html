@@ -124,5 +124,65 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
     
 </body>
-    
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const csvUrl = "https://cdn.jsdelivr.net/gh/Nadeemmayo/offpageseoexpert.com@main/inventory.csv";
+
+  Papa.parse(csvUrl, {
+    download: true,
+    header: true,
+    skipEmptyLines: true,
+    complete: function(results) {
+      const table = document.querySelector("#inventoryTable tbody");
+      table.innerHTML = "";
+
+      results.data.forEach(row => {
+        const tr = document.createElement("tr");
+
+        tr.innerHTML = `
+          <td>${row["Publication"] || ""}</td>
+          <td>
+            ${row["URLs"] ? <a href="${row["URLs"]}" target="_blank" class="text-cyan-400 underline">${row["URLs"]}</a> : ""}
+          </td>
+          <td>${row["Genres"] || ""}</td>
+          <td>${row["Price(USD)"] || ""}</td>
+          <td>${row["DA"] || ""}</td>
+          <td>${row["DR"] || ""}</td>
+          <td>${row["TAT"] || ""}</td>
+          <td>${row["Region"] || ""}</td>
+          <td>${row["Most Visit"] || ""}</td>
+          <td>${row["Sponsored"] || ""}</td>
+          <td>${row["Indexed"] || ""}</td>
+          <td>${row["Do Follow"] || ""}</td>
+          <td>
+            ${row["Action"] ? <a href="${row["Action"]}" target="_blank" class="bg-cyan-500 text-white px-3 py-1 rounded">View</a> : ""}
+          </td>
+        `;
+
+        table.appendChild(tr);
+      });
+
+      if ($.fn.DataTable.isDataTable('#inventoryTable')) {
+        $('#inventoryTable').DataTable().destroy();
+      }
+
+      $('#inventoryTable').DataTable({
+        pageLength: 100,
+        ordering: true,
+        info: false,
+        language: {
+          search: "",
+          searchPlaceholder: "Search by publication or genre..."
+        }
+      });
+    },
+    error: function(error) {
+      console.error("CSV load error:", error);
+      alert("CSV file not loading. Please check inventory.csv file and path.");
+    }
+  });
+});
+</script>  
 </html>
