@@ -156,6 +156,39 @@ const inventoryData = [
   { publication: "Explainopedia", urls: "https://explainopedia.com/", genres: "News", price: "Quote Available", da: "34", dr: "45", tat: "3 Days", region: "United States", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
   { publication: "Huff Mag", urls: "https://huffmag.com/", genres: "Lifestyle", price: "Quote Available", da: "62", dr: "37", tat: "1 Day", region: "Global", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "No", action1: "Whatsapp", action2: "Email" }
 ];
+   <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tableBody = document.querySelector('tbody'); 
+    if(!tableBody) return;
+
+    tableBody.innerHTML = '';
+
+    inventoryData.forEach(item => {
+        const row = `
+            <tr class="border-b border-slate-200 hover:bg-slate-50">
+                <td class="p-3 text-[12px]">${item.publication}</td>
+                <td class="p-3 text-[12px]"><a href="${item.urls}" target="_blank" class="text-blue-600 underline">Visit</a></td>
+                <td class="p-3 text-[12px]">${item.genres}</td>
+                <td class="p-3 text-[12px]">${item.price}</td>
+                <td class="p-3 text-[12px]">${item.da}</td>
+                <td class="p-3 text-[12px]">${item.dr}</td>
+                <td class="p-3 text-[12px]">${item.tat}</td>
+                <td class="p-3 text-[12px]">${item.region}</td>
+                <td class="p-3 text-[12px]">${item.mostVisit}</td>
+                <td class="p-3 text-[12px]">${item.sponsored}</td>
+                <td class="p-3 text-[12px]">${item.indexed}</td>
+                <td class="p-3 text-[12px]">${item.doFollow}</td>
+                <td class="p-3 text-[12px]">
+                    <div class="flex gap-2">
+                        <button class="bg-green-500 text-white px-2 py-1 rounded-sm text-[10px]">${item.action1}</button>
+                        <button class="bg-blue-500 text-white px-2 py-1 rounded-sm text-[10px]">${item.action2}</button>
+                    </div>
+                </td>
+            </tr>`;
+        tableBody.innerHTML += row;
+    });
+});
+</script> 
 </body>
   
 </html>
