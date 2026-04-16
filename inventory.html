@@ -44,6 +44,57 @@
     table.dataTable.no-footer { border-bottom: none !important; }
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
+    /* ===== TABLE FINAL PREMIUM STYLE ===== */
+
+/* column lines */
+table.dataTable th,
+table.dataTable td {
+  border: 1px solid #1e293b !important;
+  text-align: center;
+}
+
+/* alternate rows */
+table.dataTable tbody tr:nth-child(even) {
+  background-color: #0b132b !important;
+}
+
+/* hover effect */
+table.dataTable tbody tr:hover {
+  background-color: #1e293b !important;
+  transition: 0.2s ease;
+}
+
+/* spacing */
+table.dataTable tbody td {
+  padding: 14px !important;
+}
+
+/* publication name bold */
+table.dataTable tbody td:first-child {
+  color: #93c5fd !important;
+  font-weight: 600;
+}
+
+/* Visit link (blue) */
+td a[href^="http"] {
+  color: #3b82f6 !important;
+  font-weight: 600;
+}
+
+/* WhatsApp (green) */
+td a[href*="wa.me"] {
+  color: #22c55e !important;
+}
+
+/* Email (orange) */
+td a[href*="mailto"] {
+  color: #f59e0b !important;
+}
+
+/* better column spacing */
+table.dataTable thead th {
+  border: 1px solid #1e293b !important;
+}
   </style>
 </head>
 <body>
