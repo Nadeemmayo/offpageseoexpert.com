@@ -122,67 +122,40 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+ 
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const csvUrl = "https://cdn.jsdelivr.net/gh/Nadeemmayo/offpageseoexpert.com@main/inventory.csv";
-
-  Papa.parse(csvUrl, {
-    download: true,
-    header: true,
-    skipEmptyLines: true,
-    complete: function(results) {
-      const table = document.querySelector("#inventoryTable tbody");
-      table.innerHTML = "";
-
-      results.data.forEach(row => {
-        const tr = document.createElement("tr");
-
-        tr.innerHTML = `
-          <td>${row["Publication"] || ""}</td>
-          <td>
-            ${row["URLs"] ? <a href="${row["URLs"]}" target="_blank" class="text-cyan-400 underline">${row["URLs"]}</a> : ""}
-          </td>
-          <td>${row["Genres"] || ""}</td>
-          <td>${row["Price(USD)"] || ""}</td>
-          <td>${row["DA"] || ""}</td>
-          <td>${row["DR"] || ""}</td>
-          <td>${row["TAT"] || ""}</td>
-          <td>${row["Region"] || ""}</td>
-          <td>${row["Most Visit"] || ""}</td>
-          <td>${row["Sponsored"] || ""}</td>
-          <td>${row["Indexed"] || ""}</td>
-          <td>${row["Do Follow"] || ""}</td>
-          <td>
-            ${row["Action"] ? <a href="${row["Action"]}" target="_blank" class="bg-cyan-500 text-white px-3 py-1 rounded">View</a> : ""}
-          </td>
-        `;
-
-        table.appendChild(tr);
-      });
-
-      if ($.fn.DataTable.isDataTable('#inventoryTable')) {
-        $('#inventoryTable').DataTable().destroy();
-      }
-
-      $('#inventoryTable').DataTable({
-        pageLength: 100,
-        ordering: true,
-        info: false,
-        language: {
-          search: "",
-          searchPlaceholder: "Search by publication or genre..."
-        }
-      });
-    },
-    error: function(error) {
-      console.error("CSV load error:", error);
-      alert("CSV file not loading. Please check inventory.csv file and path.");
-    }
-  });
-});
-</script>     
+const inventoryData = [
+  { publication: "Gigwise.com", urls: "https://gigwise.com/", genres: "News Entertainment", price: "Quote Available", da: "78", dr: "70", tat: "1 Week", region: "United States", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "Hood Critic", urls: "https://hoodcriticmagazine.com/", genres: "Music", price: "Quote Available", da: "35", dr: "23", tat: "1-3 Days", region: "USA (Utah)", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "Daily Scanner", urls: "https://www.dailyscanner.com/", genres: "5 genres", price: "Quote Available", da: "67", dr: "59", tat: "1 Day", region: "United States", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "No", action1: "Whatsapp", action2: "Email" },
+  { publication: "LA Collide", urls: "https://lacollide.com/", genres: "4 genres", price: "Quote Available", da: "32", dr: "11", tat: "1-3 Days", region: "USA (CA)", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "Discrete", indexed: "Yes", doFollow: "No", action1: "Whatsapp", action2: "Email" },
+  { publication: "Cali Post", urls: "https://calipost.com/", genres: "News Music", price: "Quote Available", da: "60", dr: "55", tat: "1-3 Days", region: "USA (CA)", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "Medium", urls: "https://medium.com/", genres: "News", price: "Quote Available", da: "95", dr: "94", tat: "1 Day", region: "Global", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "No", doFollow: "No", action1: "Whatsapp", action2: "Email" },
+  { publication: "LA Entertainment Weekly", urls: "https://laentertainmentweekly.com/", genres: "Entertainment", price: "Quote Available", da: "63", dr: "28", tat: "1 Day", region: "USA (CA)", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "No", action1: "Whatsapp", action2: "Email" },
+  { publication: "NY Times Mag", urls: "https://nytimesmag.com/", genres: "News Lifestyle", price: "Quote Available", da: "31", dr: "32", tat: "1 Day", region: "USA (NY)", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "No", action1: "Whatsapp", action2: "Email" },
+  { publication: "Vents Magazine", urls: "https://ventsmagazine.com/", genres: "3 genres", price: "Quote Available", da: "64", dr: "77", tat: "1 Week", region: "United States", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "Self Growth", urls: "https://selfgrowth.com/", genres: "Lifestyle", price: "Quote Available", da: "63", dr: "77", tat: "1 Week", region: "Global", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "No", action1: "Whatsapp", action2: "Email" },
+  { publication: "Mark Meets", urls: "https://markmeets.com/", genres: "Music", price: "Quote Available", da: "70", dr: "79", tat: "1 Day", region: "United Kingdom", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "The Sustainable Post", urls: "https://www.thesustainablepost.com/", genres: "3 genres", price: "Quote Available", da: "62", dr: "23", tat: "3 Days", region: "Global/USA", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "Restaurant Portals", urls: "http://restaurantportals.com/", genres: "Lifestyle", price: "Quote Available", da: "62", dr: "23", tat: "3-5 Days", region: "United States", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "Cryptonexa", urls: "https://www.cryptonexa.com/", genres: "Web 3", price: "Quote Available", da: "56", dr: "37", tat: "3-5 Days", region: "Global", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "Elite Luxury News", urls: "https://www.eliteluxurynews.com/", genres: "5 genres", price: "Quote Available", da: "62", dr: "35", tat: "1-3 Days", region: "Global/USA", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "Miami Weekly", urls: "https://miamiweekly.com/", genres: "3 genres", price: "Quote Available", da: "57", dr: "27", tat: "1 Day", region: "USA (Florida)", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "Discrete", indexed: "Yes", doFollow: "No", action1: "Whatsapp", action2: "Email" },
+  { publication: "Opulence Magazine", urls: "https://opulencemag.co.uk/", genres: "News", price: "Quote Available", da: "38", dr: "28", tat: "3 Days", region: "United Kingdom", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "Ravish Magazine", urls: "https://ravishmag.co.uk/", genres: "News", price: "Quote Available", da: "56", dr: "56", tat: "3 Days", region: "United Kingdom", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "MetaPress", urls: "https://metapress.com/", genres: "News", price: "Quote Available", da: "77", dr: "81", tat: "1-3 Days", region: "United States", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "Platter Share", urls: "https://www.plattershare.com/", genres: "Lifestyle", price: "Quote Available", da: "56", dr: "44", tat: "3 Days", region: "United States", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "The Influential", urls: "https://www.the-influential.com/", genres: "7 genres", price: "Quote Available", da: "64", dr: "45", tat: "3 Days", region: "Global/USA", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "Home Design Looks", urls: "https://homedesignlooks.com/", genres: "News Real Estate", price: "Quote Available", da: "51", dr: "29", tat: "3-5 Days", region: "United States", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "Cali Weekly", urls: "https://caliweekly.com/", genres: "News", price: "Quote Available", da: "58", dr: "23", tat: "1 Day", region: "USA (CA)", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "Discrete", indexed: "Yes", doFollow: "No", action1: "Whatsapp", action2: "Email" },
+  { publication: "Muzique Magazine", urls: "https://muziquemagazine.com/", genres: "Music", price: "Quote Available", da: "55", dr: "48", tat: "1-3 Days", region: "Global", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "CEO Magazine", urls: "https://ceo-magazine.com/", genres: "Business", price: "Quote Available", da: "38", dr: "35", tat: "1-3 Days", region: "United States", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "Discrete", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "Elite Music News", urls: "https://www.elitemusicnews.com/", genres: "Music Entertainment", price: "Quote Available", da: "54", dr: "19", tat: "1-3 Days", region: "Global/USA", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "The Pinnacle List", urls: "https://thepinnaclelist.com/", genres: "News", price: "Quote Available", da: "54", dr: "59", tat: "3 Days", region: "United States", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "Exec Magazine", urls: "https://execmag.com/", genres: "News", price: "Quote Available", da: "38", dr: "20", tat: "1-3 Days", region: "United States", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "Discrete", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "Explainopedia", urls: "https://explainopedia.com/", genres: "News", price: "Quote Available", da: "34", dr: "45", tat: "3 Days", region: "United States", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "Yes", action1: "Whatsapp", action2: "Email" },
+  { publication: "Huff Mag", urls: "https://huffmag.com/", genres: "Lifestyle", price: "Quote Available", da: "62", dr: "37", tat: "1 Day", region: "Global", mostVisit: "🇺🇸 🇬🇧 🇨🇦 🇮🇳", sponsored: "No", indexed: "Yes", doFollow: "No", action1: "Whatsapp", action2: "Email" }
+];
 </body>
   
 </html>
