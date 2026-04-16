@@ -44,56 +44,58 @@
     table.dataTable.no-footer { border-bottom: none !important; }
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
-    /* ===== TABLE FINAL PREMIUM STYLE ===== */
+   /* ===== FINAL PREMIUM TABLE FIX ===== */
 
-/* column lines */
+/* Proper column spacing */
 table.dataTable th,
 table.dataTable td {
   border: 1px solid #1e293b !important;
+  padding: 12px 14px !important;
   text-align: center;
 }
 
-/* alternate rows */
-table.dataTable tbody tr:nth-child(even) {
-  background-color: #0b132b !important;
+/* Header more clean */
+table.dataTable thead th {
+  border: 1px solid #3b82f6 !important;
+  font-size: 12px;
 }
 
-/* hover effect */
+/* Alternate row colors (Zebra style) */
+table.dataTable tbody tr:nth-child(odd) {
+  background-color: #0f172a !important;
+}
+
+table.dataTable tbody tr:nth-child(even) {
+  background-color: #111827 !important;
+}
+
+/* Hover effect (premium feel) */
 table.dataTable tbody tr:hover {
   background-color: #1e293b !important;
-  transition: 0.2s ease;
+  transition: 0.3s;
 }
 
-/* spacing */
+/* Column text size adjust */
 table.dataTable tbody td {
-  padding: 14px !important;
+  font-size: 12px !important;
 }
 
-/* publication name bold */
-table.dataTable tbody td:first-child {
-  color: #93c5fd !important;
-  font-weight: 600;
+/* Visit link */
+table.dataTable td a {
+  color: #3b82f6;
+  font-weight: bold;
 }
 
-/* Visit link (blue) */
-td a[href^="http"] {
-  color: #3b82f6 !important;
-  font-weight: 600;
+/* WhatsApp button */
+table.dataTable td a[href*="wa.me"] {
+  color: #25D366;
+  font-weight: bold;
 }
 
-/* WhatsApp (green) */
-td a[href*="wa.me"] {
-  color: #22c55e !important;
-}
-
-/* Email (orange) */
-td a[href*="mailto"] {
-  color: #f59e0b !important;
-}
-
-/* better column spacing */
-table.dataTable thead th {
-  border: 1px solid #1e293b !important;
+/* Email button */
+table.dataTable td a[href*="mailto"] {
+  color: #f59e0b;
+  font-weight: bold;
 }
   </style>
 </head>
