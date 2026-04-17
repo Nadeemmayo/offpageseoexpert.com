@@ -1,2 +1,129 @@
-ok
-kkkkk
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | OffPage SEO Expert</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    body {
+      background-color: #0f172a;
+      color: white;
+    }
+    .portfolio-card {
+      transition: all 0.3s ease;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="p-6 border-b border-slate-800 bg-[#0f172a]">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold italic uppercase tracking-tighter">
+        OFFPAGE SEO <span class="text-blue-500">Agency</span>
+      </h1>
+      <ul class="flex space-x-8 text-[10px] font-bold uppercase tracking-widest italic">
+        <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+        <li><a href="about.html" class="hover:text-blue-400">About</a></li>
+        <li><a href="services.html" class="hover:text-blue-400">Services</a></li>
+        <li><a href="portfolio.html" class="text-blue-500 border-b-2 border-blue-500 pb-1">Portfolio</a></li>
+        <li><a href="inventory.html" class="hover:text-blue-400">Inventory</a></li>
+        <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PORTFOLIO SECTION -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- QUOTE -->
+      <div class="text-center mb-14">
+        <p class="text-blue-300 italic text-lg md:text-xl">
+          "Real Growth, Proven Results. We don’t just build links, we build authority."
+        </p>
+      </div>
+
+      <!-- 2 BOXES -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+        <!-- PREMIUM -->
+        <div class="portfolio-card bg-[#111c3d] rounded-3xl shadow-2xl border border-slate-800 overflow-hidden">
+          <div class="h-1 bg-yellow-500"></div>
+
+          <div class="p-10">
+            <span class="inline-block bg-yellow-500/15 text-yellow-400 text-xs font-bold uppercase px-4 py-2 rounded-full mb-5">
+              Premium
+            </span>
+
+            <h3 class="text-4xl font-black mb-4">Premium Live Links</h3>
+
+            <p class="text-slate-300 leading-8 mb-10">
+              High-authority backlinks from premium platforms like Forbes, Yahoo Finance, Business Insider, AP News and top-tier global media websites.
+            </p>
+
+            <div class="flex items-center justify-between pt-6 border-t border-slate-700">
+              <span class="text-green-400 font-black italic uppercase text-sm">
+                High Authority Placements
+              </span>
+
+              <a href="#premium-links"
+                 class="bg-cyan-400 hover:bg-cyan-300 text-slate-900 font-black px-6 py-3 rounded-xl transition">
+                View Links
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- GENERAL -->
+        <div class="portfolio-card bg-[#111c3d] rounded-3xl shadow-2xl border border-slate-800 overflow-hidden">
+          <div class="h-1 bg-blue-500"></div>
+
+          <div class="p-10">
+            <span class="inline-block bg-blue-500/15 text-blue-400 text-xs font-bold uppercase px-4 py-2 rounded-full mb-5">
+              General
+            </span>
+
+            <h3 class="text-4xl font-black mb-4">General Live Links</h3>
+
+            <p class="text-slate-300 leading-8 mb-10">
+              A large collection of backlinks across multiple niches including business, tech, health, finance, and general authority sites.
+            </p>
+
+            <div class="flex items-center justify-between pt-6 border-t border-slate-700">
+              <span class="text-green-400 font-black italic uppercase text-sm">
+                Mixed Niche Placements
+              </span>
+
+              <a href="#general-links"
+                 class="bg-cyan-400 hover:bg-cyan-300 text-slate-900 font-black px-6 py-3 rounded-xl transition">
+                View Links
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 text-center text-slate-500 text-[11px] uppercase tracking-[0.3em]">
+    © 2026 OffPage SEO Agency | Global Link Building Experts
+  </footer>
+
+</body>
+</html>
