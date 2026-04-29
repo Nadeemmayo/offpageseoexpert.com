@@ -1,191 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Premium Country Sites | Off Page SEO Expert</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Country Sites | Off Page SEO Expert</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #080b14;
-      color: #ffffff;
-    }
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#080b14;color:#fff}
 
-    header {
-      background: #111111;
-      padding: 22px 8%;
-      display: flex;
-      justify-content: flex-end;
-      gap: 28px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+header{
+background:#111;
+padding:22px 8%;
+display:flex;
+justify-content:flex-end;
+gap:24px;
+position:sticky;
+top:0;
+z-index:1000
+}
+header a{color:#fff;text-decoration:none;font-weight:800;font-size:14px}
 
-    header a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 14px;
-    }
+.hero{
+background:linear-gradient(135deg,#07111f,#081a4d,#007bff);
+padding:90px 8%;
+text-align:center
+}
+.hero h1{font-size:54px;margin:0;font-weight:900;text-transform:uppercase}
+.hero span{color:#37b6ff}
+.hero p{font-size:18px;color:#d8e7ff;max-width:850px;margin:22px auto 0}
 
-    .hero {
-      background: linear-gradient(135deg, #07111f, #081a4d, #007bff);
-      padding: 90px 8%;
-      text-align: center;
-    }
+.section{padding:60px 8%}
+.section h2{text-align:center;font-size:34px;text-transform:uppercase;margin-bottom:15px}
+.section p{text-align:center;color:#c7d4ea;margin-bottom:35px}
 
-    .hero h1 {
-      font-size: 54px;
-      line-height: 1.1;
-      margin: 0;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
+.table-box{
+background:#121a2b;
+height:260px;
+border-radius:14px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#37b6ff;
+font-weight:900;
+font-size:18px;
+box-shadow:0 0 20px rgba(0,123,255,.12)
+}
 
-    .hero h1 span {
-      color: #37b6ff;
-    }
+.cta{
+background:linear-gradient(135deg,#007bff,#003f9e);
+text-align:center;
+padding:70px 8%
+}
+.cta h2{font-size:42px;margin:0 0 15px;text-transform:uppercase}
+.cta p{color:#e6f0ff;font-size:17px}
+.cta a{
+display:inline-block;
+margin-top:25px;
+background:#00c96b;
+color:#fff;
+padding:15px 32px;
+border-radius:35px;
+text-decoration:none;
+font-weight:900
+}
 
-    .hero p {
-      font-size: 18px;
-      max-width: 780px;
-      margin: 22px auto 0;
-      color: #d8e7ff;
-    }
+.country-wrap{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
+justify-content:center;
+margin-top:40px
+}
+.country-pill{
+background:#121a2b;
+border:1px dashed rgba(55,182,255,.5);
+color:#37b6ff;
+padding:12px 20px;
+border-radius:40px;
+text-decoration:none;
+font-weight:800;
+font-size:14px;
+box-shadow:0 0 18px rgba(0,123,255,.12);
+transition:.3s
+}
+.country-pill:hover{
+background:#00d4ff;
+color:#07111f;
+transform:translateY(-3px)
+}
 
-    .section {
-      padding: 60px 8%;
-    }
-
-    .section h2 {
-      font-size: 34px;
-      text-align: center;
-      margin-bottom: 35px;
-      text-transform: uppercase;
-    }
-
-    .country-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-
-    .country-card {
-      background: #121a2b;
-      border: 1px solid rgba(255,255,255,0.12);
-      padding: 22px;
-      border-radius: 14px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,123,255,0.12);
-    }
-
-    .country-card h3 {
-      margin: 0 0 10px;
-      color: #37b6ff;
-      font-size: 22px;
-    }
-
-    .country-card p {
-      color: #c7d4ea;
-      font-size: 14px;
-    }
-
-    .country-card a {
-      display: inline-block;
-      margin-top: 12px;
-      background: #007bff;
-      color: #fff;
-      padding: 11px 22px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 800;
-    }
-
-    .cta {
-      background: linear-gradient(135deg, #007bff, #003f9e);
-      text-align: center;
-      padding: 70px 8%;
-    }
-
-    .cta h2 {
-      font-size: 42px;
-      margin: 0 0 15px;
-      text-transform: uppercase;
-    }
-
-    .cta p {
-      color: #e6f0ff;
-      font-size: 17px;
-    }
-
-    .cta a {
-      display: inline-block;
-      margin-top: 25px;
-      background: #00c96b;
-      color: #fff;
-      padding: 15px 32px;
-      border-radius: 35px;
-      text-decoration: none;
-      font-weight: 900;
-    }
-  </style>
+@media(max-width:768px){
+header{flex-wrap:wrap;justify-content:center;gap:14px}
+.hero h1{font-size:38px}
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <a href="index.html">HOME</a>
-    <a href="about.html">ABOUT</a>
-    <a href="Services.html">SERVICES</a>
-    <a href="portfolio.html">PORTFOLIO</a>
-    <a href="inventory.html">INVENTORY</a>
-    <a href="premium-country-sites.html">COUNTRY SITES</a>
-    <a href="contact.html">CONTACT</a>
-  </header>
+<header>
+<a href="index.html">HOME</a>
+<a href="about.html">ABOUT</a>
+<a href="Services.html">SERVICES</a>
+<a href="portfolio.html">PORTFOLIO</a>
+<a href="inventory.html">INVENTORY</a>
+<a href="premium-country-sites.html">COUNTRY SITES</a>
+<a href="premium-niche-sites.html">NICHE SITES</a>
+<a href="all-niche-sites.html">ALL NICHES</a>
+<a href="contact.html">CONTACT</a>
+</header>
 
-  <section class="hero">
-    <h1>Premium <span>Country Sites</span></h1>
-    <p>Explore high-authority guest posting websites organized by country for targeted SEO campaigns and premium backlink placements.</p>
-  </section>
+<section class="hero">
+<h1>Premium <span>Country Sites</span></h1>
+<p>Explore high-authority guest posting websites organized by country for targeted SEO campaigns and premium backlink placements.</p>
+</section>
 
-  <section class="section">
-    <h2>Country Wise Guest Posting Sites</h2>
+<section class="section">
+<h2>Premium Country Inventory Table</h2>
+<p>Country-wise metrics, traffic, DR, DA and pricing will appear here.</p>
+<div class="table-box">TABLE COMING SOON</div>
+</section>
 
-    <div class="country-grid">
-      <div class="country-card">
-        <h3>USA Sites</h3>
-        <p>Premium USA-based guest posting websites for high authority backlinks.</p>
-        <a href="#">View Sites</a>
-      </div>
+<section class="cta">
+<h2>Top 50K+ High-Authority</h2>
+<p>Instant access to our master database for bulk inventory orders.</p>
+<a href="https://wa.me/923074646927">Contact For Pricing</a>
+</section>
 
-      <div class="country-card">
-        <h3>UK Sites</h3>
-        <p>High-quality UK guest posting sites for niche-relevant SEO campaigns.</p>
-        <a href="#">View Sites</a>
-      </div>
+<section class="section">
+<h2>Explore Country Wise Sites</h2>
+<p>Select any country below to explore available guest posting sites.</p>
 
-      <div class="country-card">
-        <h3>India Sites</h3>
-        <p>Indian guest posting websites with traffic, DR, DA and niche data.</p>
-        <a href="#">View Sites</a>
-      </div>
-
-      <div class="country-card">
-        <h3>Canada Sites</h3>
-        <p>Canada-based backlink opportunities for local and global SEO.</p>
-        <a href="#">View Sites</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta">
-    <h2>Top 50K+ High-Authority</h2>
-    <p>Instant access to our master database for bulk inventory orders.</p>
-    <a href="https://wa.me/923074646927">Contact For Pricing</a>
-  </section>
+<div class="country-wrap">
+<a class="country-pill">United States</a>
+<a class="country-pill">United Kingdom</a>
+<a class="country-pill">Canada</a>
+<a class="country-pill">Germany</a>
+<a class="country-pill">Australia</a>
+<a class="country-pill">Europe</a>
+<a class="country-pill">UAE</a>
+<a class="country-pill">Netherlands</a>
+<a class="country-pill">New Zealand</a>
+<a class="country-pill">Brazil</a>
+<a class="country-pill">India</a>
+<a class="country-pill">Pakistan</a>
+<a class="country-pill">Singapore</a>
+<a class="country-pill">Switzerland</a>
+<a class="country-pill">Philippines</a>
+<a class="country-pill">Africa</a>
+<a class="country-pill">Argentina</a>
+<a class="country-pill">Asia</a>
+<a class="country-pill">Austria</a>
+<a class="country-pill">Belarus</a>
+<a class="country-pill">Belgium</a>
+<a class="country-pill">Bosnia and Herzegovina</a>
+<a class="country-pill">Cameroon</a>
+<a class="country-pill">Chile</a>
+<a class="country-pill">Colombia</a>
+<a class="country-pill">Costa Rica</a>
+<a class="country-pill">Croatia</a>
+<a class="country-pill">Denmark</a>
+<a class="country-pill">Ecuador</a>
+<a class="country-pill">Egypt</a>
+<a class="country-pill">Ghana</a>
+<a class="country-pill">Guatemala</a>
+<a class="country-pill">Hong Kong</a>
+<a class="country-pill">Ireland</a>
+<a class="country-pill">Israel</a>
+<a class="country-pill">Japan</a>
+<a class="country-pill">Kenya</a>
+<a class="country-pill">Latin America</a>
+<a class="country-pill">Luxembourg</a>
+<a class="country-pill">Malaysia</a>
+<a class="country-pill">Malta</a>
+<a class="country-pill">Mexico</a>
+<a class="country-pill">Montenegro</a>
+<a class="country-pill">Nigeria</a>
+<a class="country-pill">North America</a>
+<a class="country-pill">Oceania</a>
+<a class="country-pill">Panama</a>
+<a class="country-pill">Peru</a>
+<a class="country-pill">Senegal</a>
+<a class="country-pill">South Africa</a>
+<a class="country-pill">South America</a>
+<a class="country-pill">Southeast Asia</a>
+<a class="country-pill">Uganda</a>
+<a class="country-pill">Uruguay</a>
+<a class="country-pill">Venezuela</a>
+<a class="country-pill">Zimbabwe</a>
+</div>
+</section>
 
 </body>
 </html>
