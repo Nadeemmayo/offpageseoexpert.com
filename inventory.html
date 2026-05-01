@@ -1,4 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO Inventory - Off Page SEO Expert</title>
 
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #080b14;
+      color: #ffffff;
+    }
+
+    header {
+      background: #111;
+      padding: 22px 8%;
+      display: flex;
+      justify-content: flex-end;
+      gap: 24px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg,#07111f,#081a4d,#007bff);
+      padding: 90px 8%;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 54px;
+      margin: 0;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-style: italic;
+    }
+
+    .hero span {
+      color: #37b6ff;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #d8e7ff;
+      margin-top: 18px;
+    }
+
+    .inventory-section {
+      padding: 70px 6% 90px;
+      background: #080b14;
+    }
+
+    .inventory-title {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .inventory-title h2 {
+      font-size: 34px;
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: #ffffff;
+    }
+
+    .inventory-title p {
+      color: #c7d4ea;
+      margin-top: 10px;
+    }
+
+    .search-box {
+      max-width: 520px;
+      margin: 0 auto 28px;
+    }
+
+    #inventorySearch {
+      width: 100%;
+      padding: 15px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(61,139,255,.45);
+      background: #101c44;
+      color: #fff;
+      outline: none;
+      font-size: 15px;
+      box-shadow: 0 0 22px rgba(0,130,255,.18);
+    }
+
+    #inventorySearch::placeholder {
+      color: #98a7c8;
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 14px;
+      border: 1px solid rgba(74,137,255,.35);
+      box-shadow: 0 18px 45px rgba(0,0,0,.35);
+    }
+
+    table {
+      width: 100%;
+      min-width: 1100px;
+      border-collapse: collapse;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    th {
+      background: #111a35;
+      color: #ffffff;
+      padding: 16px 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      text-align: center;
+    }
+
+    td {
+      padding: 14px 14px;
+      border: 1px solid rgba(25,35,60,.16);
+      color: #28334a;
+      text-align: center;
+    }
+
+    tbody tr:nth-child(odd) {
+      background: #eadbd3;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #bfe1e8;
+    }
+
+    td:first-child,
+    th:first-child {
+      text-align: left;
+    }
+
+    td a {
+      color: #2467c9;
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    td a:hover {
+      text-decoration: underline;
+    }
+
+    .traffic-cell,
+    .metric-cell {
+      color: #ff2e2e !important;
+      font-weight: 900;
+    }
+
+    .price-cell {
+      background: #075eb8;
+      color: #ffffff !important;
+      font-weight: 900;
+    }
+
+    .whatsapp-link {
+      color: #009f5b !important;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .email-link {
+      color: #e63946 !important;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #070b1f;
+      color: #c7d4ea;
+      text-align: center;
+      padding: 26px 10px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .inventory-title h2 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html">HOME</a>
+  <a href="about.html">ABOUT</a>
+  <a href="services.html">SERVICES</a>
+  <a href="portfolio.html">PORTFOLIO</a>
+  <a href="inventory.html">INVENTORY</a>
+  <a href="premium-country-sites.html">COUNTRY SITES</a>
+  <a href="all-niche-sites.html">ALL NICHES</a>
+  <a href="contact.html">CONTACT</a>
+</header>
+
+<section class="hero">
+  <h1>Premium <span>SEO Inventory</span></h1>
+  <p>Verified High Authority Backlinks Database</p>
+</section>
+
+<section class="inventory-section">
+  <div class="inventory-title">
+    <h2>Premium Inventory Table</h2>
+    <p>Search websites, traffic, DR, DA, PA, pricing and contact options.</p>
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="inventorySearch" placeholder="Search websites, traffic, DR, DA, PA..." />
+  </div>
+
+  <div class="table-wrap">
+    <table id="inventoryTable">
+      <thead>
+        <tr>
+          <th>Websites</th>
+          <th>Traffic</th>
+          <th>DR</th>
+          <th>DA</th>
+          <th>PA</th>
+          <th>Price (USD)</th>
+          <th>Whatsapp</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+
+<tr><td><a href="https://bloomberg.com" target="_blank">Bloomberg.com</a></td><td class="traffic-cell">18.7M</td><td class="metric-cell">88</td><td class="metric-cell">94</td><td class="metric-cell">76</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
+<tr><td><a href="https://forbes.com" target="_blank">forbes.com</a></td><td class="traffic-cell">34.7M</td><td class="metric-cell">95</td><td class="metric-cell">94</td><td class="metric-cell">80</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
+<tr><td><a href="https://yahoo.com" target="_blank">yahoo.com</a></td><td class="traffic-cell">537.3M</td><td class="metric-cell">100</td><td class="metric-cell">89</td><td class="metric-cell">78</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
+<tr><td><a href="https://finance.yahoo.com" target="_blank">finance.yahoo.com</a></td><td class="traffic-cell">134.3M</td><td class="metric-cell">100</td><td class="metric-cell">93</td><td class="metric-cell">79</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
+<tr><td><a href="https://jagranjosh.com" target="_blank">jagranjosh.com</a></td><td class="traffic-cell">8.5M</td><td class="metric-cell">80</td><td class="metric-cell">71</td><td class="metric-cell">58</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
+<tr><td><a href="https://microsoft.com" target="_blank">microsoft.com</a></td><td class="traffic-cell">392.7M</td><td class="metric-cell">100</td><td class="metric-cell">98</td><td class="metric-cell">86</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
+<tr><td><a href="https://apnews.com" target="_blank">apnews.com</a></td><td class="traffic-cell">13.9M</td><td class="metric-cell">83</td><td class="metric-cell">92</td><td class="metric-cell">76</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
+<tr><td><a href="https://nypost.com" target="_blank">nypost.com</a></td><td class="traffic-cell">16M</td><td class="metric-cell">86</td><td class="metric-cell">93</td><td class="metric-cell">76</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
+<tr><td><a href="https://msn.com" target="_blank">msn.com</a></td><td class="traffic-cell">69.9M</td><td class="metric-cell">96</td><td class="metric-cell">94</td><td class="metric-cell">79</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
+<tr><td><a href="https://msn.com/en-in" target="_blank">msn.com/en-in</a></td><td class="traffic-cell">7.1M</td><td class="metric-cell">96</td><td class="metric-cell">86</td><td class="metric-cell">60</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
+<tr><td><a href="https://khaleejtimes.com" target="_blank">khaleejtimes.com</a></td><td class="traffic-cell">3.3M</td><td class="metric-cell">69</td><td class="metric-cell">61</td><td class="metric-cell">52</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
+<tr><td><a href="https://alkhaleej.ae" target="_blank">alkhaleej.ae</a></td><td class="traffic-cell">1.7M</td><td class="metric-cell">59</td><td class="metric-cell">61</td><td class="metric-cell">52</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
+<tr><td><a href="https://express.co.uk" target="_blank">express.co.uk</a></td><td class="traffic-cell">10.6M</td><td class="metric-cell">81</td><td class="metric-cell">93</td><td class="metric-cell">70</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
+<tr><td><a href="https://gulfnews.com" target="_blank">gulfnews.com</a></td><td class="traffic-cell">4.7M</td><td class="metric-cell">75</td><td class="metric-cell">89</td><td class="metric-cell">68</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
+<tr><td><a href="https://billboard.com" target="_blank">billboard.com</a></td><td class="traffic-cell">9.8M</td><td class="metric-cell">82</td><td class="metric-cell">92</td><td class="metric-cell">71</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
+<tr><td><a href="https://usmagazine.com" target="_blank">usmagazine.com</a></td><td class="traffic-cell">3.2M</td><td class="metric-cell">71</td><td class="metric-cell">90</td><td class="metric-cell">66</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
+
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  © Off Page SEO Expert - All Rights Reserved
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.getElementById("inventorySearch");
+  const tableRows = document.querySelectorAll("#inventoryTable tbody tr");
+
+  searchInput.addEventListener("keyup", function () {
+    const searchValue = this.value.toLowerCase();
+
+    tableRows.forEach(function (row) {
+      const rowText = row.innerText.toLowerCase();
+      row.style.display = rowText.includes(searchValue) ? "" : "none";
+    });
+  });
+});
+</script>
+
+</body>
+</html>
 
   <section class="bg-blue-600 py-20 text-center">
     <div class="container mx-auto px-6">
