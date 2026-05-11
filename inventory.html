@@ -5,244 +5,197 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Premium SEO Inventory | OffPage SEO Agency</title>
-  <meta name="description" content="Premium SEO inventory with verified authority websites, traffic, DR, DA, PA, pricing and contact options for guest posting and link building.">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Arial,Helvetica,sans-serif;background:#07112f;color:#fff;overflow-x:hidden}
+    a{text-decoration:none}
+
+    header{
+      background:#07112f;
+      padding:16px 6%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:22px;
+      flex-wrap:wrap;
+      position:sticky;
+      top:0;
+      z-index:999;
+      border-bottom:1px solid rgba(255,255,255,.12);
     }
 
-    html {
-      scroll-behavior: smooth;
+    header a{
+      color:#fff;
+      font-weight:900;
+      font-size:13px;
+      text-transform:uppercase;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #07112f;
-      color: #ffffff;
-      overflow-x: hidden;
+    header a:hover{color:#57d4ff}
+
+    .hero{
+      background:linear-gradient(135deg,#07112f 0%,#092b78 55%,#0b57d0 100%);
+      padding:90px 6%;
+      text-align:center;
     }
 
-    a {
-      text-decoration: none;
+    .hero h1{
+      font-size:48px;
+      font-weight:900;
+      text-transform:uppercase;
+      font-style:italic;
+      margin-bottom:18px;
     }
 
-    header {
-      background: #07112f;
-      padding: 16px 6%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 22px;
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    .hero span{color:#57d4ff}
+
+    .hero p{
+      font-size:18px;
+      color:#dbeafe;
     }
 
-    header a {
-      color: #ffffff;
-      font-weight: 800;
-      font-size: 13px;
-      text-transform: uppercase;
-      transition: 0.3s ease;
+    .inventory-section{
+      padding:70px 5% 90px;
+      background:#0b173f;
     }
 
-    header a:hover {
-      color: #57d4ff;
+    .inventory-title{
+      text-align:center;
+      margin-bottom:30px;
     }
 
-    .hero {
-      background: linear-gradient(135deg, #07112f 0%, #092b78 55%, #0b57d0 100%);
-      padding: 90px 6%;
-      text-align: center;
+    .inventory-title h2{
+      font-size:38px;
+      text-transform:uppercase;
+      font-weight:900;
+      font-style:italic;
+      margin-bottom:12px;
     }
 
-    .hero h1 {
-      font-size: 48px;
-      line-height: 1.2;
-      font-weight: 900;
-      text-transform: uppercase;
-      font-style: italic;
-      margin-bottom: 18px;
+    .inventory-title h2 span{color:#57d4ff}
+
+    .inventory-title p{
+      color:#c7d4ea;
+      font-size:16px;
     }
 
-    .hero span {
-      color: #57d4ff;
+    .search-box{
+      max-width:560px;
+      margin:0 auto 30px;
     }
 
-    .hero p {
-      font-size: 18px;
-      color: #dbeafe;
-      max-width: 800px;
-      margin: 0 auto;
+    #inventorySearch{
+      width:100%;
+      padding:17px 22px;
+      border-radius:16px;
+      border:1px solid rgba(87,212,255,.45);
+      background:#07112f;
+      color:#fff;
+      outline:none;
+      font-size:15px;
+      box-shadow:0 15px 35px rgba(0,0,0,.25);
     }
 
-    .inventory-section {
-      padding: 70px 5% 90px;
-      background: #0b173f;
+    #inventorySearch::placeholder{color:#9fb3d9}
+
+    .table-wrap{
+      width:100%;
+      overflow-x:auto;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:0 25px 60px rgba(0,0,0,.35);
+      background:#111827;
     }
 
-    .inventory-title {
-      text-align: center;
-      margin-bottom: 30px;
+    table{
+      width:100%;
+      min-width:1100px;
+      border-collapse:collapse;
+      font-size:14px;
+      font-weight:800;
     }
 
-    .inventory-title h2 {
-      font-size: 38px;
-      text-transform: uppercase;
-      font-weight: 900;
-      font-style: italic;
-      margin-bottom: 12px;
+    th{
+      background:#171827;
+      color:#ffffff;
+      padding:16px 14px;
+      border:1px solid rgba(255,255,255,.10);
+      text-align:center;
+      text-transform:uppercase;
+      font-size:13px;
     }
 
-    .inventory-title h2 span {
-      color: #57d4ff;
+    td{
+      padding:14px 14px;
+      border:1px solid rgba(31,41,55,.18);
+      color:#374151;
+      text-align:center;
     }
 
-    .inventory-title p {
-      color: #c7d4ea;
-      font-size: 16px;
-      max-width: 850px;
-      margin: 0 auto;
+    tbody tr:nth-child(odd) td{
+      background:#eadbd3;
     }
 
-    .search-box {
-      max-width: 560px;
-      margin: 0 auto 30px;
+    tbody tr:nth-child(even) td{
+      background:#bfe1e8;
     }
 
-    #inventorySearch {
-      width: 100%;
-      padding: 17px 22px;
-      border-radius: 16px;
-      border: 1px solid rgba(87,212,255,0.45);
-      background: #07112f;
-      color: #ffffff;
-      outline: none;
-      font-size: 15px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-    }
-
-    #inventorySearch::placeholder {
-      color: #9fb3d9;
-    }
-
-    .table-wrap {
-      width: 100%;
-      overflow-x: auto;
-      border-radius: 22px;
-      border: 1px solid rgba(87,212,255,0.25);
-      box-shadow: 0 25px 60px rgba(0,0,0,0.35);
-      background: rgba(255,255,255,0.07);
-      backdrop-filter: blur(12px);
-    }
-
-    table {
-      width: 100%;
-      min-width: 1100px;
-      border-collapse: collapse;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    th {
-      background: #0b57d0;
-      color: #ffffff;
-      padding: 17px 14px;
-      border: 1px solid rgba(255,255,255,0.16);
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 13px;
-      letter-spacing: 0.5px;
-    }
-
-    td {
-      padding: 15px 14px;
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #dbeafe;
-      text-align: center;
-      background: #07112f;
-    }
-
-    tbody tr:nth-child(even) td {
-      background: #0b173f;
-    }
-
-    tbody tr:hover td {
-      background: #102765;
+    tbody tr:hover td{
+      background:#dbeafe;
     }
 
     td:first-child,
-    th:first-child {
-      text-align: left;
+    th:first-child{
+      text-align:left;
     }
 
-    td a {
-      color: #57d4ff;
-      font-weight: 900;
+    td a{
+      color:#2563eb;
+      font-weight:900;
     }
 
-    td a:hover {
-      text-decoration: underline;
+    td a:hover{
+      text-decoration:underline;
     }
 
     .traffic-cell,
-    .metric-cell {
-      color: #ffb703 !important;
-      font-weight: 900;
+    .metric-cell{
+      color:#ef4444!important;
+      font-weight:900;
     }
 
-    .price-cell {
-      background: #0b57d0 !important;
-      color: #ffffff !important;
-      font-weight: 900;
+    .price-cell{
+      color:#059669!important;
+      font-weight:900;
+      background:inherit!important;
     }
 
-    .whatsapp-link {
-      color: #22c55e !important;
-      font-weight: 900;
+    .whatsapp-link{
+      color:#059669!important;
+      font-weight:900;
     }
 
-    .email-link {
-      color: #fb7185 !important;
-      font-weight: 900;
+    .email-link{
+      color:#e11d48!important;
+      font-weight:900;
     }
 
-    footer {
-      background: #050b1f;
-      color: #94a3b8;
-      text-align: center;
-      padding: 30px 10px;
-      font-size: 14px;
-      border-top: 1px solid rgba(255,255,255,0.1);
+    footer{
+      background:#050b1f;
+      color:#94a3b8;
+      text-align:center;
+      padding:30px 10px;
+      font-size:14px;
+      border-top:1px solid rgba(255,255,255,.1);
     }
 
-    @media (max-width: 768px) {
-      header {
-        gap: 14px;
-        padding: 14px 4%;
-      }
-
-      header a {
-        font-size: 11px;
-      }
-
-      .hero {
-        padding: 70px 5%;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .inventory-title h2 {
-        font-size: 28px;
-      }
+    @media(max-width:768px){
+      header{gap:14px;padding:14px 4%}
+      header a{font-size:11px}
+      .hero{padding:70px 5%}
+      .hero h1{font-size:34px}
+      .inventory-title h2{font-size:28px}
     }
   </style>
 </head>
@@ -292,7 +245,6 @@
         </tr>
       </thead>
       <tbody>
-
 <tr><td><a href="https://bloomberg.com" target="_blank">Bloomberg.com</a></td><td class="traffic-cell">18.7M</td><td class="metric-cell">88</td><td class="metric-cell">94</td><td class="metric-cell">76</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
 <tr><td><a href="https://forbes.com" target="_blank">forbes.com</a></td><td class="traffic-cell">34.7M</td><td class="metric-cell">95</td><td class="metric-cell">94</td><td class="metric-cell">80</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
 <tr><td><a href="https://yahoo.com" target="_blank">yahoo.com</a></td><td class="traffic-cell">537.3M</td><td class="metric-cell">100</td><td class="metric-cell">89</td><td class="metric-cell">78</td><td class="price-cell">Quote Available</td><td><a class="whatsapp-link" href="https://wa.me/923074646927" target="_blank">Whatsapp</a></td><td><a class="email-link" href="mailto:admin@offpageseoexpert.com">Email</a></td></tr>
@@ -720,57 +672,33 @@
     </p>
 
     <div class="main-cta-row">
-
-      <a href="https://wa.me/923074646927"
-         target="_blank"
-         class="main-btn whatsapp-btn">
-         CONTACT FOR PRICING
+      <a href="https://wa.me/923074646927" target="_blank" class="main-btn whatsapp-btn">
+        CONTACT FOR PRICING
       </a>
 
-      <a href="https://docs.google.com/spreadsheets/d/1ngvHB-hOBzkXBGYbmwVj4ISuDLhnX5naKKEREtk2s5Q/edit?usp=drivesdk"
-         target="_blank"
-         class="main-btn sheet-main-btn">
-         VIEW 50K MASTER SHEET
+      <a href="https://docs.google.com/spreadsheets/d/1ngvHB-hOBzkXBGYbmwVj4ISuDLhnX5naKKEREtk2s5Q/edit?usp=drivesdk" target="_blank" class="main-btn sheet-main-btn">
+        VIEW 50K MASTER SHEET
       </a>
-
     </div>
 
     <div class="sheet-grid-small">
-
-      <a href="https://docs.google.com/spreadsheets/d/1Qth-UngjrXjF9pXMhDF9ZjcR9kDe1EojdfNRNH0kQIc/edit?usp=drivesdk" target="_blank" class="sheet-pill">USA SHEET</a>
-
-      <a href="https://docs.google.com/spreadsheets/d/1cNjC9lD5nvySpi7fXKK22X8YYyc5nBGo2nibqILmY5M/edit?usp=drivesdk" target="_blank" class="sheet-pill">CBD & CASINO</a>
-
-      <a href="https://docs.google.com/spreadsheets/d/1qoGmEkFFl-TYnXmKB0NiCkoO9JPas87e9WG6WA6fnjo/edit?usp=drivesdk" target="_blank" class="sheet-pill">SAAS SITES</a>
-
-      <a href="https://docs.google.com/spreadsheets/d/1RUyUre-x275DUniYiQO-FxVj5WY9kUJSSsDUZK0i_JQ/edit?usp=drivesdk" target="_blank" class="sheet-pill">GERMANY</a>
-
-      <a href="https://docs.google.com/spreadsheets/d/1E3__pNEvR4Dt4WS3CW_OZFiZvljy96si-OLdIHbZYmQ/edit?usp=drivesdk" target="_blank" class="sheet-pill">AUSTRALIA</a>
-
-      <a href="https://docs.google.com/spreadsheets/d/1Q_IqwrYxSJRT0w3Xt6OeB7Pv3F5R5czBXsIdtlyJNMg/edit?usp=drivesdk" target="_blank" class="sheet-pill">FRANCE</a>
-
-      <a href="https://docs.google.com/spreadsheets/d/1PEfECJWacGpxO1Kym4k2z_lINKSRU_edk4I1hW3SxEg/edit?usp=drivesdk" target="_blank" class="sheet-pill">SPAIN</a>
-
-      <a href="https://docs.google.com/spreadsheets/d/1Wa9Y5_SfQVSjNSKYuiLo1GoT5yKKlHfmCnLGcjrPIQo/edit?usp=drivesdk" target="_blank" class="sheet-pill">DUBAI</a>
-
-      <a href="https://docs.google.com/spreadsheets/d/1h5jwZpyik__ivGarZruKB-pcOOffoOUqegYOsonVkiY/edit?usp=drivesdk" target="_blank" class="sheet-pill">INDIA</a>
-
-      <a href="https://docs.google.com/spreadsheets/d/1eQrGgYPyeCjSVCXzJryIz90beAiGy6g6sGRQBTV3X2s/edit?usp=drivesdk" target="_blank" class="sheet-pill">ITALY</a>
-
-      <a href="https://docs.google.com/spreadsheets/d/1cHNymQtoVhCurVeM64q8nIEfReV4_Tyb22apY1Qq3OU/edit?usp=drivesdk" target="_blank" class="sheet-pill">BRAZIL</a>
-
-      <a href="https://docs.google.com/spreadsheets/d/1zvRuEm8a2GbcWJSm7V8u_0siDW1D9f2WgFhu3GJdHvc/edit?usp=drivesdk" target="_blank" class="sheet-pill">SOUTH AFRICA</a>
-
-      <a href="https://docs.google.com/spreadsheets/d/1OMhgkkdEeHyOsvkXhVdTTV2AxzqQthXu0wXdyvAmos0/edit?usp=drivesdk" target="_blank" class="sheet-pill">NETHERLAND</a>
-
-      <a href="https://docs.google.com/spreadsheets/d/10AQrc7EduTcOA5hK9RTcrBk5AVh9oA8-Vej4_fQAAuw/edit?usp=drivesdk" target="_blank" class="sheet-pill">INDONESIA</a>
-
-      <a href="https://docs.google.com/spreadsheets/d/1XjXbdudJLxhM5NLz8WOazkh8WgrP2Z8r40lokwyv1xM/edit?usp=drivesdk" target="_blank" class="sheet-pill">PORTUGAL</a>
-
-      <a href="https://docs.google.com/spreadsheets/d/1Fj3lHot0qsJ8zuxZuaqoIr7BXJWf84KNpVKVm-H6JhE/edit?usp=drivesdk" target="_blank" class="sheet-pill">JAPAN</a>
-
-      <a href="https://docs.google.com/spreadsheets/d/1VODfM4EB325mAkTdAlwmN6IyTVnjY4NEadcf21bEl2A/edit?usp=drivesdk" target="_blank" class="sheet-pill">RUSSIA</a>
-
+      <a href="https://docs.google.com/spreadsheets/d/1Qth-UngjrXjF9pXMhDF9ZjcR9kDe1EojdfNRNH0kQIc/edit?usp=drivesdk" target="_blank" class="sheet-pill usa">USA SHEET</a>
+      <a href="https://docs.google.com/spreadsheets/d/1cNjC9lD5nvySpi7fXKK22X8YYyc5nBGo2nibqILmY5M/edit?usp=drivesdk" target="_blank" class="sheet-pill cbd">CBD & CASINO</a>
+      <a href="https://docs.google.com/spreadsheets/d/1qoGmEkFFl-TYnXmKB0NiCkoO9JPas87e9WG6WA6fnjo/edit?usp=drivesdk" target="_blank" class="sheet-pill saas">SAAS SITES</a>
+      <a href="https://docs.google.com/spreadsheets/d/1RUyUre-x275DUniYiQO-FxVj5WY9kUJSSsDUZK0i_JQ/edit?usp=drivesdk" target="_blank" class="sheet-pill germany">GERMANY</a>
+      <a href="https://docs.google.com/spreadsheets/d/1E3__pNEvR4Dt4WS3CW_OZFiZvljy96si-OLdIHbZYmQ/edit?usp=drivesdk" target="_blank" class="sheet-pill australia">AUSTRALIA</a>
+      <a href="https://docs.google.com/spreadsheets/d/1Q_IqwrYxSJRT0w3Xt6OeB7Pv3F5R5czBXsIdtlyJNMg/edit?usp=drivesdk" target="_blank" class="sheet-pill france">FRANCE</a>
+      <a href="https://docs.google.com/spreadsheets/d/1PEfECJWacGpxO1Kym4k2z_lINKSRU_edk4I1hW3SxEg/edit?usp=drivesdk" target="_blank" class="sheet-pill spain">SPAIN</a>
+      <a href="https://docs.google.com/spreadsheets/d/1Wa9Y5_SfQVSjNSKYuiLo1GoT5yKKlHfmCnLGcjrPIQo/edit?usp=drivesdk" target="_blank" class="sheet-pill dubai">DUBAI</a>
+      <a href="https://docs.google.com/spreadsheets/d/1h5jwZpyik__ivGarZruKB-pcOOffoOUqegYOsonVkiY/edit?usp=drivesdk" target="_blank" class="sheet-pill india">INDIA</a>
+      <a href="https://docs.google.com/spreadsheets/d/1eQrGgYPyeCjSVCXzJryIz90beAiGy6g6sGRQBTV3X2s/edit?usp=drivesdk" target="_blank" class="sheet-pill italy">ITALY</a>
+      <a href="https://docs.google.com/spreadsheets/d/1cHNymQtoVhCurVeM64q8nIEfReV4_Tyb22apY1Qq3OU/edit?usp=drivesdk" target="_blank" class="sheet-pill brazil">BRAZIL</a>
+      <a href="https://docs.google.com/spreadsheets/d/1zvRuEm8a2GbcWJSm7V8u_0siDW1D9f2WgFhu3GJdHvc/edit?usp=drivesdk" target="_blank" class="sheet-pill southafrica">SOUTH AFRICA</a>
+      <a href="https://docs.google.com/spreadsheets/d/1OMhgkkdEeHyOsvkXhVdTTV2AxzqQthXu0wXdyvAmos0/edit?usp=drivesdk" target="_blank" class="sheet-pill netherland">NETHERLAND</a>
+      <a href="https://docs.google.com/spreadsheets/d/10AQrc7EduTcOA5hK9RTcrBk5AVh9oA8-Vej4_fQAAuw/edit?usp=drivesdk" target="_blank" class="sheet-pill indonesia">INDONESIA</a>
+      <a href="https://docs.google.com/spreadsheets/d/1XjXbdudJLxhM5NLz8WOazkh8WgrP2Z8r40lokwyv1xM/edit?usp=drivesdk" target="_blank" class="sheet-pill portugal">PORTUGAL</a>
+      <a href="https://docs.google.com/spreadsheets/d/1Fj3lHot0qsJ8zuxZuaqoIr7BXJWf84KNpVKVm-H6JhE/edit?usp=drivesdk" target="_blank" class="sheet-pill japan">JAPAN</a>
+      <a href="https://docs.google.com/spreadsheets/d/1VODfM4EB325mAkTdAlwmN6IyTVnjY4NEadcf21bEl2A/edit?usp=drivesdk" target="_blank" class="sheet-pill russia">RUSSIA</a>
     </div>
   </div>
 </section>
@@ -781,41 +709,23 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
   const searchInput = document.getElementById("inventorySearch");
   const tableRows = document.querySelectorAll("#inventoryTable tbody tr");
 
   searchInput.addEventListener("keyup", function () {
-
     const searchValue = this.value.toLowerCase();
 
     tableRows.forEach(function (row) {
-
       const rowText = row.innerText.toLowerCase();
-
-      row.style.display =
-      rowText.includes(searchValue)
-      ? ""
-      : "none";
-
+      row.style.display = rowText.includes(searchValue) ? "" : "none";
     });
-
   });
-
 });
 </script>
 
 <style>
-
 .inventory-cta-section{
-  background:
-  linear-gradient(
-  135deg,
-  #07112f 0%,
-  #0b57d0 55%,
-  #07112f 100%
-  );
-
+  background:linear-gradient(135deg,#07112f 0%,#092b78 45%,#0b57d0 100%);
   padding:90px 6%;
   text-align:center;
 }
@@ -844,6 +754,7 @@ document.addEventListener("DOMContentLoaded", function () {
   font-weight:900;
   text-transform:uppercase;
   font-style:italic;
+  color:#ffffff;
 }
 
 .inventory-cta-inner p{
@@ -877,12 +788,13 @@ document.addEventListener("DOMContentLoaded", function () {
   text-decoration:none;
 }
 
-.main-btn:hover{
-  transform:translateY(-4px);
+.main-btn:hover,
+.sheet-pill:hover{
+  transform:translateY(-4px) scale(1.03);
 }
 
 .whatsapp-btn{
-  background:#16a34a;
+  background:linear-gradient(135deg,#059669,#22c55e);
   color:#ffffff;
   box-shadow:0 15px 35px rgba(22,163,74,.35);
 }
@@ -890,7 +802,7 @@ document.addEventListener("DOMContentLoaded", function () {
 .sheet-main-btn{
   background:#ffffff;
   color:#0b57d0;
-  box-shadow:0 15px 35px rgba(255,255,255,.15);
+  box-shadow:0 15px 35px rgba(255,255,255,.18);
 }
 
 .sheet-grid-small{
@@ -900,27 +812,38 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 .sheet-pill{
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.12);
-  color:#ffffff;
-  min-height:56px;
-  border-radius:16px;
+  min-height:58px;
+  border-radius:18px;
   display:flex;
   align-items:center;
   justify-content:center;
   padding:12px 18px;
   font-size:13px;
-  font-weight:800;
-  transition:.3s ease;
-  backdrop-filter:blur(8px);
+  font-weight:900;
+  color:#ffffff;
   text-decoration:none;
+  transition:.3s ease;
+  border:1px solid rgba(255,255,255,.25);
+  box-shadow:0 12px 28px rgba(0,0,0,.25);
 }
 
-.sheet-pill:hover{
-  background:#57d4ff;
-  color:#07112f;
-  transform:translateY(-4px);
-}
+.usa{background:linear-gradient(135deg,#2563eb,#38bdf8);}
+.cbd{background:linear-gradient(135deg,#be123c,#ec4899);}
+.saas{background:linear-gradient(135deg,#0f172a,#2563eb);}
+.germany{background:linear-gradient(135deg,#111827,#dc2626,#fbbf24);}
+.australia{background:linear-gradient(135deg,#1e3a8a,#0ea5e9);}
+.france{background:linear-gradient(135deg,#1d4ed8,#ffffff,#ef4444);color:#111827;}
+.spain{background:linear-gradient(135deg,#b91c1c,#facc15,#ef4444);color:#111827;}
+.dubai{background:linear-gradient(135deg,#020617,#16a34a,#ef4444);}
+.india{background:linear-gradient(135deg,#f97316,#ffffff,#16a34a);color:#111827;}
+.italy{background:linear-gradient(135deg,#16a34a,#ffffff,#dc2626);color:#111827;}
+.brazil{background:linear-gradient(135deg,#16a34a,#facc15,#22c55e);color:#111827;}
+.southafrica{background:linear-gradient(135deg,#020617,#16a34a,#facc15);}
+.netherland{background:linear-gradient(135deg,#ef4444,#ffffff,#2563eb);color:#111827;}
+.indonesia{background:linear-gradient(135deg,#dc2626,#ffffff);color:#111827;}
+.portugal{background:linear-gradient(135deg,#166534,#dc2626,#facc15);}
+.japan{background:linear-gradient(135deg,#ffffff,#fca5a5,#dc2626);color:#111827;}
+.russia{background:linear-gradient(135deg,#ffffff,#2563eb,#dc2626);color:#111827;}
 
 footer{
   background:#050b1f;
@@ -932,42 +855,17 @@ footer{
 }
 
 @media(max-width:900px){
-
-  .inventory-cta-inner h2{
-    font-size:36px;
-  }
-
-  .sheet-grid-small{
-    grid-template-columns:repeat(2,1fr);
-  }
-
+  .inventory-cta-inner h2{font-size:36px;}
+  .sheet-grid-small{grid-template-columns:repeat(2,1fr);}
 }
 
 @media(max-width:560px){
-
-  .inventory-cta-section{
-    padding:70px 20px;
-  }
-
-  .inventory-cta-inner h2{
-    font-size:28px;
-  }
-
-  .inventory-cta-inner p{
-    font-size:15px;
-  }
-
-  .main-btn{
-    width:100%;
-    min-width:unset;
-  }
-
-  .sheet-grid-small{
-    grid-template-columns:1fr;
-  }
-
+  .inventory-cta-section{padding:70px 20px;}
+  .inventory-cta-inner h2{font-size:28px;}
+  .inventory-cta-inner p{font-size:15px;}
+  .main-btn{width:100%;min-width:unset;}
+  .sheet-grid-small{grid-template-columns:1fr;}
 }
-
 </style>
 
 </body>
