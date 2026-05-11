@@ -378,125 +378,245 @@ header a{color:#fff;text-decoration:none;font-weight:800;font-size:14px}
 </section>
 
 <style>
-.niche-inventory-section {
-  padding: 70px 6% 80px;
-  background: #070b1f;
-  text-align: center;
+*{
+  box-sizing:border-box;
 }
 
-.niche-inventory-section h2 {
-  color: #ffffff;
-  font-size: 32px;
-  font-weight: 800;
-  margin-bottom: 10px;
-  text-transform: uppercase;
+.niche-inventory-section{
+  padding:70px 6% 80px;
+  background:#070b1f;
+  text-align:center;
 }
 
-.niche-subtitle {
-  color: #d8e4ff;
-  margin-bottom: 28px;
-  font-size: 15px;
+.niche-inventory-section h2{
+  color:#ffffff;
+  font-size:32px;
+  font-weight:900;
+  margin-bottom:10px;
+  text-transform:uppercase;
 }
 
-.niche-search-wrap {
-  max-width: 520px;
-  margin: 0 auto 26px;
+.niche-subtitle{
+  color:#d8e4ff;
+  margin-bottom:28px;
+  font-size:15px;
 }
 
-#nicheTableSearch {
-  width: 100%;
-  padding: 15px 20px;
-  border-radius: 12px;
-  border: 1px solid rgba(61, 139, 255, 0.45);
-  background: #101c44;
-  color: #ffffff;
-  outline: none;
-  font-size: 15px;
-  box-shadow: 0 0 22px rgba(0, 130, 255, 0.18);
+.niche-search-wrap{
+  max-width:520px;
+  margin:0 auto 26px;
 }
 
-#nicheTableSearch::placeholder {
-  color: #98a7c8;
+#nicheTableSearch{
+  width:100%;
+  padding:15px 20px;
+  border-radius:14px;
+  border:1px solid rgba(87,212,255,.45);
+  background:#101c44;
+  color:#ffffff;
+  outline:none;
+  font-size:15px;
+  box-shadow:0 0 22px rgba(0,130,255,.18);
 }
 
-.niche-table-wrap {
-  width: 100%;
-  overflow-x: auto;
-  border-radius: 14px;
-  border: 1px solid rgba(74, 137, 255, 0.35);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+#nicheTableSearch::placeholder{
+  color:#98a7c8;
 }
 
-.niche-inventory-table {
-  width: 100%;
-  min-width: 1050px;
-  border-collapse: collapse;
-  font-size: 14px;
-  font-weight: 700;
+.niche-table-wrap{
+  width:100%;
+  overflow-x:auto;
+  border-radius:16px;
+  border:1px solid rgba(74,137,255,.35);
+  box-shadow:0 18px 45px rgba(0,0,0,.35);
 }
 
-.niche-inventory-table th {
-  background: #111a35;
-  color: #ffffff;
-  padding: 16px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  text-align: center;
+.niche-inventory-table{
+  width:100%;
+  min-width:1050px;
+  border-collapse:collapse;
+  font-size:14px;
+  font-weight:700;
 }
 
-.niche-inventory-table td {
-  padding: 14px 14px;
-  border: 1px solid rgba(25, 35, 60, 0.16);
-  color: #28334a;
-  text-align: center;
+.niche-inventory-table th{
+  background:#111a35;
+  color:#ffffff;
+  padding:16px 14px;
+  border:1px solid rgba(255,255,255,.12);
+  text-align:center;
 }
 
-.niche-inventory-table tbody tr:nth-child(odd) {
-  background: #eadbd3;
+.niche-inventory-table td{
+  padding:14px 14px;
+  border:1px solid rgba(25,35,60,.16);
+  color:#28334a;
+  text-align:center;
 }
 
-.niche-inventory-table tbody tr:nth-child(even) {
-  background: #bfe1e8;
+.niche-inventory-table tbody tr:nth-child(odd){
+  background:#eadbd3;
+}
+
+.niche-inventory-table tbody tr:nth-child(even){
+  background:#bfe1e8;
 }
 
 .niche-inventory-table td:first-child,
-.niche-inventory-table th:first-child {
-  text-align: left;
+.niche-inventory-table th:first-child{
+  text-align:left;
 }
 
-.niche-inventory-table td a {
-  color: #2467c9;
-  text-decoration: none;
-  font-weight: 800;
+.niche-inventory-table td a{
+  color:#2467c9;
+  text-decoration:none;
+  font-weight:800;
 }
 
 .metric-cell,
-.traffic-cell {
-  color: #ff2e2e !important;
-  font-weight: 900;
+.traffic-cell{
+  color:#ff2e2e!important;
+  font-weight:900;
 }
 
-.niche-inventory-table td:nth-child(6) {
-  color: #00b96b !important;
-  font-weight: 900;
+.niche-inventory-table td:nth-child(6),
+.price-cell{
+  color:#00b96b!important;
+  font-weight:900;
 }
 
-.price-cell {
-  color: #00b96b !important;
-  font-weight: 900;
+.cta{
+  background:
+    radial-gradient(circle at top,#123c96 0%,transparent 32%),
+    linear-gradient(135deg,#07112f 0%,#0b57d0 52%,#07112f 100%);
+  padding:80px 6%;
+  text-align:center;
+  color:#ffffff;
 }
 
-@media (max-width: 768px) {
-  .niche-inventory-section {
-    padding: 50px 18px;
-  }
+.cta h2{
+  font-size:48px;
+  line-height:1.08;
+  font-weight:900;
+  font-style:italic;
+  text-transform:uppercase;
+  margin:0 0 14px;
+  letter-spacing:-1px;
+}
 
-  .niche-inventory-section h2 {
-    font-size: 24px;
-  }
+.cta p{
+  max-width:760px;
+  margin:0 auto 20px;
+  color:#dbeafe;
+  font-size:16px;
+  line-height:1.7;
+}
 
-  .niche-inventory-table {
-    font-size: 13px;
-  }
+.cta > a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:54px;
+  padding:0 32px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#16a34a,#22c55e);
+  color:#ffffff;
+  font-size:14px;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow:0 15px 35px rgba(22,163,74,.35);
+  transition:.25s ease;
+}
+
+.cta a:hover{
+  transform:translateY(-4px);
+}
+
+.cta div a{
+  transition:.25s ease;
+}
+
+.section{
+  background:#0b173f;
+  padding:75px 5%;
+  text-align:center;
+  color:#ffffff;
+}
+
+.section h2{
+  font-size:44px;
+  font-weight:900;
+  font-style:italic;
+  text-transform:uppercase;
+  margin:0 0 34px;
+}
+
+.niche-wrap{
+  max-width:1280px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:10px;
+}
+
+.niche-pill{
+  min-height:40px;
+  padding:9px 10px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#ffffff;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:900;
+  line-height:1.2;
+  letter-spacing:.15px;
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 8px 20px rgba(0,0,0,.22);
+  transition:.25s ease;
+  background:linear-gradient(135deg,#2563eb,#38bdf8);
+}
+
+.niche-pill:nth-child(6n+1){background:linear-gradient(135deg,#2563eb,#38bdf8);}
+.niche-pill:nth-child(6n+2){background:linear-gradient(135deg,#7c3aed,#2563eb);}
+.niche-pill:nth-child(6n+3){background:linear-gradient(135deg,#db2777,#f97316);}
+.niche-pill:nth-child(6n+4){background:linear-gradient(135deg,#059669,#22c55e);}
+.niche-pill:nth-child(6n+5){background:linear-gradient(135deg,#0f172a,#0b57d0);}
+.niche-pill:nth-child(6n+6){background:linear-gradient(135deg,#f59e0b,#ef4444);}
+
+.niche-pill:hover{
+  transform:translateY(-4px) scale(1.04);
+  box-shadow:0 18px 35px rgba(0,0,0,.35);
+  border-color:#57d4ff;
+}
+
+@media(max-width:1200px){
+  .niche-wrap{grid-template-columns:repeat(5,1fr);}
+}
+
+@media(max-width:980px){
+  .niche-wrap{grid-template-columns:repeat(4,1fr);}
+}
+
+@media(max-width:768px){
+  .niche-inventory-section{padding:50px 18px;}
+  .niche-inventory-section h2{font-size:24px;}
+  .niche-inventory-table{font-size:13px;}
+  .cta h2,.section h2{font-size:32px;}
+  .niche-wrap{grid-template-columns:repeat(3,1fr);}
+}
+
+@media(max-width:560px){
+  .cta{padding:60px 18px;}
+  .section{padding:55px 18px;}
+  .niche-wrap{grid-template-columns:repeat(2,1fr);}
+  .niche-pill{font-size:10.5px;min-height:38px;}
+}
+
+@media(max-width:360px){
+  .niche-wrap{grid-template-columns:1fr;}
 }
 </style>
 
@@ -505,218 +625,86 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchInput = document.getElementById("nicheTableSearch");
   const tableRows = document.querySelectorAll("#nicheInventoryTable tbody tr");
 
-  searchInput.addEventListener("keyup", function () {
-    const searchValue = this.value.toLowerCase();
+  if (searchInput) {
+    searchInput.addEventListener("keyup", function () {
+      const searchValue = this.value.toLowerCase();
 
-    tableRows.forEach(function (row) {
-      const rowText = row.innerText.toLowerCase();
-      row.style.display = rowText.includes(searchValue) ? "" : "none";
+      tableRows.forEach(function (row) {
+        const rowText = row.innerText.toLowerCase();
+        row.style.display = rowText.includes(searchValue) ? "" : "none";
+      });
     });
-  });
+  }
 });
 </script>
 
 <section class="cta">
-<h2>Top 1500K+ High-Authority</h2>
-<p>Instant access to our complete backlink inventory for bulk orders.</p>
-<a href="https://wa.me/923074646927">Contact For Pricing</a>
-  <p style="margin-top:20px; font-size:15px; opacity:0.9;">
-Access our complete niche-wise database across multiple high-demand categories.
-</p>
+  <h2>Top 1500K+ High-Authority</h2>
+  <p>Instant access to our complete backlink inventory for bulk orders.</p>
+  <a href="https://wa.me/923074646927">Contact For Pricing</a>
 
-<div style="margin-top:22px; text-align:center;">
+  <p style="margin-top:20px;font-size:15px;opacity:.95;">
+    Access our complete niche-wise database across multiple high-demand categories.
+  </p>
 
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?usp=drivesdk" target="_blank"
-style="display:inline-block; padding:16px 30px; margin:10px; border-radius:50px; font-size:15px; font-weight:800; text-decoration:none; color:#fff; background:linear-gradient(135deg,#00c6ff,#0072ff); box-shadow:0 8px 20px rgba(0,114,255,0.45);">
-🎯 VISIT NICHE DATABASE (SET 1)
-</a>
+  <div style="margin-top:22px;text-align:center;">
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?usp=drivesdk" target="_blank" style="display:inline-block;padding:15px 28px;margin:8px;border-radius:50px;font-size:14px;font-weight:900;text-decoration:none;color:#fff;background:linear-gradient(135deg,#00c6ff,#0072ff);box-shadow:0 8px 20px rgba(0,114,255,.45);">🎯 VISIT NICHE DATABASE (SET 1)</a>
 
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?usp=drivesdk" target="_blank"
-style="display:inline-block; padding:16px 30px; margin:10px; border-radius:50px; font-size:15px; font-weight:800; text-decoration:none; color:#fff; background:linear-gradient(135deg,#ff512f,#dd2476); box-shadow:0 8px 20px rgba(221,36,118,0.45);">
-🚀 VISIT NICHE DATABASE (SET 2)
-</a>
+    <a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?usp=drivesdk" target="_blank" style="display:inline-block;padding:15px 28px;margin:8px;border-radius:50px;font-size:14px;font-weight:900;text-decoration:none;color:#fff;background:linear-gradient(135deg,#ff512f,#dd2476);box-shadow:0 8px 20px rgba(221,36,118,.45);">🚀 VISIT NICHE DATABASE (SET 2)</a>
 
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?usp=drivesdk" target="_blank"
-style="display:inline-block; padding:16px 30px; margin:10px; border-radius:50px; font-size:15px; font-weight:800; text-decoration:none; color:#fff; background:linear-gradient(135deg,#00b09b,#96c93d); box-shadow:0 8px 20px rgba(0,176,155,0.45);">
-💎 VISIT NICHE DATABASE (SET 3)
-</a>
+    <a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?usp=drivesdk" target="_blank" style="display:inline-block;padding:15px 28px;margin:8px;border-radius:50px;font-size:14px;font-weight:900;text-decoration:none;color:#fff;background:linear-gradient(135deg,#00b09b,#96c93d);box-shadow:0 8px 20px rgba(0,176,155,.45);">💎 VISIT NICHE DATABASE (SET 3)</a>
 
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?usp=drivesdk" target="_blank"
-style="display:inline-block; padding:16px 30px; margin:10px; border-radius:50px; font-size:15px; font-weight:800; text-decoration:none; color:#fff; background:linear-gradient(135deg,#f7971e,#ffd200); box-shadow:0 8px 20px rgba(247,151,30,0.45);">
-🌟 VISIT NICHE DATABASE (SET 4)
-</a>
-  <br>
+    <a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?usp=drivesdk" target="_blank" style="display:inline-block;padding:15px 28px;margin:8px;border-radius:50px;font-size:14px;font-weight:900;text-decoration:none;color:#111827;background:linear-gradient(135deg,#f7971e,#ffd200);box-shadow:0 8px 20px rgba(247,151,30,.45);">🌟 VISIT NICHE DATABASE (SET 4)</a>
 
-<div style="text-align:center; width:100%; margin-top:18px;">
-  <a href="https://docs.google.com/spreadsheets/d/1nY8wF-qPW7Z_yEfu7QbXU4nDbLo0QveuI8TjReium0Y/edit?usp=drivesdk"
-     target="_blank"
-     style="display:inline-block; padding:16px 30px; margin:10px; border-radius:50px; font-size:15px; font-weight:800; text-decoration:none; color:#ffffff; background:linear-gradient(135deg,#ff003c,#ff4b2b,#ff9800); box-shadow:0 0 18px rgba(255,0,60,0.55), 0 8px 22px rgba(0,0,0,0.28); letter-spacing:0.5px;">
-     🏡 VISIT HOME IMPROVEMENT SHEET 💰
-  </a>
-</div>
-
-</div>
+    <div style="text-align:center;width:100%;margin-top:12px;">
+      <a href="https://docs.google.com/spreadsheets/d/1nY8wF-qPW7Z_yEfu7QbXU4nDbLo0QveuI8TjReium0Y/edit?usp=drivesdk" target="_blank" style="display:inline-block;padding:15px 28px;margin:8px;border-radius:50px;font-size:14px;font-weight:900;text-decoration:none;color:#ffffff;background:linear-gradient(135deg,#ff003c,#ff4b2b,#ff9800);box-shadow:0 0 18px rgba(255,0,60,.55),0 8px 22px rgba(0,0,0,.28);letter-spacing:.5px;">🏡 VISIT HOME IMPROVEMENT SHEET 💰</a>
+    </div>
+  </div>
 </section>
 
 <section class="section">
-<h2>Explore All Niches</h2>
+  <h2>Explore All Niches</h2>
 
-<div class="niche-wrap">
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=0#gid=0" target="_blank" class="niche-pill">Affiliate Marketing</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=41460147#gid=41460147" target="_blank" class="niche-pill">Anime</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1381166501#gid=1381166501" target="_blank"  class="niche-pill">Architecture</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=589003717#gid=589003717" target="_blank"  class="niche-pill">Audio, Video and Photographic Equipment</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=43386909#gid=43386909" target="_blank"  class="niche-pill">Auto</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=510229612#gid=510229612" target="_blank"  class="niche-pill">Auto Insurance</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=240254339#gid=240254339" target="_blank"  class="niche-pill">Maintenance</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1381493521#gid=1381493521" target="_blank"  class="niche-pill">Automotive</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=792359290#gid=792359290" target="_blank"  class="niche-pill">Autopress</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=535699529#gid=535699529" target="_blank"  class="niche-pill">Basketball</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1176473667#gid=1176473667" target="_blank"  class="niche-pill">Beauty</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1026873680#gid=1026873680" target="_blank"  class="niche-pill">Beauty Salons</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1143006910#gid=1143006910" target="_blank"  class="niche-pill">Betting</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=975924388#gid=975924388" target="_blank"  class="niche-pill">Board Games</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1208640396#gid=1208640396" target="_blank"  class="niche-pill">Boxing</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=2093793399#gid=2093793399" target="_blank"  class="niche-pill">Business</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=2059221773#gid=2059221773" target="_blank"  class="niche-pill">Business Services</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1000997996#gid=1000997996" target="_blank"  class="niche-pill">Car Enthusiasts</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1018132826#gid=1018132826" target="_blank"  class="niche-pill">Careers</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=163533757#gid=163533757" target="_blank"  class="niche-pill">Cars Sale</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1932015910#gid=1932015910" target="_blank"  class="niche-pill">Casino</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1896250427#gid=1896250427" target="_blank"  class="niche-pill">Catalogs</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1527484432#gid=1527484432" target="_blank"  class="niche-pill">Celebrity</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1577996925#gid=1577996925" target="_blank"  class="niche-pill">Cinema</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=266887072#gid=266887072" target="_blank"  class="niche-pill">Clothes, Shoes, Accessories</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=966856773#gid=966856773" target="_blank"  class="niche-pill">Competitions</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=430662455#gid=430662455" target="_blank"  class="niche-pill">Computer Games</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=476733979#gid=476733979" target="_blank"  class="niche-pill">Computers</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1828578527#gid=1828578527" target="_blank"  class="niche-pill">Construction</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1807082408#gid=1807082408" target="_blank"  class="niche-pill">Cooking</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=118207295#gid=118207295" target="_blank"  class="niche-pill">Cosmetics</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=669577316#gid=669577316" target="_blank"  class="niche-pill">Counters and Ratings</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=206766915#gid=206766915" target="_blank"  class="niche-pill">Courses</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=157730265#gid=157730265" target="_blank"  class="niche-pill">Cryptocurrencies</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1146754526#gid=1146754526" target="_blank"  class="niche-pill">Culture</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=490479111#gid=490479111" target="_blank"  class="niche-pill">Cybersecurity</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=349277690#gid=349277690" target="_blank"  class="niche-pill">Dental</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=274694340#gid=274694340" target="_blank"  class="niche-pill">Dentistry</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1927777900#gid=1927777900" target="_blank"  class="niche-pill">Dictionaries</a>
-<a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1218818048#gid=1218818048" target="_blank"  class="niche-pill">Diets and Healthy Eating</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=0#gid=0" target="_blank"  class="niche-pill">Digital Marketing</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=41460147#gid=41460147" target="_blank"  class="niche-pill">Driver Training</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=1381166501#gid=1381166501" target="_blank"  class="niche-pill">Education</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=589003717#gid=589003717" target="_blank"  class="niche-pill">Encyclopedias</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=43386909#gid=43386909" target="_blank"  class="niche-pill">Entertainment & Music</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=510229612#gid=510229612" target="_blank"  class="niche-pill">Entrepreneurship</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=240254339#gid=240254339" target="_blank"  class="niche-pill">Everything for the Office</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=1381493521#gid=1381493521" target="_blank"  class="niche-pill">Everything for the Party</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=792359290#gid=792359290" target="_blank"  class="niche-pill">Extreme Sport</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=535699529#gid=535699529" target="_blank"  class="niche-pill">Family</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=1176473667#gid=1176473667" target="_blank"  class="niche-pill">Fashion and Fashion Designers</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=1026873680#gid=1026873680" target="_blank"  class="niche-pill">Finance</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=1143006910#gid=1143006910" target="_blank"  class="niche-pill">Food</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=975924388#gid=975924388" target="_blank"  class="niche-pill">Football</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=1208640396#gid=1208640396" target="_blank"  class="niche-pill">Forex</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=2093793399#gid=2093793399" target="_blank"  class="niche-pill">Furniture</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=2059221773#gid=2059221773" target="_blank"  class="niche-pill">Smartphone & Gadgets</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=1000997996#gid=1000997996" target="_blank"  class="niche-pill">Gambling</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=1018132826#gid=1018132826" target="_blank"  class="niche-pill">Games for Children</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=163533757#gid=163533757" target="_blank"  class="niche-pill">Games</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=1932015910#gid=1932015910" target="_blank"  class="niche-pill">Gardening</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=1896250427#gid=1896250427" target="_blank"  class="niche-pill">Graphic Design</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=1527484432#gid=1527484432" target="_blank"  class="niche-pill">Health & Fitness</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=1577996925#gid=1577996925" target="_blank"  class="niche-pill">Hi-Tech</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=266887072#gid=266887072" target="_blank"  class="niche-pill">Higher Education</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=966856773#gid=966856773" target="_blank"  class="niche-pill">Hobby</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=430662455#gid=430662455" target="_blank"  class="niche-pill">Hockey</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=476733979#gid=476733979" target="_blank"  class="niche-pill">Home Improvement</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=1828578527#gid=1828578527" target="_blank"  class="niche-pill">Hosting and Domains</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=1807082408#gid=1807082408" target="_blank"  class="niche-pill">House</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=118207295#gid=118207295" target="_blank"  class="niche-pill">Household Appliances</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=669577316#gid=669577316" target="_blank"  class="niche-pill">Household Goods, Household Chemicals</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=206766915#gid=206766915" target="_blank"  class="niche-pill">Humor</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=157730265#gid=157730265" target="_blank"  class="niche-pill">iGaming</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=1146754526#gid=1146754526" target="_blank"  class="niche-pill">Insurance</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=490479111#gid=490479111" target="_blank"  class="niche-pill">Interior Design</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=349277690#gid=349277690" target="_blank"  class="niche-pill">Internet Access</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=274694340#gid=274694340" target="_blank"  class="niche-pill">Internet</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=1927777900#gid=1927777900" target="_blank"  class="niche-pill">Fashion & Jewellery</a>
-<a href="https://docs.google.com/spreadsheets/d/1kktxEtGN5yJ9KjwLe63ZPQFzmvPgxwMB0oUPZeAH9g4/edit?gid=1218818048#gid=1218818048" target="_blank"  class="niche-pill">Job</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=0#gid=0" target="_blank"  class="niche-pill">Laws</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=41460147#gid=41460147" target="_blank"  class="niche-pill">Legal</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1381166501#gid=1381166501" target="_blank"  class="niche-pill">Lifestyle</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=589003717#gid=589003717" target="_blank"  class="niche-pill">Literature</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=43386909#gid=43386909" target="_blank"  class="niche-pill">Logical Games</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=510229612#gid=510229612" target="_blank"  class="niche-pill">Martial Arts</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=240254339#gid=240254339" target="_blank"  class="niche-pill">Medical Centers</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1381493521#gid=1381493521" target="_blank"  class="niche-pill">Medical Portals</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=792359290#gid=792359290" target="_blank"  class="niche-pill">Medicine and Health</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=535699529#gid=535699529" target="_blank"  class="niche-pill">Mobile Games</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1176473667#gid=1176473667" target="_blank"  class="niche-pill">Mobile Telephony</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1026873680#gid=1026873680" target="_blank"  class="niche-pill">Mommy</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1143006910#gid=1143006910" target="_blank"  class="niche-pill">Motorcycles</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=975924388#gid=975924388" target="_blank"  class="niche-pill">Motorsport</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1208640396#gid=1208640396" target="_blank"  class="niche-pill">Museums and Theaters</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=2093793399#gid=2093793399" target="_blank"  class="niche-pill">Nature</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=2059221773#gid=2059221773" target="_blank"  class="niche-pill">Networks and Communications</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1000997996#gid=1000997996" target="_blank"  class="niche-pill">News</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1018132826#gid=1018132826" target="_blank"  class="niche-pill">Non-Profit Organizations</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=163533757#gid=163533757" target="_blank"  class="niche-pill">Nutrition</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1932015910#gid=1932015910" target="_blank"  class="niche-pill">Online Games</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1896250427#gid=1896250427" target="_blank"  class="niche-pill">Pets</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1527484432#gid=1527484432" target="_blank"  class="niche-pill">Pharmacies and Medicines</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1577996925#gid=1577996925" target="_blank"  class="niche-pill">Photo</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=266887072#gid=266887072" target="_blank"  class="niche-pill">Places for Entertainment</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=966856773#gid=966856773" target="_blank"  class="niche-pill">Plastic Surgery</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=430662455#gid=430662455" target="_blank"  class="niche-pill">Politics</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=476733979#gid=476733979" target="_blank"  class="niche-pill">Production and Supply</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1828578527#gid=1828578527" target="_blank"  class="niche-pill">Programs</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1807082408#gid=1807082408" target="_blank"  class="niche-pill">Psychology, Psychological Tests</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=118207295#gid=118207295" target="_blank"  class="niche-pill">Real Estate</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=669577316#gid=669577316" target="_blank"  class="niche-pill">Recreation and Entertainment</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=206766915#gid=206766915" target="_blank"  class="niche-pill">References</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=157730265#gid=157730265" target="_blank"  class="niche-pill">Religion</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1146754526#gid=1146754526" target="_blank"  class="niche-pill">Resistance Sports</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=490479111#gid=490479111" target="_blank"  class="niche-pill">SaaS</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=349277690#gid=349277690" target="_blank"  class="niche-pill">Safety</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=274694340#gid=274694340" target="_blank"  class="niche-pill">Science / Learning Materials</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1927777900#gid=1927777900" target="_blank"  class="niche-pill">Scripts</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1218818048#gid=1218818048" target="_blank"  class="niche-pill">Secondary Education</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=142527664#gid=142527664" target="_blank"  class="niche-pill">SEO</a>
-<a href="https://docs.google.com/spreadsheets/d/1I20GICqvUf1FDkpVF5hgrEWD5mW0_T9fzR8qZgJanws/edit?gid=1507700661#gid=1507700661" target="_blank"  class="niche-pill">Shopping</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=0#gid=0" target="_blank"  class="niche-pill">Showbiz</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=41460147#gid=41460147" target="_blank"  class="niche-pill">Social Media</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=1381166501#gid=1381166501" target="_blank"  class="niche-pill">Society</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=589003717#gid=589003717" target="_blank"  class="niche-pill">Solar Energy</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=43386909#gid=43386909" target="_blank"  class="niche-pill">Spare Parts, Accessories</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=510229612#gid=510229612" target="_blank"  class="niche-pill">Sporting Goods</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=240254339#gid=240254339" target="_blank"  class="niche-pill">Sports Broadcasts</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=1381493521#gid=1381493521" target="_blank"  class="niche-pill">Sports Clubs</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=792359290#gid=792359290" target="_blank"  class="niche-pill">Sport</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=535699529#gid=535699529" target="_blank"  class="niche-pill">Sports Media</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=1176473667#gid=1176473667" target="_blank"  class="niche-pill">Startup</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=1026873680#gid=1026873680" target="_blank"  class="niche-pill">Summer Sports</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=1143006910#gid=1143006910" target="_blank"  class="niche-pill">Supplements</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=975924388#gid=975924388" target="_blank"  class="niche-pill">Tattoo and Piercing</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=1208640396#gid=1208640396" target="_blank"  class="niche-pill">Technology</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=2093793399#gid=2093793399" target="_blank"  class="niche-pill">Tennis</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=2059221773#gid=2059221773" target="_blank"  class="niche-pill">Tools</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=1000997996#gid=1000997996" target="_blank"  class="niche-pill">Flat and Country House</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=1018132826#gid=1018132826" target="_blank"  class="niche-pill">Tourism and Travel</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=163533757#gid=163533757" target="_blank"  class="niche-pill">Transport</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=1932015910#gid=1932015910" target="_blank"  target="_blank"  class="niche-pill">Travel</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=1896250427#gid=1896250427" target="_blank"  class="niche-pill">TV</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=1527484432#gid=1527484432" target="_blank"  class="niche-pill">Water Sports</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=1577996925#gid=1577996925" target="_blank"  class="niche-pill">Web Design</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=266887072#gid=266887072" target="_blank"  class="niche-pill">Web Programming</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=966856773#gid=966856773" target="_blank"  class="niche-pill">Website Development</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=430662455#gid=430662455" target="_blank"  class="niche-pill">Wedding</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=476733979#gid=476733979" target="_blank"  class="niche-pill">Weight Loss</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=1828578527#gid=1828578527" target="_blank"  class="niche-pill">Winter Sports</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=1807082408#gid=1807082408" target="_blank"  class="niche-pill">Women’s Magazines</a>
-<a href="https://docs.google.com/spreadsheets/d/1RKt4d46MwTjTm4N-hYdsyzjGVQ1d1zkUUd0F5awD17c/edit?gid=118207295#gid=118207295" target="_blank"  class="niche-pill">Yoga</a>
-</div>
+  <div class="niche-wrap">
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=0#gid=0" target="_blank" class="niche-pill">Affiliate Marketing</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=41460147#gid=41460147" target="_blank" class="niche-pill">Anime</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1381166501#gid=1381166501" target="_blank" class="niche-pill">Architecture</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=589003717#gid=589003717" target="_blank" class="niche-pill">Audio, Video and Photographic Equipment</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=43386909#gid=43386909" target="_blank" class="niche-pill">Auto</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=510229612#gid=510229612" target="_blank" class="niche-pill">Auto Insurance</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=240254339#gid=240254339" target="_blank" class="niche-pill">Maintenance</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1381493521#gid=1381493521" target="_blank" class="niche-pill">Automotive</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=792359290#gid=792359290" target="_blank" class="niche-pill">Autopress</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=535699529#gid=535699529" target="_blank" class="niche-pill">Basketball</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1176473667#gid=1176473667" target="_blank" class="niche-pill">Beauty</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1026873680#gid=1026873680" target="_blank" class="niche-pill">Beauty Salons</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1143006910#gid=1143006910" target="_blank" class="niche-pill">Betting</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=975924388#gid=975924388" target="_blank" class="niche-pill">Board Games</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1208640396#gid=1208640396" target="_blank" class="niche-pill">Boxing</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=2093793399#gid=2093793399" target="_blank" class="niche-pill">Business</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=2059221773#gid=2059221773" target="_blank" class="niche-pill">Business Services</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1000997996#gid=1000997996" target="_blank" class="niche-pill">Car Enthusiasts</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1018132826#gid=1018132826" target="_blank" class="niche-pill">Careers</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=163533757#gid=163533757" target="_blank" class="niche-pill">Cars Sale</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1932015910#gid=1932015910" target="_blank" class="niche-pill">Casino</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1896250427#gid=1896250427" target="_blank" class="niche-pill">Catalogs</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1527484432#gid=1527484432" target="_blank" class="niche-pill">Celebrity</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1577996925#gid=1577996925" target="_blank" class="niche-pill">Cinema</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=266887072#gid=266887072" target="_blank" class="niche-pill">Clothes, Shoes, Accessories</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=966856773#gid=966856773" target="_blank" class="niche-pill">Competitions</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=430662455#gid=430662455" target="_blank" class="niche-pill">Computer Games</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=476733979#gid=476733979" target="_blank" class="niche-pill">Computers</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1828578527#gid=1828578527" target="_blank" class="niche-pill">Construction</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1807082408#gid=1807082408" target="_blank" class="niche-pill">Cooking</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=118207295#gid=118207295" target="_blank" class="niche-pill">Cosmetics</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=669577316#gid=669577316" target="_blank" class="niche-pill">Counters and Ratings</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=206766915#gid=206766915" target="_blank" class="niche-pill">Courses</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=157730265#gid=157730265" target="_blank" class="niche-pill">Cryptocurrencies</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1146754526#gid=1146754526" target="_blank" class="niche-pill">Culture</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=490479111#gid=490479111" target="_blank" class="niche-pill">Cybersecurity</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=349277690#gid=349277690" target="_blank" class="niche-pill">Dental</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=274694340#gid=274694340" target="_blank" class="niche-pill">Dentistry</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1927777900#gid=1927777900" target="_blank" class="niche-pill">Dictionaries</a>
+    <a href="https://docs.google.com/spreadsheets/d/1PzS0V_MzeLtbmC_Xn9WFVNpJtrO7ed61O8KdxY49rsg/edit?gid=1218818048#gid=1218818048" target="_blank" class="niche-pill">Diets and Healthy Eating</a>
+  </div>
 </section>
-
-</body>
-</html>
