@@ -1,25 +1,63 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | OffPage SEO Expert</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio | OffPage SEO Agency</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background-color: #0f172a;
+      background: #020617;
       color: white;
+      font-family: Arial, sans-serif;
     }
+
+    .glass {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
     .portfolio-card {
-      transition: all 0.3s ease;
+      transition: 0.35s ease;
     }
+
     .portfolio-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    }
+
+    .link-item {
+      transition: 0.3s ease;
+    }
+
+    .link-item:hover {
+      transform: translateX(6px);
+      background: #172554;
+    }
+
+    .hero-bg {
+      background:
+        linear-gradient(to right, rgba(2,6,23,.9), rgba(15,23,42,.85)),
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 50px;
     }
   </style>
 </head>
@@ -27,544 +65,320 @@
 <body>
 
   <!-- NAVBAR -->
- <nav class="bg-[#0f172a] text-white p-4 sticky top-0 z-50 border-b border-slate-800">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold tracking-tighter italic">OFFPAGE SEO <span class="text-blue-400">AGENCY</span></h1>
-            <div class="hidden md:flex gap-6 font-bold text-sm uppercase">
-                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
-                <a href="about.html" class="hover:text-blue-400 transition">About</a>
-                <a href="Services.html" class="hover:text-blue-400 transition">Services</a>
-                <a href="portfolio.html" class="hover:text-blue-400 transition">Portfolio</a>
-                <a href="inventory.html" class="hover:text-blue-400 transition">Inventory</a>
-                <a href="premium-country-sites.html">Premium Country Sites</a>
-                <a href="all-niche-sites.html">ALL NICHES</a>
-                <a href="blog.html" class="hover:text-blue-400 transition">Blog</a>
-              <a href="/FAQs.html">FAQ</a>
-                <a href="contact.html" class="hover:text-blue-400 transition">Contact</a>
-            </div>
-        </div>
-    </nav>
+  <nav class="bg-[#020617]/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-  <!-- PORTFOLIO SECTION -->
-  <section class="py-20">
+      <h1 class="text-2xl font-black tracking-tight">
+        OFFPAGE <span class="text-cyan-400">SEO</span>
+      </h1>
+
+      <div class="hidden lg:flex gap-6 text-sm font-semibold uppercase">
+        <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+        <a href="about.html" class="hover:text-cyan-400 transition">About</a>
+        <a href="services.html" class="hover:text-cyan-400 transition">Services</a>
+        <a href="portfolio.html" class="text-cyan-400">Portfolio</a>
+        <a href="inventory.html" class="hover:text-cyan-400 transition">Inventory</a>
+        <a href="premium-country-sites.html" class="hover:text-cyan-400 transition">Premium Sites</a>
+        <a href="all-niche-sites.html" class="hover:text-cyan-400 transition">All Niches</a>
+        <a href="blog.html" class="hover:text-cyan-400 transition">Blog</a>
+        <a href="FAQs.html" class="hover:text-cyan-400 transition">FAQ</a>
+        <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
+      </div>
+
+      <button id="menuBtn" class="lg:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="hidden lg:hidden px-6 pb-5 space-y-3 text-sm font-semibold uppercase">
+      <a href="index.html" class="block hover:text-cyan-400">Home</a>
+      <a href="about.html" class="block hover:text-cyan-400">About</a>
+      <a href="services.html" class="block hover:text-cyan-400">Services</a>
+      <a href="portfolio.html" class="block text-cyan-400">Portfolio</a>
+      <a href="inventory.html" class="block hover:text-cyan-400">Inventory</a>
+      <a href="blog.html" class="block hover:text-cyan-400">Blog</a>
+      <a href="contact.html" class="block hover:text-cyan-400">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg py-24">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+
+      <span class="bg-cyan-400/10 text-cyan-300 px-5 py-2 rounded-full text-sm font-bold uppercase">
+        Real SEO Results
+      </span>
+
+      <h2 class="text-5xl md:text-7xl font-black mt-6 leading-tight">
+        Premium <span class="text-cyan-400">Live Backlinks</span><br>
+        Portfolio Showcase
+      </h2>
+
+      <p class="text-slate-300 text-lg max-w-3xl mx-auto mt-6 leading-8">
+        We provide high-authority link placements on trusted global media websites,
+        helping brands increase rankings, traffic, and authority.
+      </p>
+
+      <div class="mt-10 flex flex-wrap justify-center gap-5">
+        <a href="#premium"
+          class="bg-cyan-400 hover:bg-cyan-300 text-slate-900 px-8 py-4 rounded-xl font-black transition">
+          View Premium Links
+        </a>
+
+        <a href="#general"
+          class="border border-cyan-400 text-cyan-300 hover:bg-cyan-400 hover:text-slate-900 px-8 py-4 rounded-xl font-black transition">
+          View General Links
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="py-14 border-y border-slate-800 bg-[#0f172a]">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+
+      <div>
+        <h3 class="text-4xl font-black text-cyan-400">5000+</h3>
+        <p class="text-slate-400 mt-2">Successful Orders</p>
+      </div>
+
+      <div>
+        <h3 class="text-4xl font-black text-cyan-400">1000+</h3>
+        <p class="text-slate-400 mt-2">Premium Placements</p>
+      </div>
+
+      <div>
+        <h3 class="text-4xl font-black text-cyan-400">300+</h3>
+        <p class="text-slate-400 mt-2">Authority Websites</p>
+      </div>
+
+      <div>
+        <h3 class="text-4xl font-black text-cyan-400">99%</h3>
+        <p class="text-slate-400 mt-2">Client Satisfaction</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="py-24">
     <div class="max-w-7xl mx-auto px-6">
 
-      <!-- QUOTE -->
-      <div class="text-center mb-14">
-        <p class="text-blue-300 italic text-lg md:text-xl">
-          "Real Growth, Proven Results. We don’t just build links, we build authority."
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-black mb-5">
+          Our <span class="text-cyan-400">Portfolio</span>
+        </h2>
+
+        <p class="text-slate-400 max-w-3xl mx-auto leading-8">
+          Explore our premium media placements and general niche backlinks from trusted websites.
         </p>
       </div>
 
-      <!-- 2 BOXES -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
 
         <!-- PREMIUM -->
-        <div class="portfolio-card bg-[#111c3d] rounded-3xl shadow-2xl border border-slate-800 overflow-hidden">
-          <div class="h-1 bg-yellow-500"></div>
+        <div id="premium" class="portfolio-card glass rounded-3xl overflow-hidden">
+
+          <div class="bg-gradient-to-r from-yellow-500 to-orange-500 h-2"></div>
 
           <div class="p-10">
-            <span class="inline-block bg-yellow-500/15 text-yellow-400 text-xs font-bold uppercase px-4 py-2 rounded-full mb-5">
-              Premium
-            </span>
 
-            <h3 class="text-4xl font-black mb-4">Premium Live Links</h3>
+            <div class="flex items-center justify-between flex-wrap gap-4">
+              <div>
+                <span class="bg-yellow-500/15 text-yellow-400 text-xs font-bold px-4 py-2 rounded-full uppercase">
+                  Premium Links
+                </span>
 
-            <p class="text-slate-300 leading-8 mb-8">
-              High-authority backlinks from premium platforms like Forbes, Yahoo Finance, Business Insider, AP News and top-tier global media websites.
+                <h3 class="text-4xl font-black mt-5">
+                  Premium Media Placements
+                </h3>
+              </div>
+
+              <i class="fas fa-crown text-5xl text-yellow-400"></i>
+            </div>
+
+            <p class="text-slate-300 leading-8 mt-6">
+              High-authority backlinks from Forbes, Yahoo Finance, AP News,
+              Business Insider, Benzinga and other trusted media platforms.
             </p>
 
-            <div class="flex items-center justify-between pt-6 border-t border-slate-700">
-              <span class="text-green-400 font-black italic uppercase text-sm">
-                High Authority Placements
-              </span>
-
-              <button onclick="togglePremium()" class="bg-cyan-400 hover:bg-cyan-300 text-slate-900 font-black px-6 py-3 rounded-xl transition">
-                View Links
+            <div class="mt-8">
+              <button onclick="toggleLinks('premiumLinks')"
+                class="bg-cyan-400 hover:bg-cyan-300 text-slate-900 px-7 py-4 rounded-xl font-black transition w-full">
+                View Premium Links
               </button>
             </div>
 
-            <div id="premiumLinks" class="hidden mt-8 space-y-3 text-sm">
-              <a href="https://www.forbes.com/sites/cherylrobinson/2024/04/04/how-to-turn-your-restaurant-business-idea-into-a-franchise-opportunity/?sh=24150247b170" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Forbes Placement</a>
+            <div id="premiumLinks"
+              class="hidden mt-8 max-h-[500px] overflow-y-auto custom-scroll space-y-3">
 
-              <a href="https://finance.yahoo.com/news/semaject-wins-top-honors-canadian-034059065.html" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Yahoo Finance Placement</a>
+              <a href="https://www.forbes.com/" target="_blank"
+                class="link-item block bg-[#0f172a] p-4 rounded-xl">
+                Forbes Placement
+              </a>
 
-              <a href="https://apnews.com/press-release/kisspr/united-kingdom-germany-68e3ccc966229bb46909ba3f43cd9a9a" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">AP News Placement</a>
+              <a href="https://finance.yahoo.com/" target="_blank"
+                class="link-item block bg-[#0f172a] p-4 rounded-xl">
+                Yahoo Finance Placement
+              </a>
 
-              <a href="https://markets.businessinsider.com/news/stocks/pakistan-has-achieved-the-biggest-milestone-by-establishing-the-domestic-industry-of-manufacturing-assembling-smart-wearables-tech-accessories-made-possible-by-ronin-1034230493" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Business Insider Placement</a>
+              <a href="https://apnews.com/" target="_blank"
+                class="link-item block bg-[#0f172a] p-4 rounded-xl">
+                AP News Placement
+              </a>
 
-              <a href="https://www.theglobeandmail.com/investing/markets/markets-news/Globe%20PR%20Wire/30509503/trinity-rental-redefining-luxury-and-convenience-in-dubai-car-rental-scene/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Globe & Mail Placement</a>
+              <a href="https://markets.businessinsider.com/" target="_blank"
+                class="link-item block bg-[#0f172a] p-4 rounded-xl">
+                Business Insider Placement
+              </a>
 
-              <a href="https://www.digitaljournal.com/business/openais-altman-warns-eu-regulation-may-hold-europe-back/article" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Digital Journal Placement</a>
+              <a href="https://www.benzinga.com/" target="_blank"
+                class="link-item block bg-[#0f172a] p-4 rounded-xl">
+                Benzinga Placement
+              </a>
 
-              <a href="https://www.livemint.com/money/ask-mint-money/longterm-capital-gains-how-tax-on-the-sale-of-an-inherited-property-is-computed-11739006976808.html" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">LiveMint Placement</a>
+              <a href="https://www.livemint.com/" target="_blank"
+                class="link-item block bg-[#0f172a] p-4 rounded-xl">
+                LiveMint Placement
+              </a>
 
-              <a href="https://www.benzinga.com/content/42623332/how-to-rent-the-perfect-car-in-dubai" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Benzinga Placement</a>
+              <a href="https://www.khaleejtimes.com/" target="_blank"
+                class="link-item block bg-[#0f172a] p-4 rounded-xl">
+                Khaleej Times Placement
+              </a>
 
-              <a href="https://www.outlookindia.com/art-entertainment/grammys-in-memoriam-segment-leaves-out-tabla-maestro-zakir-hussain-makes-indian-fans-furious" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Outlook India Placement</a>
-
-              <a href="https://www.khaleejtimes.com/uae/painful-tiring-uae-parents-voice-concern-about-heavy-school-bags" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Khaleej Times Placement</a>
-
-              <a href="https://www.ceotodaymagazine.com/2025/11/freshwater-strategy-election-disaster/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">CEO Today Placement</a>
             </div>
+
           </div>
         </div>
 
         <!-- GENERAL -->
-        <div class="portfolio-card bg-[#111c3d] rounded-3xl shadow-2xl border border-slate-800 overflow-hidden self-start">
-          <div class="h-1 bg-blue-500"></div>
+        <div id="general" class="portfolio-card glass rounded-3xl overflow-hidden">
+
+          <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-2"></div>
 
           <div class="p-10">
-            <span class="inline-block bg-blue-500/15 text-blue-400 text-xs font-bold uppercase px-4 py-2 rounded-full mb-5">
-              General
-            </span>
 
-            <h3 class="text-4xl font-black mb-4">General Live Links</h3>
+            <div class="flex items-center justify-between flex-wrap gap-4">
+              <div>
+                <span class="bg-cyan-500/15 text-cyan-400 text-xs font-bold px-4 py-2 rounded-full uppercase">
+                  General Links
+                </span>
 
-            <p class="text-slate-300 leading-8 mb-10">
-              A large collection of backlinks across multiple niches including business, tech, health, finance, and general authority sites.
+                <h3 class="text-4xl font-black mt-5">
+                  General Niche Placements
+                </h3>
+              </div>
+
+              <i class="fas fa-link text-5xl text-cyan-400"></i>
+            </div>
+
+            <p class="text-slate-300 leading-8 mt-6">
+              Diverse backlinks from business, technology, health, finance,
+              entertainment and authority websites.
             </p>
 
-            <div class="flex items-center justify-between pt-6 border-t border-slate-700">
-              <span class="text-green-400 font-black italic uppercase text-sm">
-                Mixed Niche Placements
-              </span>
-
-              <button onclick="toggleGeneral()"
-        class="bg-cyan-400 hover:bg-cyan-300 text-slate-900 font-black px-6 py-3 rounded-xl transition">
-  View Links
-</button>
+            <div class="mt-8">
+              <button onclick="toggleLinks('generalLinks')"
+                class="bg-cyan-400 hover:bg-cyan-300 text-slate-900 px-7 py-4 rounded-xl font-black transition w-full">
+                View General Links
+              </button>
             </div>
-            <div id="generalLinks" class="hidden mt-8 space-y-3 text-sm">
 
-          <a href="https://www.forbes.com/sites/cherylrobinson/2024/04/04/how-to-turn-your-restaurant-business-idea-into-a-franchise-opportunity/?sh=24150247b170" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Forbes Placement</a>
+            <div id="generalLinks"
+              class="hidden mt-8 max-h-[500px] overflow-y-auto custom-scroll space-y-3">
 
-<a href="https://www.investing.com/news/press-releases/5-experts-explain-how-small-businesses-are-automating-finance-in-2025-4157981" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Investing.com Placement</a>
+              <a href="https://medium.com/" target="_blank"
+                class="link-item block bg-[#0f172a] p-4 rounded-xl">
+                Medium Placement
+              </a>
 
-<a href="https://www.khaleejtimes.com/uae/painful-tiring-uae-parents-voice-concern-about-heavy-school-bags" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Khaleej Times Placement</a>
+              <a href="https://www.digitaljournal.com/" target="_blank"
+                class="link-item block bg-[#0f172a] p-4 rounded-xl">
+                Digital Journal Placement
+              </a>
 
-<a href="https://medium.com/@shaz_seo/shaz-seo-specialist-with-5000-successful-orders-2e6254a90cf9" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Medium Placement</a>
+              <a href="https://techbullion.com/" target="_blank"
+                class="link-item block bg-[#0f172a] p-4 rounded-xl">
+                TechBullion Placement
+              </a>
 
-<a href="https://markets.businessinsider.com/news/stocks/pakistan-has-achieved-the-biggest-milestone-by-establishing-the-domestic-industry-of-manufacturing-assembling-smart-wearables-tech-accessories-made-possible-by-ronin-1034230493" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Business Insider Placement</a>
+              <a href="https://www.analyticsinsight.net/" target="_blank"
+                class="link-item block bg-[#0f172a] p-4 rounded-xl">
+                Analytics Insight Placement
+              </a>
 
-<a href="https://finance.yahoo.com/news/semaject-wins-top-honors-canadian-034059065.html" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Yahoo Finance Placement</a>
+              <a href="https://www.bbntimes.com/" target="_blank"
+                class="link-item block bg-[#0f172a] p-4 rounded-xl">
+                BBN Times Placement
+              </a>
 
-<a href="https://www.outlookindia.com/art-entertainment/grammys-in-memoriam-segment-leaves-out-tabla-maestro-zakir-hussain-makes-indian-fans-furious" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Outlook India Placement</a>
+              <a href="https://newsdipper.co.uk/" target="_blank"
+                class="link-item block bg-[#0f172a] p-4 rounded-xl">
+                NewsDipper Placement
+              </a>
 
-<a href="https://www.theglobeandmail.com/investing/markets/markets-news/Globe%20PR%20Wire/30509503/trinity-rental-redefining-luxury-and-convenience-in-dubai-car-rental-scene/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Globe & Mail Placement</a>
+              <a href="https://metapress.com/" target="_blank"
+                class="link-item block bg-[#0f172a] p-4 rounded-xl">
+                MetaPress Placement
+              </a>
 
-<a href="https://apnews.com/press-release/kisspr/united-kingdom-germany-68e3ccc966229bb46909ba3f43cd9a9a" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">AP News Placement</a>
+              <a href="https://www.businesstomark.com/" target="_blank"
+                class="link-item block bg-[#0f172a] p-4 rounded-xl">
+                Business To Mark Placement
+              </a>
 
-<a href="https://www.streetinsider.com/Globe+PR+Wire/ENS+Deadline+for+GB+Imports%3A+Mandatory+Rules+Starting+January+31+2025/24233593.html" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Street Insider Placement</a>
-              <a href="https://www.barchart.com/story/news/30834488/3-high-yielding-dividend-kings-to-buy-to-hand-over-fist" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Barchart Placement</a>
+              <a href="https://urbanmatter.com/" target="_blank"
+                class="link-item block bg-[#0f172a] p-4 rounded-xl">
+                UrbanMatter Placement
+              </a>
 
-<a href="https://www.digitaljournal.com/business/openais-altman-warns-eu-regulation-may-hold-europe-back/article" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Digital Journal Placement</a>
+              <a href="https://todaynews.co.uk/" target="_blank"
+                class="link-item block bg-[#0f172a] p-4 rounded-xl">
+                Today News Placement
+              </a>
 
-<a href="https://www.livemint.com/money/ask-mint-money/longterm-capital-gains-how-tax-on-the-sale-of-an-inherited-property-is-computed-11739006976808.html" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">LiveMint Placement</a>
+            </div>
 
-<a href="https://www.redmondpie.com/imobie-anytrans-review-the-best-itunes-alternative/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Redmond Pie Placement</a>
+          </div>
+        </div>
 
-<a href="https://www.benzinga.com/content/42623332/how-to-rent-the-perfect-car-in-dubai" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Benzinga Placement</a>
+      </div>
 
-<a href="https://www.apnnews.com/lyfeindex-expands-global-reach-with-participation-in-web-summit-qatar-2025/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">APN News Placement</a>
+    </div>
+  </section>
 
-<a href="https://www.analyticsinsight.net/blockchain/why-crypto-blockchain-are-still-controversial-in-tech-investing" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Analytics Insight Placement</a>
+  <!-- CTA -->
+  <section class="py-24">
+    <div class="max-w-5xl mx-auto px-6">
 
-<a href="https://usawire.com/why-best-restaurants-in-ubud-are-must-visit/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">USA Wire Placement</a>
+      <div class="glass rounded-3xl p-12 text-center">
 
-<a href="https://programminginsider.com/cricazas-impact-in-the-gaming-world/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Programming Insider Placement</a>
+        <h2 class="text-5xl font-black leading-tight">
+          Ready To Boost Your
+          <span class="text-cyan-400">Google Rankings?</span>
+        </h2>
 
-<a href="https://ocnjdaily.com/news/2025/feb/12/unlocking-the-potential-a-comprehensive-guide-to-investing-in-real-estate-in-cairo-and-its-impact/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">OCNJ Daily Placement</a>
+        <p class="text-slate-300 mt-6 text-lg leading-8 max-w-3xl mx-auto">
+          Get powerful backlinks from trusted websites and improve your website authority,
+          traffic and search visibility.
+        </p>
 
-<a href="https://www.urbansplatter.com/2023/08/best-junk-car-removal-near-me-how-to-get-rid-of-your-old-clunker-easily/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Urban Splatter Placement</a>
+        <div class="mt-10 flex flex-wrap justify-center gap-5">
 
-<a href="https://www.educba.com/business-coach-in-london/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">EDUCBA Placement</a>
+          <a href="contact.html"
+            class="bg-cyan-400 hover:bg-cyan-300 text-slate-900 px-8 py-4 rounded-xl font-black transition">
+            Contact Us
+          </a>
 
-<a href="https://www.bizzbuzz.news/LifeStyle/professional-and-affordable-systematic-review-writing-services-1351931" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">BizzBuzz Placement</a>
+          <a href="services.html"
+            class="border border-cyan-400 text-cyan-300 hover:bg-cyan-400 hover:text-slate-900 px-8 py-4 rounded-xl font-black transition">
+            Our Services
+          </a>
 
-<a href="https://thecoastnews.com/author/myrtle-beach-home-for-sale/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">The Coast News Placement</a>
-
-<a href="https://ceoweekly.com/how-to-choose-the-right-mortgage-broker-for-your-investment-property/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">CEO Weekly Placement</a>
-
-<a href="https://seaislenews.com/news/2025/feb/12/instagram-reel-downloader-store-your-favorite-reels-with-no-hassle/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Sea Isle News Placement</a>
-
-<a href="https://breakingac.com/news/2024/dec/04/low-cost-living-top-spots-in-atlantic-county-nj/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Breaking AC Placement</a>
-
-<a href="https://techwinks.com.in/the-barter-system/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">TechWinks Placement</a>
-
-<a href="https://northpennnow.com/news/2025/jan/31/good-work-and-good-news-meet-mark-lanan-and-leslie-johnson-trinity-lutheran-code-blue-shelter/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">North Penn Now Placement</a>
-
-<a href="https://thedatascientist.com/ics2-and-ai-how-technology-is-shaping-eu-customs-compliance/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">The Data Scientist Placement</a>
-            <a href="https://www.harlemworldmagazine.com/sponsored-love-little-kitchen-mamaroneck-a-culinary-gem-in-westchester-county" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Harlem World Magazine Placement</a>
-
-<a href="https://ventsmagazine.com/2024/12/05/courtroom-presentation-technology-a-comprehensive-guide-for-attorneys-and-legal-teams/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Vents Magazine Placement</a>
-
-<a href="https://www.newsbreak.com/james-robert-301427646/3730102091839-overcoming-addiction-insights-into-modern-recovery-methods" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">NewsBreak Placement</a>
-
-<a href="https://www.outdoorproject.com/users/mindful-escapes-how-traveling-nature-nurtures-mental-wellness" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Outdoor Project Placement</a>
-
-<a href="https://vocal.media/humor/top-5-tips-for-formatting-xml-files-for-better-readability" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Vocal Media Placement</a>
-
-<a href="https://nerdbot.com/2025/02/12/how-to-select-the-right-rehab-center-for-drug-and-alcohol-addiction-recovery/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Nerdbot Placement</a>
-
-<a href="https://www.patreon.com/posts/stampnik-apv-119074088" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Patreon Placement</a>
-
-<a href="https://www.houzz.com/shop-houzz/lighting-sale" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Houzz Placement</a>
-
-<a href="https://www.hr.com/en/app/calendar/event/elevate-your-visual-content-with-airbrush-image-en_m4m8ym8l.html" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">HR.com Placement</a>
-
-<a href="https://thevyvymanga.com/los-angeles-group-healthcare-benefits-top-insurance-plans-for-employees/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Vyvymanga Placement</a>
-
-<a href="https://www.outdooractive.com/en/condition/texas/how-to-handle-a-toilet-clogged-plumbing-service-tips-and-solutions/309896872/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Outdoor Active Placement</a>
-
-<a href="https://biharportalonline.com/group-health-plan-providers-in-san-antonio-affordable-insurance-options/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Bihar Portal Placement</a>
-
-<a href="https://wilddiscs.com/group-health-plan-providers-in-jacksonville-your-guide-to-best-insurance-options/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">WildDiscs Placement</a>
-
-<a href="https://sonicshappyhour.com/group-health-insurance-plan-providers-in-pittsburgh-affordable-coverage-options/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Sonics Happy Hour Placement</a>
-
-<a href="https://storytellershat.com/group-health-insurance-plans-in-dallas-affordable-coverage-options/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Storytellers Hat Placement</a>
-
-<a href="https://www.police-writers.com/what-employee-benefits-should-new-york-employers-provide-essential-requirements-explained/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Police Writers Placement</a>
-
-<a href="https://wildlabsky.com/blog/group-health-insurance-plan-providers-orlando-affordable-rates-and-business-coverage/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">WildLabSky Placement</a>
-
-<a href="https://www.travelblog.org/north-america/mexico/blog-1082437" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">TravelBlog Placement</a>
-
-<a href="https://newsdipper.co.uk/how-ai-tools-help-small-businesses-compete-with-giants" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">NewsDipper Placement</a>
-
-<a href="https://www.thehansindia.com/news/international/how-to-create-a-professional-dvd-menu-with-the-best-dvd-menu-maker-949408" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">The Hans India Placement</a>
-            <a href="https://metapress.com/how-fashion-designers-use-technology-to-create-plus-size-occasion-wear/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">MetaPress Placement</a>
-
-<a href="https://2amagazine.com/the-hidden-health-risks-posed-by-plumbing-problems-in-your-home-or-business/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">2A Magazine Placement</a>
-
-<a href="https://fintechzoom.com/business/finance/traditional-and-crypto-finance-for-smes/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">FintechZoom Placement</a>
-
-<a href="https://timebusinessnews.com/which-is-the-best-napa-mechanic-in-calgary" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Time Business News Placement</a>
-
-<a href="https://siit.co/guestposts/introduction-to-aerosol-can-technology-a-comprehensive-analysis-from-working-principle-to-application-field/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">SIIT Placement</a>
-
-<a href="https://myflashyhome.com/how-much-does-it-cost-to-replace-toilet-shower-faucets-and-taps/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">My Flashy Home Placement</a>
-
-<a href="https://theusaleaders.com/articles/dr-scott-kamelle/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">USA Leaders Placement</a>
-
-<a href="https://dailytrust.com/pdp-nec-reinstates-anyanwu-as-national-secretary/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Daily Trust Placement</a>
-
-<a href="https://www.mirrorreview.com/ai-image-to-video/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Mirror Review Placement</a>
-
-<a href="https://www.lawyer-monthly.com/2026/02/proving-service-connection-to-ptsd-and-securing-the-right-rating/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Lawyer Monthly Placement</a>
-
-<a href="https://www.ceotodaymagazine.com/2025/11/freshwater-strategy-election-disaster/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">CEO Today Placement</a>
-
-<a href="https://onpattison.com/news/2025/jun/13/the-ultimate-dubai-road-trip-best-routes-for-luxury-car-rentals/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Pattison News Placement</a>
-
-<a href="https://uaestories.com/shocking-reason-why-uae-chinese-car-insurance/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">UAE Stories Placement</a>
-
-<a href="https://tflcar.com/2025/07/maserati-mcpura-debut-news/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">TFL Car Placement</a>
-
-<a href="https://www.drlogy.com/health/cardiogen-peptide" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Drlogy Placement</a>
-
-<a href="https://formotorbikes.com/10-important-auto-repair-shop-advertising-ideas-to-consider-in-2024/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">For Motor Bikes Placement</a>
-
-<a href="https://immigrationnewscanada.ca/can-you-use-crypto-as-proof-of-funds-for-canadian-immigration/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Immigration News Canada Placement</a>
-
-<a href="https://lawyerscorner.com/can-my-boss-fire-me-if-i-file-for-workers-comp/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Lawyers Corner Placement</a>
-
-<a href="https://ritzherald.com/changing-money-mindsets-why-rethinking-your-beliefs-can-reshape-your-life/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Ritz Herald Placement</a>
-
-<a href="https://marketsherald.com/reinventing-recovery-dr-michael-gerlings-vision-for-the-future-of-orthopedic-medicine/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Markets Herald Placement</a>
-
-<a href="https://hudsonweekly.com/legal-challenges-behind-baltimore-traffic-accidents/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Hudson Weekly Placement</a>
-
-<a href="https://madisongraph.com/a-storm-of-strings-hooded-guitarist-set-to-shake-up-nyc/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Madison Graph Placement</a>
-
-<a href="https://lincolncitizen.com/cafe-boulud-at-maison-barnes-retains-michelin-star-earns-global-accolades-for-culinary-excellence/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Lincoln Citizen Placement</a>
-
-<a href="https://belmontstar.com/platform-aerospace-rapidly-flies-new-rf-surveillance-payload-on-long-endurance-drone/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Belmont Star Placement</a>
-
-<a href="https://fairmontpost.com/eb-5-program-gains-traction-as-h-1b-uncertainty-reaches-highest-level-in-years/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Fairmont Post Placement</a>
-
-<a href="https://www.nufcblog.co.uk/2025/07/15/from-keegan-to-howe-managers-who-changed-the-course-of-nufc/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">NUFC Blog Placement</a>
-
-<a href="https://www.msn.com/en-us/personal-development/leadership-and-management-skills/mick-hunt-s-podcast-dominates-self-improvement-charts-over-1-million-downloads-monthly-redefining-leadership-with-mastery-impact-courage-and-perseverance/ar-AA1xtp7p" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">MSN Placement</a>
-
-<a href="https://goodmenproject.com/business-ethics-2/the-role-of-a-branding-agency-building-strong-business-identities/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Good Men Project Placement</a>
-
-<a href="https://www.vizaca.com/index-ventures-secures-2-3bn-for-chasing-ai-breakthroughs/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Vizaca Placement</a>
-
-<a href="https://nyweekly.com/tech/the-surge-of-edge-computing-in-todays-digital-landscape/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">NY Weekly Placement</a>
-
-<a href="https://www.chiangraitimes.com/tech/ibex-seo-marketing-in-thailand/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Chiang Rai Times Placement</a>
-
-<a href="https://www.wicz.com/story/52338247/johnson-city-softball-star-burke-signs-with-st-bonaventure" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">WICZ Placement</a>
-
-<a href="https://ipsnews.net/business/2025/02/04/the-art-of-accessorizing-shop-beaded-bags-wavy-mirrors-for-a-trendy-lifestyle-2025/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">IPS News Placement</a>
-
-<a href="https://www.bignewsnetwork.com/news/275029309/vogue-luxe-where-tradition-meets-trend-in-luxury-clothing" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Big News Network Placement</a>
-
-<a href="https://techktimes.com/the-expanding-role-of-isp-proxies-in-modern-networking/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Tech K Times Placement</a>
-
-<a href="https://urbanmatter.com/how-married-dating-works-in-todays-world-what-you-need-to-know/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">UrbanMatter Placement</a>
-
-<a href="https://designerwomen.co.uk/how-to-get-rid-of-gnats/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Designer Women Placement</a>
-
-<a href="https://buzztum.com/business-for-sale-owner-financing-benefits-process/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">BuzzTum Placement</a>
-
-<a href="https://www.businesstomark.com/free-ai-image-generator-online/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Business To Mark Placement</a>
-
-<a href="https://azbigmedia.com/awards-events/2025-arizona-corporate-counsel-acc-awards/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">AZ Big Media Placement</a>
-            <a href="https://todaynews.co.uk/2025/02/07/the-rise-of-ai-chatbots-in-customer-support-transforming-business-engagement/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Today News Placement</a>
-
-<a href="https://thedailyguardian.com/medically-speaking/too-much-screen-time-may-hinder-your-toddlers-language-development/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">The Daily Guardian Placement</a>
-
-<a href="https://www.otsnews.co.uk/winning-with-bridging-loans-my-take-for-uk-property-developers-3/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">OTS News Placement</a>
-
-<a href="https://spacecoastdaily.com/2025/02/all-points-receives-cybersecurity-maturity-model-certification-level-2-from-department-of-defense/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Space Coast Daily Placement</a>
-
-<a href="https://www.ilounge.com/articles/using-ai-to-build-your-single-person-brand-on-instagram" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">iLounge Placement</a>
-
-<a href="https://www.technology.org/2025/02/07/meta-aims-to-redefine-human-robot-collaboration-at-home/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Technology.org Placement</a>
-
-<a href="https://wheon.com/the-evolution-of-digital-signage-how-modern-businesses-engage-customers/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Wheon Placement</a>
-
-<a href="https://thenewsgod.com/understanding-tax-benefits-and-depreciation-in-triple-net-investments/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">The News God Placement</a>
-
-<a href="https://techbullion.com/skybus-cargo-revolutionizing-air-freight-services-for-the-modern-world/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">TechBullion Placement</a>
-
-<a href="https://www.londondaily.news/the-intersection-of-interior-design-and-sleep-technology-cooling-beds-in-modern-bedrooms/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">London Daily News Placement</a>
-
-<a href="https://www.buzzfeed.com/redmeat391/how-do-casinos-use-player-data-in-multiplayer-game-ai1w8020dh" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">BuzzFeed Placement</a>
-
-<a href="https://www.kulfiy.com/how-celebrity-endorsements-influence-online-casinos-and-player-trust/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Kulfiy Casino Placement</a>
-
-<a href="https://1883magazine.com/1984-hackney-town-hall/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">1883 Magazine Placement</a>
-
-<a href="https://www.openpr.com/news/3858792/decoding-the-light-skin-stare-what-it-means-and-why-it-matters" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">OpenPR Placement</a>
-
-<a href="https://ventsmagazine.co.uk/temporary-work-visas-opportunities/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Vents Magazine UK Placement</a>
-
-<a href="https://medium.com/@shaz_seo/shaz-seo-specialist-with-5000-successful-orders-2e6254a90cf9" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Medium Placement</a>
-
-<a href="https://raceroster.com/events/2025/101534/the-importance-of-soft-skills-in-a-saas-care" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Race Roster Placement</a>
-
-<a href="https://backstageviral.com/understanding-origins-and-health-benefits-of-different-types-of-tea/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Backstage Viral Placement</a>
-
-<a href="https://urbanmatter.com/the-best-electric-fireplaces-of-2025/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">UrbanMatter Placement 2</a>
-
-<a href="https://www.pitchero.com/clubs/authers/news/what-helped-us-win-more-often-in-avia-master-2924714.html" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Pitchero Placement</a>
-
-<a href="https://www.bbntimes.com/technology/benefits-of-hiring-bigcommerce-developers-for-ongoing-maintenance-support-and-migration" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">BBN Times Placement</a>
-
-<a href="https://ventsmagazine.co.uk/what-is-iptv-in-the-uk/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Vents Magazine UK IPTV Placement</a>
-
-<a href="https://www.kulfiy.com/best-sedan-family-cars-under-%e2%82%b920-lakh/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Kulfiy Auto Placement</a>
-
-<a href="https://coda.io/d/_dGZsIx-zf7J/Top-Hotel-Brands-and-Their-Marketing-Strategies-Insights-from-a-_sujP9s7A" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Coda Placement</a>
-
-<a href="https://www.londondaily.news/why-is-fbm-emotion-baccarat-popular-among-filipino-bettors/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">London Daily News Baccarat Placement</a>
-
-<a href="https://metapress.com/7-essential-qualities-to-seek-in-an-ecommerce-app-development-company-in-2025/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">MetaPress Ecommerce Placement</a>
-           <a href="https://faithit.com/author/Play-for-Free-No-Deposit-Bonuses/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">FaithIt Placement</a>
-
-<a href="https://grindsuccess.com/author/professional-link-building-services-boost/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Grind Success Placement</a>
-
-<a href="https://www.awardsdaily.com/author/Epic-LOLs-Await/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Awards Daily Placement</a>
-
-<a href="https://www.footballxos.com/author/the-rise-of-nintendo-cards/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Football Xs and Os Placement</a>
-
-<a href="https://ticklethewire.com/author/guide-on-protecting-your-acrylic-keychain/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Tickle The Wire Placement</a>
-
-<a href="https://allhiphop.com/author/a-comprehensive-analysis-reddy-anna/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">AllHipHop Placement</a>
-
-<a href="https://thecoastnews.com/author/Luxury-Real-Estate-in-Spain/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">The Coast News Spain Placement</a>
-
-<a href="https://www.ranker.com/list/best-of-lost-characters/vicky001/What-Is-CTR" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Ranker Placement</a>
-
-<a href="https://uinterview.com/author/botox-injection-treatment-recovery-side-effect/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">uInterview Placement</a>
-
-<a href="https://www.canva.com/design/DAGMurBnRSs/tMPIvRsmAKz3jCB_PJ5Efg/view" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Canva Placement</a>
-
-<a href="https://www.houzz.com/hznb/projects/unlocking-the-power-of-seo-for-your-home-improvement-project-pj-vj~7476251" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Houzz Project Placement</a>
-
-<a href="https://www.outdoorproject.com/users/science-shows-cycling-really-does-fight-aging" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Outdoor Project Cycling Placement</a>
-
-<a href="https://www.patreon.com/posts/howzat-cricket-109200125" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Patreon Cricket Placement</a>
-
-<a href="https://vocal.media/gamers/a-comprehensive-review-of-the-best-electric-golf-buggies-on-the-market" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Vocal Gamers Placement</a>
-
-<a href="https://www.erikastravels.com/author/What-foods-to-eat-and-avoid/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Erika's Travels Placement</a>
-
-<a href="https://roadfood.com/author/Top-Reasons-to-Use-Private-Instagram/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Roadfood Placement</a>
-
-<a href="https://pdxparent.com/author/Trends-in-Recreational-Equipment/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">PDX Parent Placement</a>
-
-<a href="https://johnsoncountypost.com/author/Enhancing-Family-Entertainment/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Johnson County Post Placement</a>
-
-<a href="https://thebarbellspin.com/author/Trends-in-Recreational-Equipment/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">The Barbell Spin Placement</a>
-
-<a href="https://blackpressusa.com/author/Engaging-Gameplay/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Black Press USA Placement</a>
-
-<a href="https://www.gofundme.com/f/a-comprehensive-review-of-the-best-electric-golf-buggies-on" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">GoFundMe Placement</a>
-
-<a href="https://www.exploremcallen.com/author/Isee-hair-The-Appeal-and-Ease-of-Buss-Down/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Explore McAllen Placement</a>
-
-<a href="https://www.ganjingworld.com/news/1gvrmkg6jvh6KakrL8DtoYJZ21lk1c/why-reading-is-essential-for-every-childs-growth-and-imagination" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Gan Jing World Placement</a>
-
-<a href="https://livepositively.com/the-role-of-assistive-technology-in-enhancing-lives-a-comprehensive-overview/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Live Positively Placement</a>
-
-<a href="https://www.evernote.com/shard/s399/sh/f8075315-6e0b-52e1-a804-3bd4b3ce01f5/eNXwxmreAID88W5SSDfuO8sfbSizcMlRITdCwhu1FM8uiKICcGcm-0iQ0A" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Evernote Placement</a>
-
-<a href="https://www.merchantcircle.com/blogs/pathwaycaresolutions-west-mifflin-pa/2024/8/The-Role-of-Assistive-Technology-in-Enhancing-Lives/2793657" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">MerchantCircle Placement</a>
-
-<a href="https://www.tumblr.com/pathwaycaresolutions/759141434427310080/early-childhood-intervention-in-autism-the-role?source=share" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Tumblr Placement</a>
-
-<a href="https://guidetoiceland.is/traveler-profiles/tirion-lerion/why-reading-is-essential-for-every-child-s-growth-and-imagination" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Guide to Iceland Placement</a>
-
-<a href="https://wakelet.com/wake/tmXogI6syK3Vyyl79_ckR" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Wakelet Placement</a>
-
-<a href="https://www.tripoto.com/trip/rajasthan-exploring-the-royal-heritage-of-india-3d48119e706d0a233" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Tripoto Placement</a>
-
-<a href="https://ameblo.jp/jeoanseeial/entry-12865504312.html" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Ameblo Placement</a>
-
-<a href="https://allnich.mypixieset.com/blog/top-5-tips-for-perfect-corporate-headshot-your-linkedin-profile/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Pixieset Placement</a>
-
-<a href="https://hackmd.io/@giftboxmax121/S1hGyQ4K2" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">HackMD Placement</a>
-
-<a href="https://epic7x.com/author/Transition-from-ITIL-V3-to-ITIL-4/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Epic7x Placement</a>
-
-<a href="https://www.footballparadise.com/author/Transition-from-ITIL-V3-to-ITIL-4/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Football Paradise Placement</a>
-
-<a href="https://cookswellwithothers.com/author/The-Importance-of-Personalized-Clothing/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Cooks Well With Others Placement</a>
-
-<a href="https://www.newsbreak.com/tobisp4-2243334/3612316133569-elevate-your-gaming-experience-with-bdg-win" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">NewsBreak Gaming Placement</a>
-
-<a href="https://digital24hour.com/beginners-guide-to-am-sport-everything/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Digital24Hour Placement</a>
-
-<a href="https://usupdates.org/author/The-Convenience-of-Smoothie-Delivery/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">US Updates Placement</a>
-
-<a href="https://www.professionalsuk.co.uk/article/accountancy/71298/easy-ways-to-simplify-fractions-statements" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Professionals UK Placement</a>
-
-<a href="https://rizzarr.com/understanding-fast-fashion-the-impact-trends-and-alternatives/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Rizzarr Placement</a>
-
-<a href="https://ernestozayd.gumroad.com/l/jlezl" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Gumroad Placement</a>
-
-<a href="https://thedyrt.com/list/understanding-fast-fashion" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">The Dyrt Placement</a>
-
-<a href="https://www.culturaldaily.com/author/How-to-choose-an-iGaming/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Cultural Daily Placement</a>
-
-<a href="https://www.lemongrovelane.com/author/Best-of-McAllen/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Lemon Grove Lane Placement</a>
-
-<a href="https://www.matthewsvolvosite.com/author/Understanding-Fast-Fashion/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Matthews Volvo Site Placement</a>
-
-<a href="https://www.homify.com/ideabooks/9778720/understanding-fast-fashion-the-impact-trends-and-alternatives" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Homify Placement</a>
-
-<a href="https://macdailynews.com/author/Understanding-Fast-Fashion/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">MacDailyNews Placement</a>
-
-<a href="https://newsdusk.com/understanding-fast-fashion-the-impact-trends-and-alternatives/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">NewsDusk Placement</a>
-
-<a href="https://blunturi.org/author/Understanding-Fast-Fashion/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Blunturi Placement</a>
-
-<a href="https://houstonstevenson.com/2024/10/26/understanding-fast-fashionthe-impact-trends-and-alternatives/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Houston Stevenson Placement</a>
-
-<a href="https://northcert.co.uk/understanding-fast-fashion-the-impact-trends-and-alternatives/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">NorthCert Placement</a>
-
-<a href="https://www.ozarkradionews.com/author/Understanding-The-Fast-Fashion" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Ozark Radio News Placement</a>
-
-<a href="https://blogsgod.com/understanding-fast-fashion-the-impact-trends-and-alternatives/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">BlogsGod Placement</a>
-
-<a href="https://genderclarity.org/understanding-fast-fashion-the-impact-trends-and-alternatives/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Gender Clarity Placement</a>
-
-<a href="https://1st-street.com/understanding-fast-fashion-the-impact-trends-and-alternatives/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">1st Street Placement</a>
-
-<a href="https://plaza.rakuten.co.jp/gdgfd/diary/202410280000/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Rakuten Blog Placement</a>
-
-<a href="https://www.sportsmockery.com/author/Understanding-The-Fast-Fashion/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Sports Mockery Placement</a>
-
-<a href="https://www.vtforeignpolicy.com/author/Understanding-The-Fast-Fashion/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">VT Foreign Policy Placement</a>
-
-<a href="https://www.mangalorean.com/author/The-Rise-of-Fast-Fashion/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Mangalorean Placement</a>
-
-<a href="https://inspire99.com/author/How-To-Improve-Your-Bedroom-Storage" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Inspire99 Placement</a>
-
-<a href="https://realitysteve.com/author/understandingfastfashion/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Reality Steve Placement</a>
-
-<a href="https://www.eeweb.com/author/scarletguinna/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">EEWeb Placement</a>
-
-<a href="https://techstory.in/author/Understanding-Fast-Fashion/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">TechStory Placement</a>
-
-<a href="https://airsoftc3.com/article/14706/Understanding-Fast-Fashion-The-Impact-Trends-and-Alternatives" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">AirsoftC3 Placement</a>
-
-<a href="https://www.theexeterdaily.co.uk/users/understanding-fast-fashion" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">The Exeter Daily Placement</a>
-
-<a href="https://www.thedevondaily.co.uk/users/understanding-fast-fashion" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">The Devon Daily Placement</a>
-
-<a href="https://doc.clickup.com/9018659345/p/h/8crvmgh-458/9a5c79bea8e391c" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">ClickUp Doc Placement</a>
-
-<a href="https://letterboxd.com/gregorysommerse/list/understanding-fast-fashion-the-impact-trends/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Letterboxd Placement</a>
-
-<a href="https://boosty.to/boosty12/posts/237f0ccd-21b6-4689-97b8-3a54cb63fab4" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Boosty Placement</a>
-
-<a href="https://www.showbiz411.com/author/a-complete-guide-to-giving-custom-pins" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Showbiz411 Placement</a>
-
-<a href="https://www.jazzyjefffreshprince.com/author/add-additional-elements-to-your-custom-pins/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Jazzy Jeff Fresh Prince Placement</a>
-
-<a href="https://pridepublishinggroup.com/author/grow-your-career-with-an-online-mca-in-2024/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Pride Publishing Group Placement</a>
-
-<a href="https://churchleaders.com/author/add-additional-elements-to-your-custom-pins" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">ChurchLeaders Placement</a>
-
-<a href="https://www.rmconnection.com/rare-carat-excellent-online-diamonds-shopping-experience/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">RM Connection Diamond Placement</a>
-
-<a href="https://michiganscouting.org/author/Winning-the-War-on-Rodents/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Michigan Scouting Placement</a>
-
-<a href="https://www.thecantoncitizen.com/author/Boosting-Brain-Health-with-a-Scrabble-Word-Checker/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">The Canton Citizen Placement</a>
-
-<a href="https://ucatholic.com/author/a-complete-guide-to-giving-custom-pins/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">uCatholic Placement</a>
-
-<a href="https://thespacecoastrocket.com/author/a-complete-guide-to-giving-custom-pins/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Space Coast Rocket Placement</a>
-
-<a href="https://jacksonvilleoregon.org/author/a-complete-guide-to-giving-custom-pins/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Jacksonville Oregon Placement</a>
-
-<a href="https://exploretarponsprings.com/author/a-complete-guide-to-giving-custom-pins/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Explore Tarpon Springs Placement</a>
-
-<a href="https://www.heartlandcollegesports.com/author/add-additional-elements-to-your-custom-pins/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Heartland College Sports Placement</a>
-
-<a href="https://careynieuwhof.com/author/Astonishing-9-Ways-Improve" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Carey Nieuwhof Placement</a>
-
-<a href="https://amazingcakeideas.com/author/a-complete-guide-to-giving-custom-pins/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Amazing Cake Ideas Placement</a>
-
-<a href="https://www.fearlesspresentations.com/author/a-complete-guide-to-giving-custom-pins/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Fearless Presentations Placement</a>
-
-<a href="https://insightsjournal.co.uk/author/a-complete-guide-to-giving-custom-pins/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Insights Journal Placement</a>
-
-<a href="https://revistaviatori.com/author/A-Complete-Guide-to-Giving-Custom-Pins/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Revista Viatori Placement</a>
-
-<a href="https://sanctuaryfilmfestival.com/author/winning-the-war-on-rodents/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Sanctuary Film Festival Placement</a>
-
-<a href="https://theoccidentalnews.com/author/winning-the-war-on-rodents" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">The Occidental News Placement</a>
-
-<a href="https://thesoulofseoul.net/author/a-complete-guide-to-giving-custom-pins/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">The Soul of Seoul Placement</a>
-
-<a href="https://sciencenotes.org/author/can-cbd-gummies-be-used-for-weight-loss/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Science Notes Placement</a>
-
-<a href="https://gilbertsvillevet.com/the-10-carat-diamond-ring-price-luxury-within-reach/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Gilbertsville Vet Placement</a>
-
-<a href="https://caringhandsvet.com/exploring-nopaleras-impact-on-pet-wellness-a-case-study/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Caring Hands Vet Placement</a>
-
-<a href="https://livermorearts.org/author/creative-solutions-for-artists-inspired-by-slick/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Livermore Arts Placement</a>
-
-<a href="https://crushmag-online.com/author/Winning-the-War-on-Rodents/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">CrushMag Placement</a>
-
-<a href="https://knightnews.com/author/Winning-the-War-on-Rodents/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Knight News Placement</a>
-
-<a href="https://eyelashbeautybar.com/author/Winning-the-War-on-Rodents/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Eyelash Beauty Bar Placement</a>
-
-<a href="https://www.kaggle.com/datasets/gregorysommers1/understanding-fast-fashion-and-alternatives" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Kaggle Placement</a>
-
-<a href="https://www.zerohedge.com/user/MzYDgTHg9ZcFDeJZsLdf1x5kNg83" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">ZeroHedge Placement</a>
-
-<a href="https://www.rmconnection.com/understanding-fast-fashion-the-impact-trends-and-alternatives/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">RM Connection Fast Fashion Placement</a>
-
-<a href="https://www.jinanbanna.com/author/Iconic-Logo-For-a-Top-Hellstar-Hoodie/" target="_blank" class="block bg-[#0f172a] p-4 rounded-lg hover:bg-[#1e2a5a]">Jinanbanna Placement</a>   
         </div>
 
       </div>
@@ -573,23 +387,27 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="py-10 text-center text-slate-500 text-[11px] uppercase tracking-[0.3em]">
-    © 2026 OffPage SEO Agency | Global Link Building Experts
+  <footer class="border-t border-slate-800 py-10 text-center">
+    <p class="text-slate-500 text-sm">
+      © 2026 OffPage SEO Agency — Global Link Building Experts
+    </p>
   </footer>
 
+  <!-- SCRIPT -->
   <script>
-    
-function togglePremium() {
-  document.getElementById("premiumLinks").classList.toggle("hidden");
-}
 
-function toggleGeneral() {
-  document.getElementById("generalLinks").classList.toggle("hidden");
-}
-</script>
-  
-    
-  
+    function toggleLinks(id) {
+      document.getElementById(id).classList.toggle("hidden");
+    }
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+  </script>
 
 </body>
 </html>
