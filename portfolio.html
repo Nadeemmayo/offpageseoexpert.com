@@ -9,405 +9,487 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-    html {
-      scroll-behavior: smooth;
+    html{
+      scroll-behavior:smooth;
     }
 
-    body {
-      background: #020617;
-      color: white;
-      font-family: Arial, sans-serif;
+    body{
+      background:#020617;
+      color:white;
+      font-family:Arial, sans-serif;
+      overflow-x:hidden;
     }
 
-    .glass {
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .portfolio-card {
-      transition: 0.35s ease;
-    }
-
-    .portfolio-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-    }
-
-    .link-item {
-      transition: 0.3s ease;
-    }
-
-    .link-item:hover {
-      transform: translateX(6px);
-      background: #172554;
-    }
-
-    .hero-bg {
+    .hero-bg{
       background:
-        linear-gradient(to right, rgba(2,6,23,.9), rgba(15,23,42,.85)),
-        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop');
-      background-size: cover;
-      background-position: center;
+      linear-gradient(to right, rgba(2,6,23,.95), rgba(15,23,42,.92)),
+      url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
     }
 
-    .custom-scroll::-webkit-scrollbar {
-      width: 6px;
+    .glass{
+      background:rgba(15,23,42,0.75);
+      backdrop-filter:blur(14px);
+      border:1px solid rgba(255,255,255,0.06);
     }
 
-    .custom-scroll::-webkit-scrollbar-thumb {
-      background: #334155;
-      border-radius: 50px;
+    .portfolio-card{
+      transition:.4s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .portfolio-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 25px 60px rgba(0,0,0,.45);
+      border-color:rgba(250,204,21,.3);
+    }
+
+    .portfolio-card::before{
+      content:"";
+      position:absolute;
+      top:-100%;
+      left:-100%;
+      width:200%;
+      height:200%;
+      background:linear-gradient(
+        45deg,
+        transparent,
+        rgba(250,204,21,.05),
+        transparent
+      );
+      transform:rotate(25deg);
+      transition:.8s;
+    }
+
+    .portfolio-card:hover::before{
+      top:100%;
+      left:100%;
+    }
+
+    .link-item{
+      transition:.3s ease;
+      border:1px solid transparent;
+    }
+
+    .link-item:hover{
+      transform:translateX(6px);
+      background:#172554;
+      border-color:#facc15;
+    }
+
+    .gold-btn{
+      background:linear-gradient(to right,#facc15,#eab308);
+      color:#111827;
+      font-weight:900;
+      transition:.3s ease;
+    }
+
+    .gold-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 25px rgba(250,204,21,.35);
+    }
+
+    .outline-btn{
+      border:1px solid #facc15;
+      color:#facc15;
+      transition:.3s ease;
+    }
+
+    .outline-btn:hover{
+      background:#facc15;
+      color:#111827;
+    }
+
+    .custom-scroll::-webkit-scrollbar{
+      width:6px;
+    }
+
+    .custom-scroll::-webkit-scrollbar-thumb{
+      background:#475569;
+      border-radius:20px;
+    }
+
+    .glow{
+      box-shadow:0 0 40px rgba(250,204,21,.08);
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="bg-[#020617]/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<!-- NAVBAR -->
+<nav class="bg-[#020617]/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-800">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-      <h1 class="text-2xl font-black tracking-tight">
-        OFFPAGE <span class="text-cyan-400">SEO</span>
-      </h1>
+    <h1 class="text-2xl md:text-3xl font-black tracking-tight">
+      OFFPAGE <span class="text-yellow-400">SEO</span>
+    </h1>
 
-      <div class="hidden lg:flex gap-6 text-sm font-semibold uppercase">
-        <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
-        <a href="about.html" class="hover:text-cyan-400 transition">About</a>
-        <a href="services.html" class="hover:text-cyan-400 transition">Services</a>
-        <a href="portfolio.html" class="text-cyan-400">Portfolio</a>
-        <a href="inventory.html" class="hover:text-cyan-400 transition">Inventory</a>
-        <a href="premium-country-sites.html" class="hover:text-cyan-400 transition">Premium Sites</a>
-        <a href="all-niche-sites.html" class="hover:text-cyan-400 transition">All Niches</a>
-        <a href="blog.html" class="hover:text-cyan-400 transition">Blog</a>
-        <a href="FAQs.html" class="hover:text-cyan-400 transition">FAQ</a>
-        <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
-      </div>
+    <div class="hidden lg:flex gap-7 text-sm font-bold uppercase tracking-wide">
 
-      <button id="menuBtn" class="lg:hidden text-2xl">
-        <i class="fas fa-bars"></i>
-      </button>
+      <a href="index.html" class="hover:text-yellow-400 transition">Home</a>
+
+      <a href="about.html" class="hover:text-yellow-400 transition">About</a>
+
+      <a href="services.html" class="hover:text-yellow-400 transition">Services</a>
+
+      <a href="portfolio.html" class="text-yellow-400">Portfolio</a>
+
+      <a href="inventory.html" class="hover:text-yellow-400 transition">Inventory</a>
+
+      <a href="premium-country-sites.html" class="hover:text-yellow-400 transition">Premium Sites</a>
+
+      <a href="all-niche-sites.html" class="hover:text-yellow-400 transition">All Niches</a>
+
+      <a href="blog.html" class="hover:text-yellow-400 transition">Blog</a>
+
+      <a href="FAQs.html" class="hover:text-yellow-400 transition">FAQ</a>
+
+      <a href="contact.html" class="hover:text-yellow-400 transition">Contact</a>
 
     </div>
 
-    <!-- MOBILE MENU -->
-    <div id="mobileMenu" class="hidden lg:hidden px-6 pb-5 space-y-3 text-sm font-semibold uppercase">
-      <a href="index.html" class="block hover:text-cyan-400">Home</a>
-      <a href="about.html" class="block hover:text-cyan-400">About</a>
-      <a href="services.html" class="block hover:text-cyan-400">Services</a>
-      <a href="portfolio.html" class="block text-cyan-400">Portfolio</a>
-      <a href="inventory.html" class="block hover:text-cyan-400">Inventory</a>
-      <a href="blog.html" class="block hover:text-cyan-400">Blog</a>
-      <a href="contact.html" class="block hover:text-cyan-400">Contact</a>
-    </div>
-  </nav>
+    <button id="menuBtn" class="lg:hidden text-2xl">
+      <i class="fas fa-bars"></i>
+    </button>
 
-  <!-- HERO -->
-  <section class="hero-bg py-24">
-    <div class="max-w-6xl mx-auto px-6 text-center">
+  </div>
 
-      <span class="bg-cyan-400/10 text-cyan-300 px-5 py-2 rounded-full text-sm font-bold uppercase">
-        Real SEO Results
+  <!-- MOBILE -->
+  <div id="mobileMenu"
+    class="hidden lg:hidden px-6 pb-5 space-y-4 uppercase text-sm font-bold">
+
+    <a href="index.html" class="block hover:text-yellow-400">Home</a>
+
+    <a href="about.html" class="block hover:text-yellow-400">About</a>
+
+    <a href="services.html" class="block hover:text-yellow-400">Services</a>
+
+    <a href="portfolio.html" class="block text-yellow-400">Portfolio</a>
+
+    <a href="inventory.html" class="block hover:text-yellow-400">Inventory</a>
+
+    <a href="blog.html" class="block hover:text-yellow-400">Blog</a>
+
+    <a href="contact.html" class="block hover:text-yellow-400">Contact</a>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-bg py-28 border-b border-slate-800">
+
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+    <span class="inline-block bg-yellow-400/10 text-yellow-400 px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider border border-yellow-400/20">
+      Premium Authority Backlinks
+    </span>
+
+    <h2 class="text-5xl md:text-7xl font-black mt-8 leading-tight">
+      High Authority <br>
+      <span class="text-yellow-400">
+        SEO Portfolio
       </span>
+    </h2>
 
-      <h2 class="text-5xl md:text-7xl font-black mt-6 leading-tight">
-        Premium <span class="text-cyan-400">Live Backlinks</span><br>
-        Portfolio Showcase
+    <p class="text-slate-300 text-lg leading-9 max-w-3xl mx-auto mt-8">
+      Powerful live backlinks from trusted media websites helping businesses
+      improve rankings, authority and organic traffic worldwide.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-5 mt-12">
+
+      <a href="#premium"
+        class="gold-btn px-8 py-4 rounded-2xl">
+        View Premium Links
+      </a>
+
+      <a href="#general"
+        class="outline-btn px-8 py-4 rounded-2xl font-black">
+        View General Links
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- STATS -->
+<section class="py-16 bg-[#0b1120] border-y border-slate-800">
+
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+
+    <div class="glass glow rounded-3xl p-8">
+      <h3 class="text-4xl font-black text-yellow-400">200+</h3>
+      <p class="text-slate-400 mt-3 uppercase text-sm tracking-wider">
+        Successful Orders
+      </p>
+    </div>
+
+    <div class="glass glow rounded-3xl p-8">
+      <h3 class="text-4xl font-black text-yellow-400">80+</h3>
+      <p class="text-slate-400 mt-3 uppercase text-sm tracking-wider">
+        Premium Placements
+      </p>
+    </div>
+
+    <div class="glass glow rounded-3xl p-8">
+      <h3 class="text-4xl font-black text-yellow-400">150+</h3>
+      <p class="text-slate-400 mt-3 uppercase text-sm tracking-wider">
+        Authority Websites
+      </p>
+    </div>
+
+    <div class="glass glow rounded-3xl p-8">
+      <h3 class="text-4xl font-black text-yellow-400">99%</h3>
+      <p class="text-slate-400 mt-3 uppercase text-sm tracking-wider">
+        Client Satisfaction
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PORTFOLIO -->
+<section class="py-24">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="text-center mb-20">
+
+      <h2 class="text-5xl md:text-6xl font-black">
+        Our <span class="text-yellow-400">Portfolio</span>
       </h2>
 
-      <p class="text-slate-300 text-lg max-w-3xl mx-auto mt-6 leading-8">
-        We provide high-authority link placements on trusted global media websites,
-        helping brands increase rankings, traffic, and authority.
+      <div class="w-28 h-1 bg-yellow-400 mx-auto mt-6 rounded-full"></div>
+
+      <p class="text-slate-400 max-w-3xl mx-auto mt-8 text-lg leading-8">
+        Explore our professional backlink placements from trusted global
+        websites across multiple industries and niches.
       </p>
 
-      <div class="mt-10 flex flex-wrap justify-center gap-5">
-        <a href="#premium"
-          class="bg-cyan-400 hover:bg-cyan-300 text-slate-900 px-8 py-4 rounded-xl font-black transition">
-          View Premium Links
-        </a>
-
-        <a href="#general"
-          class="border border-cyan-400 text-cyan-300 hover:bg-cyan-400 hover:text-slate-900 px-8 py-4 rounded-xl font-black transition">
-          View General Links
-        </a>
-      </div>
-
     </div>
-  </section>
 
-  <!-- STATS -->
-  <section class="py-14 border-y border-slate-800 bg-[#0f172a]">
-    <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-      <div>
-        <h3 class="text-4xl font-black text-cyan-400">5000+</h3>
-        <p class="text-slate-400 mt-2">Successful Orders</p>
-      </div>
+      <!-- PREMIUM -->
+      <div id="premium"
+        class="portfolio-card glass rounded-[30px]">
 
-      <div>
-        <h3 class="text-4xl font-black text-cyan-400">1000+</h3>
-        <p class="text-slate-400 mt-2">Premium Placements</p>
-      </div>
+        <div class="h-2 bg-gradient-to-r from-yellow-500 via-amber-400 to-orange-500"></div>
 
-      <div>
-        <h3 class="text-4xl font-black text-cyan-400">300+</h3>
-        <p class="text-slate-400 mt-2">Authority Websites</p>
-      </div>
+        <div class="p-10">
 
-      <div>
-        <h3 class="text-4xl font-black text-cyan-400">99%</h3>
-        <p class="text-slate-400 mt-2">Client Satisfaction</p>
-      </div>
+          <div class="flex justify-between items-center flex-wrap gap-5">
 
-    </div>
-  </section>
+            <div>
 
-  <!-- PORTFOLIO -->
-  <section class="py-24">
-    <div class="max-w-7xl mx-auto px-6">
+              <span class="bg-yellow-400/10 text-yellow-400 text-xs uppercase font-black px-4 py-2 rounded-full border border-yellow-400/20">
+                Premium Links
+              </span>
 
-      <div class="text-center mb-16">
-        <h2 class="text-5xl font-black mb-5">
-          Our <span class="text-cyan-400">Portfolio</span>
-        </h2>
+              <h3 class="text-4xl font-black mt-6 leading-tight">
+                Premium Media Placements
+              </h3>
 
-        <p class="text-slate-400 max-w-3xl mx-auto leading-8">
-          Explore our premium media placements and general niche backlinks from trusted websites.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-
-        <!-- PREMIUM -->
-        <div id="premium" class="portfolio-card glass rounded-3xl overflow-hidden">
-
-          <div class="bg-gradient-to-r from-yellow-500 to-orange-500 h-2"></div>
-
-          <div class="p-10">
-
-            <div class="flex items-center justify-between flex-wrap gap-4">
-              <div>
-                <span class="bg-yellow-500/15 text-yellow-400 text-xs font-bold px-4 py-2 rounded-full uppercase">
-                  Premium Links
-                </span>
-
-                <h3 class="text-4xl font-black mt-5">
-                  Premium Media Placements
-                </h3>
-              </div>
-
-              <i class="fas fa-crown text-5xl text-yellow-400"></i>
             </div>
 
-            <p class="text-slate-300 leading-8 mt-6">
-              High-authority backlinks from Forbes, Yahoo Finance, AP News,
-              Business Insider, Benzinga and other trusted media platforms.
-            </p>
-
-            <div class="mt-8">
-              <button onclick="toggleLinks('premiumLinks')"
-                class="bg-cyan-400 hover:bg-cyan-300 text-slate-900 px-7 py-4 rounded-xl font-black transition w-full">
-                View Premium Links
-              </button>
-            </div>
-
-            <div id="premiumLinks"
-              class="hidden mt-8 max-h-[500px] overflow-y-auto custom-scroll space-y-3">
-
-              <a href="https://www.forbes.com/" target="_blank"
-                class="link-item block bg-[#0f172a] p-4 rounded-xl">
-                Forbes Placement
-              </a>
-
-              <a href="https://finance.yahoo.com/" target="_blank"
-                class="link-item block bg-[#0f172a] p-4 rounded-xl">
-                Yahoo Finance Placement
-              </a>
-
-              <a href="https://apnews.com/" target="_blank"
-                class="link-item block bg-[#0f172a] p-4 rounded-xl">
-                AP News Placement
-              </a>
-
-              <a href="https://markets.businessinsider.com/" target="_blank"
-                class="link-item block bg-[#0f172a] p-4 rounded-xl">
-                Business Insider Placement
-              </a>
-
-              <a href="https://www.benzinga.com/" target="_blank"
-                class="link-item block bg-[#0f172a] p-4 rounded-xl">
-                Benzinga Placement
-              </a>
-
-              <a href="https://www.livemint.com/" target="_blank"
-                class="link-item block bg-[#0f172a] p-4 rounded-xl">
-                LiveMint Placement
-              </a>
-
-              <a href="https://www.khaleejtimes.com/" target="_blank"
-                class="link-item block bg-[#0f172a] p-4 rounded-xl">
-                Khaleej Times Placement
-              </a>
-
+            <div class="w-20 h-20 rounded-2xl bg-yellow-400/10 flex items-center justify-center border border-yellow-400/20">
+              <i class="fas fa-crown text-yellow-400 text-4xl"></i>
             </div>
 
           </div>
+
+          <p class="text-slate-300 leading-8 mt-8">
+            High-authority backlinks from Forbes, Yahoo Finance,
+            AP News, Business Insider, Benzinga and other trusted
+            global media websites.
+          </p>
+
+          <button onclick="toggleLinks('premiumLinks')"
+            class="gold-btn w-full mt-10 py-4 rounded-2xl">
+            View Premium Links
+          </button>
+
+          <div id="premiumLinks"
+            class="hidden mt-8 space-y-4 max-h-[450px] overflow-y-auto custom-scroll">
+
+            <a href="https://www.forbes.com/" target="_blank"
+              class="link-item block bg-[#0f172a] rounded-2xl p-5">
+              Forbes Placement
+            </a>
+
+            <a href="https://finance.yahoo.com/" target="_blank"
+              class="link-item block bg-[#0f172a] rounded-2xl p-5">
+              Yahoo Finance Placement
+            </a>
+
+            <a href="https://apnews.com/" target="_blank"
+              class="link-item block bg-[#0f172a] rounded-2xl p-5">
+              AP News Placement
+            </a>
+
+            <a href="https://markets.businessinsider.com/" target="_blank"
+              class="link-item block bg-[#0f172a] rounded-2xl p-5">
+              Business Insider Placement
+            </a>
+
+            <a href="https://www.benzinga.com/" target="_blank"
+              class="link-item block bg-[#0f172a] rounded-2xl p-5">
+              Benzinga Placement
+            </a>
+
+          </div>
+
         </div>
 
-        <!-- GENERAL -->
-        <div id="general" class="portfolio-card glass rounded-3xl overflow-hidden">
+      </div>
 
-          <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-2"></div>
+      <!-- GENERAL -->
+      <div id="general"
+        class="portfolio-card glass rounded-[30px]">
 
-          <div class="p-10">
+        <div class="h-2 bg-gradient-to-r from-slate-500 via-yellow-400 to-slate-500"></div>
 
-            <div class="flex items-center justify-between flex-wrap gap-4">
-              <div>
-                <span class="bg-cyan-500/15 text-cyan-400 text-xs font-bold px-4 py-2 rounded-full uppercase">
-                  General Links
-                </span>
+        <div class="p-10">
 
-                <h3 class="text-4xl font-black mt-5">
-                  General Niche Placements
-                </h3>
-              </div>
+          <div class="flex justify-between items-center flex-wrap gap-5">
 
-              <i class="fas fa-link text-5xl text-cyan-400"></i>
+            <div>
+
+              <span class="bg-yellow-400/10 text-yellow-400 text-xs uppercase font-black px-4 py-2 rounded-full border border-yellow-400/20">
+                General Links
+              </span>
+
+              <h3 class="text-4xl font-black mt-6 leading-tight">
+                General Niche Placements
+              </h3>
+
             </div>
 
-            <p class="text-slate-300 leading-8 mt-6">
-              Diverse backlinks from business, technology, health, finance,
-              entertainment and authority websites.
-            </p>
-
-            <div class="mt-8">
-              <button onclick="toggleLinks('generalLinks')"
-                class="bg-cyan-400 hover:bg-cyan-300 text-slate-900 px-7 py-4 rounded-xl font-black transition w-full">
-                View General Links
-              </button>
-            </div>
-
-            <div id="generalLinks"
-              class="hidden mt-8 max-h-[500px] overflow-y-auto custom-scroll space-y-3">
-
-              <a href="https://medium.com/" target="_blank"
-                class="link-item block bg-[#0f172a] p-4 rounded-xl">
-                Medium Placement
-              </a>
-
-              <a href="https://www.digitaljournal.com/" target="_blank"
-                class="link-item block bg-[#0f172a] p-4 rounded-xl">
-                Digital Journal Placement
-              </a>
-
-              <a href="https://techbullion.com/" target="_blank"
-                class="link-item block bg-[#0f172a] p-4 rounded-xl">
-                TechBullion Placement
-              </a>
-
-              <a href="https://www.analyticsinsight.net/" target="_blank"
-                class="link-item block bg-[#0f172a] p-4 rounded-xl">
-                Analytics Insight Placement
-              </a>
-
-              <a href="https://www.bbntimes.com/" target="_blank"
-                class="link-item block bg-[#0f172a] p-4 rounded-xl">
-                BBN Times Placement
-              </a>
-
-              <a href="https://newsdipper.co.uk/" target="_blank"
-                class="link-item block bg-[#0f172a] p-4 rounded-xl">
-                NewsDipper Placement
-              </a>
-
-              <a href="https://metapress.com/" target="_blank"
-                class="link-item block bg-[#0f172a] p-4 rounded-xl">
-                MetaPress Placement
-              </a>
-
-              <a href="https://www.businesstomark.com/" target="_blank"
-                class="link-item block bg-[#0f172a] p-4 rounded-xl">
-                Business To Mark Placement
-              </a>
-
-              <a href="https://urbanmatter.com/" target="_blank"
-                class="link-item block bg-[#0f172a] p-4 rounded-xl">
-                UrbanMatter Placement
-              </a>
-
-              <a href="https://todaynews.co.uk/" target="_blank"
-                class="link-item block bg-[#0f172a] p-4 rounded-xl">
-                Today News Placement
-              </a>
-
+            <div class="w-20 h-20 rounded-2xl bg-yellow-400/10 flex items-center justify-center border border-yellow-400/20">
+              <i class="fas fa-link text-yellow-400 text-4xl"></i>
             </div>
 
           </div>
+
+          <p class="text-slate-300 leading-8 mt-8">
+            Diverse backlink placements from business, tech,
+            finance, health and entertainment websites.
+          </p>
+
+          <button onclick="toggleLinks('generalLinks')"
+            class="gold-btn w-full mt-10 py-4 rounded-2xl">
+            View General Links
+          </button>
+
+          <div id="generalLinks"
+            class="hidden mt-8 space-y-4 max-h-[450px] overflow-y-auto custom-scroll">
+
+            <a href="https://medium.com/" target="_blank"
+              class="link-item block bg-[#0f172a] rounded-2xl p-5">
+              Medium Placement
+            </a>
+
+            <a href="https://www.digitaljournal.com/" target="_blank"
+              class="link-item block bg-[#0f172a] rounded-2xl p-5">
+              Digital Journal Placement
+            </a>
+
+            <a href="https://techbullion.com/" target="_blank"
+              class="link-item block bg-[#0f172a] rounded-2xl p-5">
+              TechBullion Placement
+            </a>
+
+            <a href="https://www.analyticsinsight.net/" target="_blank"
+              class="link-item block bg-[#0f172a] rounded-2xl p-5">
+              Analytics Insight Placement
+            </a>
+
+            <a href="https://urbanmatter.com/" target="_blank"
+              class="link-item block bg-[#0f172a] rounded-2xl p-5">
+              UrbanMatter Placement
+            </a>
+
+          </div>
+
         </div>
 
       </div>
 
     </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="py-24">
-    <div class="max-w-5xl mx-auto px-6">
+  </div>
 
-      <div class="glass rounded-3xl p-12 text-center">
+</section>
 
-        <h2 class="text-5xl font-black leading-tight">
-          Ready To Boost Your
-          <span class="text-cyan-400">Google Rankings?</span>
-        </h2>
+<!-- CTA -->
+<section class="pb-24">
 
-        <p class="text-slate-300 mt-6 text-lg leading-8 max-w-3xl mx-auto">
-          Get powerful backlinks from trusted websites and improve your website authority,
-          traffic and search visibility.
-        </p>
+  <div class="max-w-5xl mx-auto px-6">
 
-        <div class="mt-10 flex flex-wrap justify-center gap-5">
+    <div class="glass rounded-[35px] p-14 text-center border border-yellow-400/10 glow">
 
-          <a href="contact.html"
-            class="bg-cyan-400 hover:bg-cyan-300 text-slate-900 px-8 py-4 rounded-xl font-black transition">
-            Contact Us
-          </a>
+      <h2 class="text-5xl md:text-6xl font-black leading-tight">
+        Ready To Grow <br>
+        <span class="text-yellow-400">
+          Your Rankings?
+        </span>
+      </h2>
 
-          <a href="services.html"
-            class="border border-cyan-400 text-cyan-300 hover:bg-cyan-400 hover:text-slate-900 px-8 py-4 rounded-xl font-black transition">
-            Our Services
-          </a>
+      <p class="text-slate-300 max-w-3xl mx-auto text-lg leading-9 mt-8">
+        Get premium authority backlinks and increase your search engine
+        visibility with professional SEO placements.
+      </p>
 
-        </div>
+      <div class="flex flex-wrap justify-center gap-5 mt-12">
+
+        <a href="contact.html"
+          class="gold-btn px-8 py-4 rounded-2xl">
+          Contact Us
+        </a>
+
+        <a href="services.html"
+          class="outline-btn px-8 py-4 rounded-2xl font-black">
+          Explore Services
+        </a>
 
       </div>
 
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-slate-800 py-10 text-center">
-    <p class="text-slate-500 text-sm">
-      © 2026 OffPage SEO Agency — Global Link Building Experts
-    </p>
-  </footer>
+  </div>
 
-  <!-- SCRIPT -->
-  <script>
+</section>
 
-    function toggleLinks(id) {
-      document.getElementById(id).classList.toggle("hidden");
-    }
+<!-- FOOTER -->
+<footer class="border-t border-slate-800 py-10 text-center bg-[#020617]">
 
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
+  <p class="text-slate-500 uppercase tracking-[0.25em] text-xs">
+    © 2026 OffPage SEO Agency — Global Link Building Experts
+  </p>
 
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
+</footer>
 
-  </script>
+<!-- SCRIPT -->
+<script>
+
+  function toggleLinks(id){
+    document.getElementById(id).classList.toggle("hidden");
+  }
+
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+</script>
 
 </body>
 </html>
