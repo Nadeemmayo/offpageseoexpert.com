@@ -208,7 +208,14 @@
   <a href="contact.html">Contact</a>
 </div>
   </nav>
+<script>
+const menuBtn = document.querySelector('.mobile-menu-btn');
+const mobileMenu = document.querySelector('.mobile-menu');
 
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('active');
+});
+</script>
   <!-- HERO -->
   <header class="gradient-bg py-24 px-6 text-center">
     <div class="max-w-6xl mx-auto">
