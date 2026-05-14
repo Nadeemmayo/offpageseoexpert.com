@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="canonical" href="https://offpageseoexpert.com/contact.html" />
+
+  <link rel="canonical" href="https://offpageseoexpert.com/contact.html" />
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968875.png" type="image/png">
   <link rel="preconnect" href="https://cdn.tailwindcss.com">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -19,7 +20,8 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
   <style>
     html { scroll-behavior: smooth; }
 
@@ -168,7 +170,6 @@
         </p>
 
         <div class="grid grid-cols-2 gap-5">
-
           <a href="https://wa.me/923074646927" target="_blank" class="social-card">
             <i class="fab fa-whatsapp text-4xl text-green-400 mb-3"></i>
             <span class="block font-black text-white">WhatsApp</span>
@@ -216,7 +217,6 @@
             <span class="block font-black text-white">Instagram</span>
             <small class="text-slate-400">Connect</small>
           </a>
-
         </div>
       </div>
 
@@ -233,10 +233,9 @@
           Share your website details and service requirement. We will review your project and suggest the best SEO or backlink strategy.
         </p>
 
-        <form action="https://formsubmit.co/nadeemonlin@gmail.com" method="POST" class="space-y-5">
+        <form action="https://formsubmit.co/nadeemonlin@gmail.com" method="POST" class="space-y-5" onsubmit="return validateCaptcha();">
 
           <input type="hidden" name="_subject" value="New Contact Form Submission - OffPage SEO Expert">
-          <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_next" value="https://offpageseoexpert.com/contact.html">
 
@@ -290,7 +289,9 @@
             </label>
             <textarea rows="5" name="Message" placeholder="Tell us about your SEO goals, target keywords, required backlinks, or project details..." required class="input-field w-full p-4 rounded-2xl"></textarea>
           </div>
-<div class="g-recaptcha" data-sitekey="6Lc1uuksAAAAAPQIBaUmbNSxCz31YCBFWQK8EKjh"></div>
+
+          <div class="g-recaptcha" data-sitekey="6Lc1uuksAAAAAPQIBaUmbNSxCz31YCBFWQK8EKjh"></div>
+
           <button type="submit" class="w-full bg-blue-600 hover:bg-white hover:text-blue-700 text-white font-black uppercase tracking-widest py-5 rounded-2xl transition-all duration-500 shadow-lg shadow-blue-900/30">
             Send Project Request
           </button>
@@ -303,7 +304,6 @@
 
   <section class="py-12 px-6 bg-[#0b173f]">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-5 text-center">
-
       <div class="glass-card rounded-2xl p-6">
         <h3 class="text-3xl font-black blue-text">50K+</h3>
         <p class="text-slate-300 text-sm">Website Inventory</p>
@@ -323,7 +323,6 @@
         <h3 class="text-3xl font-black blue-text">24/7</h3>
         <p class="text-slate-300 text-sm">Support Available</p>
       </div>
-
     </div>
   </section>
 
@@ -362,6 +361,19 @@
       © 2026 OFFPAGE SEO AGENCY. All Rights Reserved.
     </p>
   </footer>
+
+  <script>
+    function validateCaptcha() {
+      var response = grecaptcha.getResponse();
+
+      if (response.length === 0) {
+        alert("Please verify that you are not a robot.");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
 
 </body>
 </html>
