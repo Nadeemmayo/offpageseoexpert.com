@@ -1,6 +1,5 @@
 ---
 layout: null
-permalink: /blog.html
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +21,8 @@ permalink: /blog.html
   <meta name="description"
         content="Read expert SEO insights about guest posting, link building, backlinks, niche edits, E-E-A-T, AI search, and off-page SEO strategies.">
 
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
   <meta property="og:title"
         content="SEO Blog | Guest Posting & Link Building Insights">
 
@@ -36,6 +37,8 @@ permalink: /blog.html
   <meta property="og:image"
         content="https://offpageseoexpert.com/preview.jpg">
 
+  <meta name="twitter:card" content="summary_large_image">
+
   <script src="https://cdn.tailwindcss.com"></script>
 
   <link rel="stylesheet"
@@ -47,9 +50,11 @@ permalink: /blog.html
     }
 
     body {
+      margin: 0;
       background: #07112f;
       color: #ffffff;
       font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
     }
 
     .gradient-bg {
@@ -83,6 +88,9 @@ permalink: /blog.html
       overflow: hidden;
       transition: all 0.35s ease;
       box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .blog-card:hover {
@@ -112,22 +120,35 @@ permalink: /blog.html
       padding: 6px 12px;
       border-radius: 999px;
       letter-spacing: 1px;
-      z-index: 2;
+      z-index: 3;
     }
 
     .blog-image i {
       font-size: 58px;
       color: rgba(255,255,255,0.85);
+      position: relative;
+      z-index: 1;
     }
 
     .blog-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    .blog-content {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
     .category-pill {
       display: inline-block;
+      align-self: flex-start;
       background: rgba(11,87,208,0.1);
       color: #0b57d0;
       padding: 7px 14px;
@@ -139,12 +160,23 @@ permalink: /blog.html
     }
 
     .read-link {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      gap: 8px;
+      margin-top: auto;
       color: #0b57d0;
       font-weight: 900;
       text-transform: uppercase;
       font-size: 12px;
       border-bottom: 2px solid #0b57d0;
       padding-bottom: 4px;
+      transition: 0.3s;
+    }
+
+    .read-link:hover {
+      color: #07112f;
+      border-color: #07112f;
     }
 
     .cta-box {
@@ -186,53 +218,75 @@ permalink: /blog.html
 
   <!-- NAVBAR -->
   <nav class="bg-[#07112f] text-white p-4 sticky top-0 z-50 border-b border-white/10">
+
     <div class="max-w-7xl mx-auto flex justify-between items-center">
 
-      <a href="{{ '/' | relative_url }}"
+      <a href="/"
          class="text-xl font-black tracking-tight italic">
         OFFPAGE SEO <span class="text-blue-400">AGENCY</span>
       </a>
 
       <div class="hidden md:flex gap-5 font-bold text-xs uppercase items-center">
 
-        <a href="{{ '/' | relative_url }}"
-           class="hover:text-blue-400 transition">Home</a>
+        <a href="/"
+           class="hover:text-blue-400 transition">
+          Home
+        </a>
 
-        <a href="{{ '/about.html' | relative_url }}"
-           class="hover:text-blue-400 transition">About</a>
+        <a href="/about.html"
+           class="hover:text-blue-400 transition">
+          About
+        </a>
 
-        <a href="{{ '/Services.html' | relative_url }}"
-           class="hover:text-blue-400 transition">Services</a>
+        <a href="/Services.html"
+           class="hover:text-blue-400 transition">
+          Services
+        </a>
 
-        <a href="{{ '/portfolio.html' | relative_url }}"
-           class="hover:text-blue-400 transition">Portfolio</a>
+        <a href="/portfolio.html"
+           class="hover:text-blue-400 transition">
+          Portfolio
+        </a>
 
-        <a href="{{ '/inventory.html' | relative_url }}"
-           class="hover:text-blue-400 transition">Inventory</a>
+        <a href="/inventory.html"
+           class="hover:text-blue-400 transition">
+          Inventory
+        </a>
 
-        <a href="{{ '/premium-country-sites.html' | relative_url }}"
-           class="hover:text-blue-400 transition">Premium Country Sites</a>
+        <a href="/premium-country-sites.html"
+           class="hover:text-blue-400 transition">
+          Premium Country Sites
+        </a>
 
-        <a href="{{ '/all-niche-sites.html' | relative_url }}"
-           class="hover:text-blue-400 transition">All Niches</a>
+        <a href="/all-niche-sites.html"
+           class="hover:text-blue-400 transition">
+          All Niches
+        </a>
 
-        <a href="{{ '/blog.html' | relative_url }}"
-           class="text-blue-400 transition">Blog</a>
+        <a href="/blog.html"
+           class="text-blue-400 transition">
+          Blog
+        </a>
 
-        <a href="{{ '/FAQs.html' | relative_url }}"
-           class="hover:text-blue-400 transition">FAQ</a>
+        <a href="/FAQs.html"
+           class="hover:text-blue-400 transition">
+          FAQ
+        </a>
 
-        <a href="{{ '/contact.html' | relative_url }}"
+        <a href="/contact.html"
            class="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full transition">
           Contact
         </a>
 
       </div>
+
     </div>
+
   </nav>
 
   <!-- HERO -->
   <section class="gradient-bg py-24 px-6 text-center">
+
     <div class="max-w-6xl mx-auto">
 
       <p class="uppercase tracking-[4px] text-sm font-bold text-blue-100 mb-5">
@@ -252,18 +306,20 @@ permalink: /blog.html
 
       <div class="flex justify-center gap-4 flex-wrap">
 
-        <a href="{{ '/Services.html' | relative_url }}"
+        <a href="/Services.html"
            class="bg-white text-blue-700 font-black px-8 py-4 rounded-full hover:scale-105 transition">
           Explore Services
         </a>
 
-        <a href="{{ '/contact.html' | relative_url }}"
+        <a href="/contact.html"
            class="bg-[#ffb703] text-slate-900 font-black px-8 py-4 rounded-full hover:scale-105 transition">
           Get Free Consultation
         </a>
 
       </div>
+
     </div>
+
   </section>
 
   <!-- FEATURE STRIP -->
@@ -296,6 +352,7 @@ permalink: /blog.html
       </div>
 
     </div>
+
   </section>
 
   <!-- DYNAMIC BLOG GRID -->
@@ -319,6 +376,8 @@ permalink: /blog.html
         </p>
 
       </div>
+
+      {% if site.posts.size > 0 %}
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
@@ -344,36 +403,54 @@ permalink: /blog.html
 
           </div>
 
-          <div class="p-7">
+          <div class="blog-content">
 
             {% if post.category %}
+
             <span class="category-pill">
               {{ post.category | escape }}
             </span>
+
             {% endif %}
 
             <h3 class="text-2xl font-black mt-5 mb-4 leading-tight uppercase italic">
               {{ post.title | escape }}
             </h3>
 
-            <p class="text-gray-600 text-sm mb-3">
+            {% if post.date %}
+
+            <p class="text-gray-500 text-xs mb-3">
+
               {{ post.date | date: "%B %d, %Y" }}
+
               {% if post.author %}
                 • {{ post.author | escape }}
               {% endif %}
+
             </p>
 
+            {% endif %}
+
+            {% if post.description %}
+
             <p class="text-gray-600 text-sm mb-6 leading-7">
-              {% if post.description %}
-                {{ post.description | strip_html | truncate: 170 }}
-              {% else %}
-                {{ post.excerpt | strip_html | truncate: 170 }}
-              {% endif %}
+              {{ post.description | strip_html | truncate: 170 }}
             </p>
+
+            {% else %}
+
+            <p class="text-gray-600 text-sm mb-6 leading-7">
+              {{ post.excerpt | strip_html | truncate: 170 }}
+            </p>
+
+            {% endif %}
 
             <a href="{{ post.url | relative_url }}"
                class="read-link">
+
               Read Full Guide
+              <i class="fas fa-arrow-right"></i>
+
             </a>
 
           </div>
@@ -384,9 +461,11 @@ permalink: /blog.html
 
       </div>
 
-      {% if site.posts.size == 0 %}
+      {% else %}
 
       <div class="text-center py-12">
+
+        <i class="fas fa-pen-nib text-5xl text-blue-600 mb-5"></i>
 
         <h3 class="text-2xl font-black text-blue-950 mb-3">
           New SEO Articles Coming Soon
@@ -401,6 +480,7 @@ permalink: /blog.html
       {% endif %}
 
     </div>
+
   </section>
 
   <!-- CTA -->
@@ -420,17 +500,17 @@ permalink: /blog.html
 
       <div class="flex justify-center gap-4 flex-wrap">
 
-        <a href="{{ '/contact.html' | relative_url }}"
+        <a href="/contact.html"
            class="bg-[#07112f] text-white px-8 py-4 rounded-full font-black hover:scale-105 transition">
           Contact Us
         </a>
 
-        <a href="{{ '/inventory.html' | relative_url }}"
+        <a href="/inventory.html"
            class="bg-white text-[#07112f] px-8 py-4 rounded-full font-black hover:scale-105 transition">
           View Inventory
         </a>
 
-        <a href="{{ '/FAQs.html' | relative_url }}"
+        <a href="/FAQs.html"
            class="bg-[#0b57d0] text-white px-8 py-4 rounded-full font-black hover:scale-105 transition">
           Read FAQ
         </a>
@@ -438,6 +518,7 @@ permalink: /blog.html
       </div>
 
     </div>
+
   </section>
 
   <!-- FOOTER -->
