@@ -1,20 +1,12 @@
 ---
 layout: null
+permalink: /blog.html
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="canonical" href="https://offpageseoexpert.com/blog.html" />
-
-  <link rel="icon"
-        href="https://cdn-icons-png.flaticon.com/512/5968/5968875.png"
-        type="image/png">
-
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>SEO Blog | Guest Posting, Link Building & Off-Page SEO Insights</title>
 
@@ -22,6 +14,15 @@ layout: null
         content="Read expert SEO insights about guest posting, link building, backlinks, niche edits, E-E-A-T, AI search, and off-page SEO strategies.">
 
   <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <link rel="canonical" href="https://offpageseoexpert.com/blog.html">
+
+  <link rel="icon"
+        href="https://cdn-icons-png.flaticon.com/512/5968/5968875.png"
+        type="image/png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OffPage SEO Expert">
 
   <meta property="og:title"
         content="SEO Blog | Guest Posting & Link Building Insights">
@@ -32,12 +33,19 @@ layout: null
   <meta property="og:url"
         content="https://offpageseoexpert.com/blog.html">
 
-  <meta property="og:type" content="website">
-
   <meta property="og:image"
         content="https://offpageseoexpert.com/preview.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title"
+        content="SEO Blog | Guest Posting & Link Building Insights">
+
+  <meta name="twitter:description"
+        content="Read practical SEO, guest posting, backlink and off-page SEO guides from OffPage SEO Expert.">
+
+  <meta name="twitter:image"
+        content="https://offpageseoexpert.com/preview.jpg">
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -75,10 +83,6 @@ layout: null
 
     .blue-text {
       color: #57d4ff;
-    }
-
-    .gold-text {
-      color: #ffb703;
     }
 
     .blog-card {
@@ -177,6 +181,7 @@ layout: null
     .read-link:hover {
       color: #07112f;
       border-color: #07112f;
+      gap: 12px;
     }
 
     .cta-box {
@@ -193,23 +198,12 @@ layout: null
     "@type": "Blog",
     "name": "OffPage SEO Expert Blog",
     "url": "https://offpageseoexpert.com/blog.html",
-    "description": "Read SEO, guest posting, link building, digital marketing, niche edits, and authority backlink related blog articles from OffPage SEO Expert.",
+    "description": "SEO, guest posting, link building, niche edits and authority backlink insights from OffPage SEO Expert.",
     "publisher": {
       "@type": "Organization",
       "name": "OffPage SEO Expert",
       "url": "https://offpageseoexpert.com"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Nadeem Mayo"
-    },
-    "telephone": "+923074646927",
-    "email": "nadeemonlin@gmail.com",
-    "sameAs": [
-      "https://www.linkedin.com/in/nadeem-mayo",
-      "https://x.com/Nadeem_seo",
-      "https://t.me/Nadeemmayos"
-    ]
+    }
   }
   </script>
 </head>
@@ -228,30 +222,19 @@ layout: null
 
       <div class="hidden md:flex gap-5 font-bold text-xs uppercase items-center">
 
-        <a href="/"
-           class="hover:text-blue-400 transition">
-          Home
-        </a>
+        <a href="/" class="hover:text-blue-400 transition">Home</a>
 
         <a href="/about.html"
-           class="hover:text-blue-400 transition">
-          About
-        </a>
+           class="hover:text-blue-400 transition">About</a>
 
         <a href="/Services.html"
-           class="hover:text-blue-400 transition">
-          Services
-        </a>
+           class="hover:text-blue-400 transition">Services</a>
 
         <a href="/portfolio.html"
-           class="hover:text-blue-400 transition">
-          Portfolio
-        </a>
+           class="hover:text-blue-400 transition">Portfolio</a>
 
         <a href="/inventory.html"
-           class="hover:text-blue-400 transition">
-          Inventory
-        </a>
+           class="hover:text-blue-400 transition">Inventory</a>
 
         <a href="/premium-country-sites.html"
            class="hover:text-blue-400 transition">
@@ -264,7 +247,7 @@ layout: null
         </a>
 
         <a href="/blog.html"
-           class="text-blue-400 transition">
+           class="text-blue-400">
           Blog
         </a>
 
@@ -355,7 +338,7 @@ layout: null
 
   </section>
 
-  <!-- DYNAMIC BLOG GRID -->
+  <!-- BLOG POSTS -->
   <section class="py-20 px-6 bg-white text-gray-900">
 
     <div class="max-w-7xl mx-auto">
@@ -377,11 +360,13 @@ layout: null
 
       </div>
 
-      {% if site.posts.size > 0 %}
+      {% assign blog_posts = site.posts %}
+
+      {% if blog_posts.size > 0 %}
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        {% for post in site.posts %}
+        {% for post in blog_posts %}
 
         <article class="blog-card">
 
@@ -406,11 +391,9 @@ layout: null
           <div class="blog-content">
 
             {% if post.category %}
-
             <span class="category-pill">
               {{ post.category | escape }}
             </span>
-
             {% endif %}
 
             <h3 class="text-2xl font-black mt-5 mb-4 leading-tight uppercase italic">
@@ -418,7 +401,6 @@ layout: null
             </h3>
 
             {% if post.date %}
-
             <p class="text-gray-500 text-xs mb-3">
 
               {{ post.date | date: "%B %d, %Y" }}
@@ -428,7 +410,6 @@ layout: null
               {% endif %}
 
             </p>
-
             {% endif %}
 
             {% if post.description %}
@@ -447,10 +428,8 @@ layout: null
 
             <a href="{{ post.url | relative_url }}"
                class="read-link">
-
               Read Full Guide
               <i class="fas fa-arrow-right"></i>
-
             </a>
 
           </div>
