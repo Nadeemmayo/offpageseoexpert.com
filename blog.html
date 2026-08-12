@@ -1,5 +1,6 @@
 ---
 layout: null
+permalink: /blog.html
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -187,59 +188,41 @@ layout: null
   <nav class="bg-[#07112f] text-white p-4 sticky top-0 z-50 border-b border-white/10">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
 
-      <a href="index.html"
+      <a href="{{ '/' | relative_url }}"
          class="text-xl font-black tracking-tight italic">
         OFFPAGE SEO <span class="text-blue-400">AGENCY</span>
       </a>
 
       <div class="hidden md:flex gap-5 font-bold text-xs uppercase items-center">
 
-        <a href="index.html"
-           class="hover:text-blue-400 transition">
-          Home
-        </a>
+        <a href="{{ '/' | relative_url }}"
+           class="hover:text-blue-400 transition">Home</a>
 
-        <a href="about.html"
-           class="hover:text-blue-400 transition">
-          About
-        </a>
+        <a href="{{ '/about.html' | relative_url }}"
+           class="hover:text-blue-400 transition">About</a>
 
-        <a href="Services.html"
-           class="hover:text-blue-400 transition">
-          Services
-        </a>
+        <a href="{{ '/Services.html' | relative_url }}"
+           class="hover:text-blue-400 transition">Services</a>
 
-        <a href="portfolio.html"
-           class="hover:text-blue-400 transition">
-          Portfolio
-        </a>
+        <a href="{{ '/portfolio.html' | relative_url }}"
+           class="hover:text-blue-400 transition">Portfolio</a>
 
-        <a href="inventory.html"
-           class="hover:text-blue-400 transition">
-          Inventory
-        </a>
+        <a href="{{ '/inventory.html' | relative_url }}"
+           class="hover:text-blue-400 transition">Inventory</a>
 
-        <a href="premium-country-sites.html"
-           class="hover:text-blue-400 transition">
-          Premium Country Sites
-        </a>
+        <a href="{{ '/premium-country-sites.html' | relative_url }}"
+           class="hover:text-blue-400 transition">Premium Country Sites</a>
 
-        <a href="all-niche-sites.html"
-           class="hover:text-blue-400 transition">
-          All Niches
-        </a>
+        <a href="{{ '/all-niche-sites.html' | relative_url }}"
+           class="hover:text-blue-400 transition">All Niches</a>
 
-        <a href="blog.html"
-           class="text-blue-400 transition">
-          Blog
-        </a>
+        <a href="{{ '/blog.html' | relative_url }}"
+           class="text-blue-400 transition">Blog</a>
 
-        <a href="FAQs.html"
-           class="hover:text-blue-400 transition">
-          FAQ
-        </a>
+        <a href="{{ '/FAQs.html' | relative_url }}"
+           class="hover:text-blue-400 transition">FAQ</a>
 
-        <a href="contact.html"
+        <a href="{{ '/contact.html' | relative_url }}"
            class="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full transition">
           Contact
         </a>
@@ -269,12 +252,12 @@ layout: null
 
       <div class="flex justify-center gap-4 flex-wrap">
 
-        <a href="Services.html"
+        <a href="{{ '/Services.html' | relative_url }}"
            class="bg-white text-blue-700 font-black px-8 py-4 rounded-full hover:scale-105 transition">
           Explore Services
         </a>
 
-        <a href="contact.html"
+        <a href="{{ '/contact.html' | relative_url }}"
            class="bg-[#ffb703] text-slate-900 font-black px-8 py-4 rounded-full hover:scale-105 transition">
           Get Free Consultation
         </a>
@@ -345,7 +328,7 @@ layout: null
 
           <div class="blog-image">
 
-            {% if post.thumbnail %}
+            {% if post.thumbnail and post.thumbnail != "" %}
 
             <img
               src="{{ post.thumbnail | relative_url }}"
@@ -365,18 +348,18 @@ layout: null
 
             {% if post.category %}
             <span class="category-pill">
-              {{ post.category }}
+              {{ post.category | escape }}
             </span>
             {% endif %}
 
             <h3 class="text-2xl font-black mt-5 mb-4 leading-tight uppercase italic">
-              {{ post.title }}
+              {{ post.title | escape }}
             </h3>
 
             <p class="text-gray-600 text-sm mb-3">
               {{ post.date | date: "%B %d, %Y" }}
               {% if post.author %}
-                • {{ post.author }}
+                • {{ post.author | escape }}
               {% endif %}
             </p>
 
@@ -437,17 +420,17 @@ layout: null
 
       <div class="flex justify-center gap-4 flex-wrap">
 
-        <a href="contact.html"
+        <a href="{{ '/contact.html' | relative_url }}"
            class="bg-[#07112f] text-white px-8 py-4 rounded-full font-black hover:scale-105 transition">
           Contact Us
         </a>
 
-        <a href="inventory.html"
+        <a href="{{ '/inventory.html' | relative_url }}"
            class="bg-white text-[#07112f] px-8 py-4 rounded-full font-black hover:scale-105 transition">
           View Inventory
         </a>
 
-        <a href="FAQs.html"
+        <a href="{{ '/FAQs.html' | relative_url }}"
            class="bg-[#0b57d0] text-white px-8 py-4 rounded-full font-black hover:scale-105 transition">
           Read FAQ
         </a>
