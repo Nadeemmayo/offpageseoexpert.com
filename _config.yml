@@ -1,27 +1,4 @@
-title: "OffPage SEO Expert"
-description: "Professional off-page SEO, guest posting, link building, niche edits and authority backlink services."
-url: "https://offpageseoexpert.com"
+title: OffPage SEO Expert
+url: https://offpageseoexpert.com
 baseurl: ""
-
 markdown: kramdown
-permalink: /blog/:title.html
-
-collections:
-  posts:
-    output: true
-
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-
-include:
-  - _pages
-
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-# Deployment refresh
